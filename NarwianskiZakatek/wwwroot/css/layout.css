@@ -1,0 +1,50 @@
+﻿
+.fit {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.no-pad {
+    padding: 0px;
+}
+
+.pagetitle {
+    font-family: 'Segoe Script';
+    color: whitesmoke;
+    font-size: xx-large;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}
+
+.footer-custom {
+    background-color: gray;
+    color: black;
+}
+
+pagetitle:link {
+    color: whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+pagetitle:visited {
+    color: whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+pagetitle:hover {
+    color: whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+pagetitle:active {
+    color: whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}

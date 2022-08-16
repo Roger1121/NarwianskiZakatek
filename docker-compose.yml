@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  narwianskizakatek:
+    image: ${DOCKER_REGISTRY-}narwianskizakatek
+    build:
+      context: .
+      dockerfile: NarwianskiZakatek/Dockerfile
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=myDataBase
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
