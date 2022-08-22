@@ -51,7 +51,7 @@ namespace NarwianskiZakatek.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoomId,RoomNumber,RoomCapacity")] Room room)
+        public async Task<IActionResult> Create([Bind("RoomNumber,RoomCapacity")] Room room)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +59,7 @@ namespace NarwianskiZakatek.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             return View(room);
         }
 

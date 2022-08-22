@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Scripts\" />
     <Folder Include="wwwroot\graphics\posts\" />
   </ItemGroup>
 
