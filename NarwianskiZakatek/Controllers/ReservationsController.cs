@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NarwianskiZakatek.Data;
-using NarwianskiZakatek.Models;
+using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -22,23 +22,30 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpGet]
-        public IActionResult New()
+        public IActionResult Date()
         {
-            ViewBag.RoomsList = new LinkedList<SelectListItem>();
             return View();
         }
 
         [HttpPost]
-        public IActionResult New(Reservation reservation)
+        public IActionResult New(DateTime beginDate, DateTime endDate)
         {
+            ViewBag.RoomList = FindAvailableRooms(beginDate, endDate);
             return View();
         }
 
-        public JsonResult FindAvailableRooms(/*DateTime beginDate, DateTime endDate*/)
+        [HttpPost]
+        public IActionResult Confirm(AvailableRooms roomList)
         {
-            var list = _context.Rooms.ToList();
+            //save
+            return View();
+        }
 
-            return Json(list);
+        private List<SelectListItem> FindAvailableRooms(DateTime beginDate, DateTime endDate)
+        {
+            var list = _context.Rooms.Select(x => new SelectListItem { Text = x.ToString(), Value = x.RoomId.ToString() }).ToList();
+
+            return list;
         }
     }
 }

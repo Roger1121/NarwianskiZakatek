@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fk9bWfmgZLvbbkiB4dOqHqkWSNuKEc8T9lnd8mZaLyw=",
+  "Hash": "08C8sOLAgeo47UWoXVfRjfocnVIrMUfNEQyZObQTKBo=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -2123,6 +2123,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\jquery-3.6.0.min.js",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "scripts/jquery-3.6.0.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\jquery-3.6.0.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\selectize.js",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "scripts/selectize.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\selectize.js"
     }
   ]
 }

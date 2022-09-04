@@ -580,6 +580,28 @@
         "Asset": null,
         "Patterns": null
       },
+      "scripts": {
+        "Children": {
+          "jquery-3.6.0.min.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "scripts/jquery-3.6.0.min.js"
+            },
+            "Patterns": null
+          },
+          "selectize.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "scripts/selectize.js"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      },
       "Identity": {
         "Children": {
           "css": {
