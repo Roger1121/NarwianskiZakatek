@@ -10,6 +10,9 @@ namespace NarwianskiZakatek.Models
         [Required]
         [Range(1, 10)]
         public int RoomCapacity { get; set; }
+
+        [Required]
+        public decimal Price { get; set; }
         public virtual ICollection<ReservedRoom>? ReservedRooms { get; set; }
 
         public override string ToString()

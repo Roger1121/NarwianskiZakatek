@@ -15,7 +15,7 @@ namespace NarwianskiZakatek.Controllers
             _context = context;
         }
 
-        [Authorize]
+        [Authorize(Roles ="User")]
         public IActionResult Index()
         {
             return View();
