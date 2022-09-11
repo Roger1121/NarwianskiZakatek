@@ -49,7 +49,12 @@ namespace NarwianskiZakatek.Models
                             PasswordHash = "AQAAAAEAACcQAAAAEDe9LsLy6xxzvfbsvrUzRSNUXRp0YwKuzvbAU02CnhAGhHgLOXMfaqShadKmkujA+A==",
                             SecurityStamp = "GFG64WLSCBWK22CVGPPDMNJA4GOA6RPB",
                             ConcurrencyStamp = "6d39cc48-1616-4c58-8001-c694eaeeb107",
-                            PhoneNumber = "123456789"
+                            PhoneNumber = "123456789",
+                            City = "Białyatok",
+                            Street = "Wiejska",
+                            BuildingNumber = "45a",
+                            PostalCode = "15-352",
+                            PostCity = "Białystok"
                         });
                         context.SaveChanges();
                         string userId = context.Users.Where(r => r.UserName == "leszczynski_szymon@wp.pl").ToList().FirstOrDefault().Id;
@@ -80,7 +85,12 @@ namespace NarwianskiZakatek.Models
                             PasswordHash = "AQAAAAEAACcQAAAAEJwNo3gck8NrGarCI2t3yHCpEX2/wUppwQhQQBtI/IwNdKsCtzWkoaNJaGOR/MpxZg==",
                             SecurityStamp = "N4S2GQNOKBGA477TJKQB7A4KYCT4OCQ3",
                             ConcurrencyStamp = "ab642b36-c5e9-4c7a-b088-2015d606a8e0",
-                            PhoneNumber = "123456789"
+                            PhoneNumber = "123456789",
+                            City = "Białyatok",
+                            Street = "Wiejska",
+                            BuildingNumber = "45a",
+                            PostalCode = "15-352",
+                            PostCity = "Białystok"
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "employee@test.pl").ToList().FirstOrDefault().Id;
@@ -106,7 +116,12 @@ namespace NarwianskiZakatek.Models
                             PasswordHash = "AQAAAAEAACcQAAAAELKBPXv8HNDhwzwO7eMO6WVzaKDAqnMvrPGcrMo11/wYuFO6ik4Xx31FdlrgKjm7yg==",
                             SecurityStamp = "2GW4WYDZN5BGMA2K4N5IJ24W5HGGZC6G",
                             ConcurrencyStamp = "3f8a113b-44b7-493d-be2e-c2542d1d007f",
-                            PhoneNumber = "123456789"
+                            PhoneNumber = "123456789",
+                            City = "Białyatok",
+                            Street = "Wiejska",
+                            BuildingNumber = "45a",
+                            PostalCode = "15-352",
+                            PostCity = "Białystok"
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "user@test.pl").ToList().FirstOrDefault().Id;
