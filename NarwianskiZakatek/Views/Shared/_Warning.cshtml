@@ -1,0 +1,10 @@
+﻿@foreach (var message in ViewBag.Warnings)
+{
+    if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            @message
+        </div>
+    }
+}
