@@ -6,6 +6,6 @@
         public string Message { get; set; }
         public string UserId { get; set; }
         public AppUser User { get; set; }
-        public bool WasDisplayed { get; set; }
+        public bool WasDisplayed { get; set; } = false;
     }
 }

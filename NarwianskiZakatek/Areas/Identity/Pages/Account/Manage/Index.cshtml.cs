@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 
 namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
@@ -17,13 +18,16 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly ApplicationDbContext _context;
 
         public IndexModel(
             UserManager<AppUser> userManager,
-            SignInManager<AppUser> signInManager)
+            SignInManager<AppUser> signInManager,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         /// <summary>
@@ -131,13 +135,39 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
                 if (!setPhoneResult.Succeeded)
                 {
-                    StatusMessage = "Unexpected error when trying to set phone number.";
+                    StatusMessage = "Nastąpił błąd, spróbuj ponownie później.";
                     return RedirectToPage();
                 }
             }
 
+            if(Input.City != user.City)
+            {
+                user.City = Input.City;
+            }
+            if(Input.Street != user.Street)
+            {
+                user.Street = Input.Street;
+            }
+            if(Input.BuildingNumber != user.BuildingNumber)
+            {
+                user.BuildingNumber = Input.BuildingNumber;
+            }
+            if(Input.LocalNumber != user.LocalNumber)
+            {
+                user.LocalNumber = Input.LocalNumber;
+            }
+            if(Input.PostalCode != user.PostalCode)
+            {
+                user.PostalCode = Input.PostalCode;
+            }
+            if(Input.PostCity != user.PostCity)
+            {
+                user.PostCity = Input.PostCity;
+            }
+            _context.SaveChanges();
+
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Twoje dane zostały pomyślnie zaktualizowane";
             return RedirectToPage();
         }
     }

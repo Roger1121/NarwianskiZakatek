@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NarwianskiZakatek.Data;
+using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -16,8 +17,9 @@ namespace NarwianskiZakatek.Controllers
 
         // GET: Users
         [Authorize(Roles= "Admin")]
-        public ActionResult Users()
+        public ActionResult Users(string? message)
         {
+            ViewBag.Message = message;
             return _context.Users != null ?
                         View(_context.Users.ToList()) :
                         Problem("Entity set 'ApplicationDbContext.Users'  is null.");
@@ -34,7 +36,7 @@ namespace NarwianskiZakatek.Controllers
                 UserId = userId
             });
             _context.SaveChanges();
-            return RedirectToAction("Users");
+            return RedirectToAction("Users", new { message = "Pomyślnie zmieniono rolę użytkownika." });
         }
 
         [Authorize(Roles = "Admin")]
@@ -48,7 +50,41 @@ namespace NarwianskiZakatek.Controllers
                 UserId = userId
             });
             _context.SaveChanges();
-            return RedirectToAction("Users");
+            return RedirectToAction("Users", new { message = "Pomyślnie zmieniono rolę użytkownika." });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult SendWarning(string userName)
+        {
+            var model = new WarningViewModel()
+            {
+                UserName = userName
+            };
+
+            return View(model);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult SendWarning(WarningViewModel model)
+        {
+            var userId = _context.Users.Where(u => u.UserName == model.UserName).First().Id;
+            _context.Warnings.Add(new Models.Warning()
+            {
+                UserId = userId,
+                Message = model.Message
+            });
+            _context.SaveChanges();
+            return RedirectToAction("Users", new { message = "Wysłano ostrzeżenie użytkownikowi." });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult LockAccount(string userName)
+        {
+            var user = _context.Users.Where(u => u.UserName == userName).First();
+            user.IsLocked = true;
+            _context.SaveChanges();
+            return RedirectToAction("Users", new { message = "Konto użytkownika zostało zablokowane."});
         }
     }
 }

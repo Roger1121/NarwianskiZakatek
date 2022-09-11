@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Data;
 
 namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 {
@@ -22,12 +23,14 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger, ApplicationDbContext context)
         {
             _signInManager = signInManager;
             _logger = logger;
             _signInManager.Options.SignIn.RequireConfirmedAccount = false;
+            _context = context;
         }
 
         /// <summary>
@@ -111,12 +114,17 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                var user = _context.Users.Where(u => u.UserName == Input.Email).First();
+                if (user.IsLocked)
+                {
+                    ModelState.AddModelError(string.Empty, "Konto zostało zablokowane.");
+                    return Page();
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
+                    _logger.LogInformation("Zalogowano pomyślnie.");
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -125,12 +133,12 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning("Konto zostało zablokowane.");
                     return RedirectToPage("./Lockout");
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Nieprawidłowa próba logowania.");
                     return Page();
                 }
             }
