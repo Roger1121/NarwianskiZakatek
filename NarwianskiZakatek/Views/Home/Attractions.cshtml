@@ -1,8 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model NarwianskiZakatek.Models.Description
+
 @{
+    ViewData["Title"] = "Atrakcje";
 }
-<h1>
-    Widok atrakcji
-</h1>
+
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+
+
+<img src="@Model.getFullPhotoPath()" width="200" />
+@Html.DisplayFor(model => model.Content)
+
+<div>
+    <a asp-action="Edit" asp-route-header="@Model?.Title">Edytuj</a>
+</div>

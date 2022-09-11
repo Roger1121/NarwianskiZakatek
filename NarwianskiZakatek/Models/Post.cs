@@ -30,6 +30,8 @@ namespace NarwianskiZakatek.Models
 
         public string getFullPhotoPath()
         {
+            if (PhotoUrl == null)
+                return null;
             return "/graphics/posts/" + PhotoUrl;
         }
     }

@@ -134,7 +134,38 @@ namespace NarwianskiZakatek.Models
                     }
                     #endregion
 
-
+                    #region add descriptions
+                    if (!context.Descriptions.Any())
+                    {
+                        context.Descriptions.Add(new Description()
+                        {
+                            Title = "Noclegi",
+                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis dolor. Praesent congue sem ut arcu cursus imperdiet et quis ipsum. Donec lacinia neque quis diam convallis egestas. Aenean a ullamcorper nunc. Donec efficitur enim sit amet elit commodo, vitae consequat urna vehicula. Nunc faucibus nec leo eget pulvinar. Nulla fermentum urna vel massa efficitur ornare. Donec eget blandit elit. Donec auctor pellentesque tempus. Sed sapien neque, lacinia ac tincidunt quis, consequat et magna. Nullam vestibulum elit quis erat viverra pharetra. Praesent in scelerisque lectus, sed lobortis nulla."
+                        });
+                        context.Descriptions.Add(new Description()
+                        {
+                            Title = "Restauracja",
+                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis dolor. Praesent congue sem ut arcu cursus imperdiet et quis ipsum. Donec lacinia neque quis diam convallis egestas. Aenean a ullamcorper nunc. Donec efficitur enim sit amet elit commodo, vitae consequat urna vehicula. Nunc faucibus nec leo eget pulvinar. Nulla fermentum urna vel massa efficitur ornare. Donec eget blandit elit. Donec auctor pellentesque tempus. Sed sapien neque, lacinia ac tincidunt quis, consequat et magna. Nullam vestibulum elit quis erat viverra pharetra. Praesent in scelerisque lectus, sed lobortis nulla."
+                        });
+                        context.Descriptions.Add(new Description()
+                        {
+                            Title = "Atrakcje",
+                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis dolor. Praesent congue sem ut arcu cursus imperdiet et quis ipsum. Donec lacinia neque quis diam convallis egestas. Aenean a ullamcorper nunc. Donec efficitur enim sit amet elit commodo, vitae consequat urna vehicula. Nunc faucibus nec leo eget pulvinar. Nulla fermentum urna vel massa efficitur ornare. Donec eget blandit elit. Donec auctor pellentesque tempus. Sed sapien neque, lacinia ac tincidunt quis, consequat et magna. Nullam vestibulum elit quis erat viverra pharetra. Praesent in scelerisque lectus, sed lobortis nulla."
+                        });
+                        context.Descriptions.Add(new Description()
+                        {
+                            Title = "Okolica",
+                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis dolor. Praesent congue sem ut arcu cursus imperdiet et quis ipsum. Donec lacinia neque quis diam convallis egestas. Aenean a ullamcorper nunc. Donec efficitur enim sit amet elit commodo, vitae consequat urna vehicula. Nunc faucibus nec leo eget pulvinar. Nulla fermentum urna vel massa efficitur ornare. Donec eget blandit elit. Donec auctor pellentesque tempus. Sed sapien neque, lacinia ac tincidunt quis, consequat et magna. Nullam vestibulum elit quis erat viverra pharetra. Praesent in scelerisque lectus, sed lobortis nulla."
+                        });
+                        context.Descriptions.Add(new Description()
+                        {
+                            Title = "O nas",
+                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis dolor. Praesent congue sem ut arcu cursus imperdiet et quis ipsum. Donec lacinia neque quis diam convallis egestas. Aenean a ullamcorper nunc. Donec efficitur enim sit amet elit commodo, vitae consequat urna vehicula. Nunc faucibus nec leo eget pulvinar. Nulla fermentum urna vel massa efficitur ornare. Donec eget blandit elit. Donec auctor pellentesque tempus. Sed sapien neque, lacinia ac tincidunt quis, consequat et magna. Nullam vestibulum elit quis erat viverra pharetra. Praesent in scelerisque lectus, sed lobortis nulla."
+                        });
+                        
+                        context.SaveChanges();
+                    }
+                    #endregion
                 }
                 catch (NpgsqlException ex)
                 {

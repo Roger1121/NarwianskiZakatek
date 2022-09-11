@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace NarwianskiZakatek.Models
+namespace NarwianskiZakatek.ViewModels
 {
     public class PostViewModel
     {
