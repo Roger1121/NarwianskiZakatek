@@ -1,0 +1,80 @@
+﻿@model NarwianskiZakatek.Models.Reservation
+
+<h1>Szczegóły rezerwacji</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BeginDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BeginDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opinion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opinion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>
+</div>
+<h4>Zarezerwowane pokoje</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Numer pokoju
+            </th>
+            <th>
+                Liczba łóżek
+            </th>
+            <th>
+                Cena
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in ViewBag.Rooms)
+        {
+            <tr>
+                <td>
+                    @room.RoomNumber
+                </td>
+                <td>
+                    @room.RoomCapacity
+                </td>
+                <td>
+                    @room.Price zł
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div>
+    @if (Model.BeginDate > DateTime.Today)
+    {
+        <a asp-action="Delete" asp-route-id="@Model.ReservationId">Anuluj rezerwację</a>
+    }
+</div>
+<div>
+    <a asp-action="MyReservations">Powrót do listy</a>
+</div>

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<NarwianskiZakatek.Models.Reservation>
 
-<h1>MyReservations</h1>
+<h1>Moje rezerwacje</h1>
 <partial name="_StatusMessage" />
 <p>
     <a asp-action="Date">Zarezerwuj pobyt</a>
@@ -15,7 +15,7 @@
                 @Html.DisplayNameFor(model => model.EndDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Price) zł
             </th>
             <th></th>
         </tr>

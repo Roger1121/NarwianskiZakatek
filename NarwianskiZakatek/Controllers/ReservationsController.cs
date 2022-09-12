@@ -17,7 +17,7 @@ namespace NarwianskiZakatek.Controllers
             _context = context;
         }
 
-        [Authorize(Roles ="Admin,Employee")]
+        [Authorize(Roles = "Admin,Employee")]
         public IActionResult Index()
         {
             return View();
@@ -64,7 +64,7 @@ namespace NarwianskiZakatek.Controllers
             _context.Add(reservation);
             _context.SaveChanges();
             decimal price = 0;
-            foreach(int roomId in roomList.Rooms)
+            foreach (int roomId in roomList.Rooms)
             {
                 _context.Add(new ReservedRoom()
                 {
@@ -135,6 +135,14 @@ namespace NarwianskiZakatek.Controllers
             return RedirectToAction("MyReservations", new { message = "Dziękujemy za udzielenie opinii." });
         }
 
+        [Authorize(Roles = "User")]
+        public IActionResult Details(int id)
+        {
+            Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).First();
+            List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
+            ViewBag.Rooms = _context.Rooms.Where(r => reservedRooms.Contains(r.RoomId)).ToList();
+            return View(reservation);
+        }
         private List<SelectListItem> FindAvailableRooms(DateTime beginDate, DateTime endDate)
         {
             var reservedRooms = GetIdsOfReservedRooms(beginDate, endDate);
