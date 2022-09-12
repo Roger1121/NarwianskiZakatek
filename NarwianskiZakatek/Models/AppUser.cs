@@ -13,5 +13,16 @@ namespace NarwianskiZakatek.Models
         public string PostCity { get; set; } = string.Empty;
         public virtual ICollection<Reservation>? Reservations { get; set; }
         public virtual ICollection<Warning>? Warnings { get; set; }
+
+        public string GetAddress() 
+        {
+            string address =  City + "\r\n" + Street + BuildingNumber;
+            if(LocalNumber != null)
+            {
+                address += "/" + LocalNumber;
+            }
+            address += "\r\n" + PostalCode + PostCity;
+            return address;
+        }
     }
 }

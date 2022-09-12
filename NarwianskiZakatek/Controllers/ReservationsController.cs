@@ -20,7 +20,16 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public IActionResult Index()
         {
-            return View();
+            return View(_context.Reservations.ToList());
+        }
+
+        [Authorize(Roles = "Admin,Employee")]
+        public IActionResult DetailsFull(int id)
+        {
+            Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).Include(r => r.User).First();
+            List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
+            ViewBag.Rooms = _context.Rooms.Where(r => reservedRooms.Contains(r.RoomId)).ToList();
+            return View(reservation);
         }
 
         [HttpGet]

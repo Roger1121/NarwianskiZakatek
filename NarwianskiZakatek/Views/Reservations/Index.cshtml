@@ -1,6 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<h1>Wszystkie rezerwacje</h1>
+﻿@model IEnumerable<NarwianskiZakatek.Models.Reservation>
+
+<h1>Lista rezerwacji</h1>
+<partial name="_StatusMessage" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price) zł
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <a asp-action="DetailsFull" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a>
+                    @if (item.BeginDate > DateTime.Today)
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.ReservationId">Anuluj rezerwację</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
