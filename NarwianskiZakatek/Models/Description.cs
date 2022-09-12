@@ -1,4 +1,6 @@
-﻿namespace NarwianskiZakatek.Models
+﻿using NarwianskiZakatek.CustomAnnotations;
+
+namespace NarwianskiZakatek.Models
 {
     public class Description
     {

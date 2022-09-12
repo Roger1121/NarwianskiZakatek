@@ -3,9 +3,9 @@
     public class Warning
     {
         public int WarningId { get; set; }
-        public string Message { get; set; }
-        public string UserId { get; set; }
-        public AppUser User { get; set; }
+        public string Message { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
+        public AppUser User { get; set; } = new AppUser();
         public bool WasDisplayed { get; set; } = false;
     }
 }

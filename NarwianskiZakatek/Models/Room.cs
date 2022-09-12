@@ -1,17 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NarwianskiZakatek.CustomAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace NarwianskiZakatek.Models
 {
     public class Room
     {
         public int RoomId { get; set; }
-        [Required]
-        public string RoomNumber { get; set; }
-        [Required]
-        [Range(1, 10)]
+
+        [RequiredNotNullOrWhitespace(ErrorMessage = "Nie podano numeru pokoju")]
+        [Display(Name = "Numer pokoju")]
+        public string RoomNumber { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Nie podano liczby łóżek w pokoju")]
+        [Display(Name = "Liczba łóżek")]
+        [Range(1, int.MaxValue, ErrorMessage = "Liczba łóżek musi być liczbą dodatnią")]
         public int RoomCapacity { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nie podano ceny noclegu")]
+        [Display(Name = "Cena za noc")]
+        [Range(0, int.MaxValue, ErrorMessage = "Cena musi być liczbą dodatnią")]
         public decimal Price { get; set; }
         public virtual ICollection<ReservedRoom>? ReservedRooms { get; set; }
 

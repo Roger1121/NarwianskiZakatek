@@ -1,18 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NarwianskiZakatek.CustomAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace NarwianskiZakatek.ViewModels
 {
     public class PostViewModel
     {
+        public int PostId { get; set; }
+
         [Display(Name = "Tytuł")]
-        public string Title { get; set; }
+        [RequiredNotNullOrWhitespace(ErrorMessage = "Nie podano tytułu posta")]
+        public string Title { get; set; } = string.Empty;
 
         [Display(Name = "Data dodania")]
         public DateTime DateCreated { get; set; }
 
         [Display(Name = "Treść")]
-        public string Content { get; set; }
+        [RequiredNotNullOrWhitespace(ErrorMessage = "Post nie posiada treści")]
+        public string Content { get; set; } = string.Empty;
 
+        [Display(Name = "Zdjęcie")]
         public IFormFile? File { get; set; }
     }
 }

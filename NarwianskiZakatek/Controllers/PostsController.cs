@@ -114,7 +114,12 @@ namespace NarwianskiZakatek.Controllers
             {
                 return NotFound();
             }
-            return View(post);
+            return View(new PostViewModel()
+            {
+                PostId = post.PostId,
+                Title = post.Title,
+                Content = post.Content
+            });
         }
 
         // POST: Posts/Edit/5
@@ -122,9 +127,9 @@ namespace NarwianskiZakatek.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,DateCreated,Content,PhotoUrl")] Post post)
+        public async Task<IActionResult> Edit(int id, PostViewModel editedPost)
         {
-            if (id != post.PostId)
+            if (id != editedPost.PostId)
             {
                 return NotFound();
             }
@@ -133,12 +138,34 @@ namespace NarwianskiZakatek.Controllers
             {
                 try
                 {
+                    Post post = _context.Posts.Where(p => p.PostId == editedPost.PostId).First();
+                    post.Title = editedPost.Title;
+                    post.Content = editedPost.Content;
+                    if(editedPost.File != null)
+                    {
+                        string path = "wwwroot/graphics/posts/" + DateTime.Now.Year;
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path);
+                        }
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(editedPost.File.FileName);
+
+                        using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+                        {
+                            editedPost.File.CopyTo(stream);
+                            if (post.PhotoUrl != null)
+                            {
+                                System.IO.File.Delete(post.getFullPhotoPath());
+                            }
+                            post.PhotoUrl = DateTime.Now.Year + "/" + fileName;
+                        }
+                    }
                     _context.Update(post);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PostExists(post.PostId))
+                    if (!PostExists(editedPost.PostId))
                     {
                         return NotFound();
                     }
@@ -149,7 +176,7 @@ namespace NarwianskiZakatek.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(post);
+            return View(editedPost);
         }
 
         // GET: Posts/Delete/5
@@ -182,6 +209,10 @@ namespace NarwianskiZakatek.Controllers
             var post = await _context.Posts.FindAsync(id);
             if (post != null)
             {
+                if (post.PhotoUrl != null)
+                {
+                    System.IO.File.Delete(post.getFullPhotoPath());
+                }
                 _context.Posts.Remove(post);
             }
             

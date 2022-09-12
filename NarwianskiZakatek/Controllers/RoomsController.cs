@@ -22,24 +22,6 @@ namespace NarwianskiZakatek.Controllers
                           Problem("Entity set 'ApplicationDbContext.Rooms'  is null.");
         }
 
-        // GET: Rooms/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Rooms == null)
-            {
-                return NotFound();
-            }
-
-            var room = await _context.Rooms
-                .FirstOrDefaultAsync(m => m.RoomId == id);
-            if (room == null)
-            {
-                return NotFound();
-            }
-
-            return View(room);
-        }
-
         // GET: Rooms/Create
         public IActionResult Create()
         {

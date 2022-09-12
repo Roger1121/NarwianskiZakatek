@@ -1,21 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace NarwianskiZakatek.Models
+﻿namespace NarwianskiZakatek.Models
 {
     public class Post
     {
         public int PostId { get; set; }
 
-        [Display(Name = "Tytuł")]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        [Display(Name = "Data dodania")]
         public DateTime DateCreated { get; set; }
 
-        [Display(Name = "Treść")]
-        public string Content { get; set; }
+        public string Content { get; set; } = string.Empty;
 
-        [Display(Name = "Zdjęcie")]
         public string? PhotoUrl { get; set; }
 
         public string getDateWithFormat()

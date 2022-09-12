@@ -1,9 +1,5 @@
 ﻿@model NarwianskiZakatek.Models.Post
 
-@{
-    ViewData["Title"] = "Delete";
-}
-
 <h1>Usuń post</h1>
 
 <h3>Czy na pewno chcesz usunąć ten post?</h3>
@@ -27,19 +23,13 @@
             @Html.DisplayNameFor(model => model.Content)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhotoUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhotoUrl)
+            @Model.getContentPreview()
         </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="PostId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót</a>
     </form>
 </div>

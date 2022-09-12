@@ -1,32 +1,29 @@
 ﻿@model IEnumerable<NarwianskiZakatek.Models.Post>
 
-@{
-    ViewData["Title"] = "Index";
-}
-
 <h1>Witaj na stronie gospodarstwa agroturystycznego Narwiański Zakątek!</h1>
-<partial name="_Warning"/>
+<partial name="_Warning" />
 <p>
-    <a asp-action="Create">Dodaj post</a>
+    <a asp-action="Create">Dodaj posta</a>
 </p>
-@foreach (var item in Model) {
-            <h1>
-                @item.Title
-            </h1>
-            <h4>
-                @item.getDateWithFormat()
-            </h4>
-            <table>
-                <tr>
-                    <td>
-                        <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110"/>
-                    </td>
-                    <td>
-                        <p style="text-align: justify;">
-                            @item.getContentPreview()
-                            <a asp-action="Details" asp-route-id="@item.PostId">Czytaj dalej</a>
-                        </p>
-                    </td>
-                </tr>
-            </table>
+@foreach (var item in Model)
+{
+    <h1>
+        @item.Title
+    </h1>
+    <h4>
+        @item.getDateWithFormat()
+    </h4>
+    <table>
+        <tr>
+            <td>
+                <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110" />
+            </td>
+            <td>
+                <p style="text-align: justify;">
+                    @item.getContentPreview()
+                    <a asp-action="Details" asp-route-id="@item.PostId">Czytaj dalej</a>
+                </p>
+            </td>
+        </tr>
+    </table>
 }

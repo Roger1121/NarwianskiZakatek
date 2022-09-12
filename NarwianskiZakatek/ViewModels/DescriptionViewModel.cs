@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NarwianskiZakatek.CustomAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace NarwianskiZakatek.ViewModels
@@ -6,11 +7,13 @@ namespace NarwianskiZakatek.ViewModels
     public class DescriptionViewModel
     {
         [Display(Name = "Tytuł")]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [Display(Name = "Treść")]
-        public string Content { get; set; }
+        [RequiredNotNullOrWhitespace(ErrorMessage = "Wpis nie posiada treści")]
+        public string Content { get; set; } = string.Empty;
 
+        [Display(Name = "Zdjęcie")]
         public IFormFile? File { get; set; }
     }
 }

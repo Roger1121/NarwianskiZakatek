@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<NarwianskiZakatek.Models.Reservation>
 
-@{
-    ViewData["Title"] = "MyReservations";
-}
-
 <h1>MyReservations</h1>
 <partial name="_StatusMessage" />
 <p>
@@ -20,12 +16,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opinion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rating)
             </th>
             <th></th>
         </tr>
@@ -44,12 +34,7 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Opinion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
+                    <a asp-action="Details" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a>
                     @if (item.BeginDate > DateTime.Today)
                     {
                         <a asp-action="Delete" asp-route-id="@item.ReservationId">Anuluj rezerwację</a>
