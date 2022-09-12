@@ -7,14 +7,11 @@
 <h1>MyReservations</h1>
 <partial name="_StatusMessage" />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Date">Zarezerwuj pobyt</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.BeginDate)
             </th>
@@ -34,32 +31,35 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BeginDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Opinion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ReservationId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReservationId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReservationId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opinion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @if (item.BeginDate > DateTime.Today)
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.ReservationId">Anuluj rezerwację</a>
+                    }
+                    @if (item.EndDate < DateTime.Today && string.IsNullOrWhiteSpace(item.Opinion))
+                    {
+                        <a asp-action="Rate" asp-route-id="@item.ReservationId">Oceń pobyt</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

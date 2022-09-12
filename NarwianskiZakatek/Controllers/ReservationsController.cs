@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.ViewModels;
@@ -75,6 +76,63 @@ namespace NarwianskiZakatek.Controllers
             reservation.Price = price * (roomList.EndDate.AddDays(1) - roomList.BeginDate).Days;
             _context.SaveChanges();
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została złożona." });
+        }
+
+        [Authorize(Roles = "User")]
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || _context.Reservations == null)
+            {
+                return NotFound();
+            }
+
+            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+
+            return View(reservation);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            if (_context.Reservations == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
+            }
+            var reservation = _context.Reservations.Find(id);
+            if (reservation != null)
+            {
+                _context.Reservations.Remove(reservation);
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
+        }
+
+        [Authorize(Roles = "User")]
+        public IActionResult Rate(int reservationId)
+        {
+            return View(new OpinionViewModel()
+            {
+                ReservationId = reservationId
+            });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        public IActionResult Rate(OpinionViewModel opinion)
+        {
+            //save opinion
+            var reservation = _context.Reservations.Where(r => r.ReservationId == opinion.ReservationId).First();
+            reservation.Opinion = opinion.Opinion;
+            reservation.Rating = opinion.Rating;
+            _context.SaveChanges();
+            return RedirectToAction("MyReservations", new { message = "Dziękujemy za udzielenie opinii." });
         }
 
         private List<SelectListItem> FindAvailableRooms(DateTime beginDate, DateTime endDate)

@@ -1,0 +1,37 @@
+﻿@model NarwianskiZakatek.Models.Reservation
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Czy na pewno chcesz anulować tę rezerwację?</h3>
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BeginDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BeginDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ReservationId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="MyReservations">Back to List</a>
+    </form>
+</div>
