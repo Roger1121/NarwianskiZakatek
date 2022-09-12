@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace NarwianskiZakatek.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,7 +64,7 @@ namespace NarwianskiZakatek.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Title = table.Column<string>(type: "text", nullable: false),
                     Content = table.Column<string>(type: "text", nullable: false),
-                    PhotoUrl = table.Column<string>(type: "text", nullable: false)
+                    PhotoUrl = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -218,7 +218,7 @@ namespace NarwianskiZakatek.Migrations
                     BeginDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     EndDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    Opinion = table.Column<string>(type: "text", nullable: false),
+                    Opinion = table.Column<string>(type: "text", nullable: true),
                     Rating = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -260,7 +260,6 @@ namespace NarwianskiZakatek.Migrations
                     ReservedRoomId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     RoomId = table.Column<int>(type: "integer", nullable: false),
-                    ReservetionId = table.Column<int>(type: "integer", nullable: false),
                     ReservationId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

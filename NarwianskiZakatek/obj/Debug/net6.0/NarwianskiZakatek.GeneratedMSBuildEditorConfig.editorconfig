@@ -107,16 +107,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Confirm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXENvbmZpcm0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Date.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/MyReservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXE15UmVzZXJ2YXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/New.cshtml]

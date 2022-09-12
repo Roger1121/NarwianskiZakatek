@@ -17,7 +17,7 @@ namespace NarwianskiZakatek.Models
 
         public override string ToString()
         {
-            return "Pokój numer: " + RoomNumber + ", liczba łóżek: " + RoomCapacity + ", cena za noc: ***";
+            return "Pokój numer: " + RoomNumber + ", liczba łóżek: " + RoomCapacity + ", cena za noc: " + Price;
         }
     }
 }

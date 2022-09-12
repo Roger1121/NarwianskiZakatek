@@ -313,7 +313,6 @@ namespace NarwianskiZakatek.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Opinion")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<decimal>("Price")
@@ -342,9 +341,6 @@ namespace NarwianskiZakatek.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservedRoomId"));
 
                     b.Property<int>("ReservationId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ReservetionId")
                         .HasColumnType("integer");
 
                     b.Property<int>("RoomId")

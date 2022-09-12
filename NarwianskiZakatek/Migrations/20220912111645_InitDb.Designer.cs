@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NarwianskiZakatek.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220911150815_nullablePhotoUrl")]
-    partial class nullablePhotoUrl
+    [Migration("20220912111645_InitDb")]
+    partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -315,7 +315,6 @@ namespace NarwianskiZakatek.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Opinion")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<decimal>("Price")
@@ -344,9 +343,6 @@ namespace NarwianskiZakatek.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservedRoomId"));
 
                     b.Property<int>("ReservationId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ReservetionId")
                         .HasColumnType("integer");
 
                     b.Property<int>("RoomId")

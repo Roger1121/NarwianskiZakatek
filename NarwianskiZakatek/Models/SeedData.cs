@@ -166,6 +166,49 @@ namespace NarwianskiZakatek.Models
                         context.SaveChanges();
                     }
                     #endregion
+
+                    #region add rooms
+                    if (!context.Rooms.Any())
+                    {
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "010",
+                            RoomCapacity = 3,
+                            Price = 210
+                        });
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "011",
+                            RoomCapacity = 2,
+                            Price = 140
+                        });
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "012",
+                            RoomCapacity = 2,
+                            Price = 140
+                        });
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "110",
+                            RoomCapacity = 5,
+                            Price = 350
+                        });
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "111",
+                            RoomCapacity = 1,
+                            Price = 70
+                        });
+                        context.Rooms.Add(new Room()
+                        {
+                            RoomNumber = "112",
+                            RoomCapacity = 1,
+                            Price = 70
+                        });
+                        context.SaveChanges();
+                    }
+                    #endregion
                 }
                 catch (NpgsqlException ex)
                 {
