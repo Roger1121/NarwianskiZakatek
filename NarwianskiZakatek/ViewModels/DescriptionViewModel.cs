@@ -13,6 +13,8 @@ namespace NarwianskiZakatek.ViewModels
         [RequiredNotNullOrWhitespace(ErrorMessage = "Wpis nie posiada treści")]
         public string Content { get; set; } = string.Empty;
 
+        public string PhotoUrl { get; set; } = string.Empty;
+
         [Display(Name = "Zdjęcie")]
         public IFormFile? File { get; set; }
     }

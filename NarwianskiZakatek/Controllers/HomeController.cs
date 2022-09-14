@@ -60,6 +60,7 @@ namespace NarwianskiZakatek.Controllers
             _description = _context.Descriptions.Where(d => d.Title == header).First();
             return View(new DescriptionViewModel()
             {
+                PhotoUrl = _description.getFullPhotoPath(),
                 Title = _description.Title,
                 Content = _description.Content
             });
