@@ -1,1 +1,65 @@
-﻿<script type="text/javascript" src="//www.kalendarznastrone.pl/calendar/start.php?theme=smoothness&font_size=11"></script>
+﻿<div id="body">
+    <div id="container">
+        <div id="header">
+        </div>
+
+        <div id="weekdays">
+            <div>Pn</div>
+            <div>Wt</div>
+            <div>Śr</div>
+            <div>Czw</div>
+            <div>Pt</div>
+            <div>So</div>
+            <div>Nd</div>
+        </div>
+
+        <div id="calendar"></div>
+    </div>
+    <script>
+        let offset = 0;
+
+        const calendar = document.getElementById('calendar');
+        const header = document.getElementById('header');
+        const weekdays = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela'];
+
+        function load() {
+            const date = new Date();
+
+            const day = date.getDate();
+            const month = date.getMonth();
+            const year = date.getFullYear();
+
+            const firstDayOfMonth = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const weekday = firstDayOfMonth.toLocaleDateString('pl-pl', { weekday: 'long' });
+            const dateString = date.toLocaleDateString('pl-pl', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+            });
+            const paddingDays = weekdays.indexOf(weekday);
+
+            for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+                const daySquare = document.createElement('div');
+                daySquare.classList.add('day');
+
+                if (day + paddingDays == i) {
+                    daySquare.setAttribute('id', 'currentDay');
+                }
+
+                if (i <= paddingDays) {
+                    daySquare.classList.add('padding');
+                }
+                else {
+                    daySquare.innerText = i - paddingDays;
+                }
+
+                calendar.appendChild(daySquare);
+            }
+            header.innerText = dateString;
+        }
+
+        load();
+    </script>
+</div>

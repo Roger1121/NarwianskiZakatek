@@ -1,0 +1,69 @@
+﻿#body {
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    background-color: #bdbdbd;
+    border-style: groove;
+    border-color: #000000;
+}
+
+#header {
+    padding: 10px;
+    color: #003c8f;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 392px;
+}
+
+#weekdays {
+    width: 100%;
+    display: flex;
+    color: #1565c0;
+}
+
+    #weekdays div {
+        width: 56px;
+        padding: 6px;
+    }
+
+#calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 50px;
+    padding: 6px;
+    height: 50px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 3px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+    .day:hover {
+        background-color: #90caf9;
+    }
+
+    .day + #currentDay {
+        background-color: #5d99c6;
+    }
+
+.padding {
+    cursor: default !important;
+    background-color: #EBEBEB !important;
+    box-shadow: none !important;
+}

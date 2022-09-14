@@ -8,6 +8,14 @@
     "Children": {
       "css": {
         "Children": {
+          "calendar.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/calendar.css"
+            },
+            "Patterns": null
+          },
           "layout.css": {
             "Children": null,
             "Asset": {
