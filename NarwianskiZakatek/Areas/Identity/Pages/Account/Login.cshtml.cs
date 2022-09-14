@@ -121,6 +121,14 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                     return Page();
                 }
 
+                var role = _context.Roles.Where(r => r.NormalizedName == "ADMIN").First();
+                var userRole = _context.UserRoles.Where(u => u.UserId == user.Id && u.RoleId == role.Id).First();
+
+                if (userRole != null)
+                {
+                    returnUrl = Url.Content("~/Admin/");
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {

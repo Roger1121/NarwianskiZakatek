@@ -542,3 +542,4 @@ C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\NarwianskiZakatek.pdb
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\NarwianskiZakatek.genruntimeconfig.cache
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\ref\NarwianskiZakatek.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css

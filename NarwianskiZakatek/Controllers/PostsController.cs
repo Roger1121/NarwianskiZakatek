@@ -41,6 +41,27 @@ namespace NarwianskiZakatek.Controllers
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 
+        public async Task<IActionResult> Admin()
+        {
+            var username = HttpContext.User.Identity.Name;
+            var Warnings = new List<string>();
+            if (username != null)
+            {
+                var user = _context.Users.Where(u => u.UserName == username).First();
+                var warnings = _context.Warnings.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
+                foreach (var warning in warnings)
+                {
+                    warning.WasDisplayed = true;
+                    Warnings.Add(warning.Message);
+                }
+                _context.SaveChanges();
+            }
+            ViewBag.Warnings = Warnings;
+            return _context.Posts != null ? 
+                          View(await _context.Posts.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
+        }
+
         // GET: Posts/Details/5
         public async Task<IActionResult> Details(int? id)
         {

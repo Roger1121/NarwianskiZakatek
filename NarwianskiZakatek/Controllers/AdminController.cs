@@ -15,6 +15,11 @@ namespace NarwianskiZakatek.Controllers
             _context = context;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Users
         [Authorize(Roles= "Admin")]
         public ActionResult Users(string? message)
