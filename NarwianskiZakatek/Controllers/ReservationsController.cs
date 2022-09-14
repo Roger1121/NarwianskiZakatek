@@ -122,6 +122,41 @@ namespace NarwianskiZakatek.Controllers
             _context.SaveChanges();
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
         }
+        [Authorize(Roles = "Admin,Employee")]
+        public IActionResult DeleteAny(int? id)
+        {
+            if (id == null || _context.Reservations == null)
+            {
+                return NotFound();
+            }
+
+            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+
+            return View(reservation);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin,Employee")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteAny(int id)
+        {
+            if (_context.Reservations == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
+            }
+            var reservation = _context.Reservations.Find(id);
+            if (reservation != null)
+            {
+                _context.Reservations.Remove(reservation);
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", new { message = "Rezerwacja została anulowana." });
+        }
 
         [Authorize(Roles = "User")]
         public IActionResult Rate(int reservationId)

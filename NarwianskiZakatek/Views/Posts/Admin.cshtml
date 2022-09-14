@@ -4,7 +4,7 @@
 }
 
 <h1>Utworzone wpisy</h1>
-<partial name="_Warning" />
+<partial name="_StatusMessage" />
 <p>
     <a asp-action="Create">Dodaj posta</a>
 </p>
@@ -26,6 +26,10 @@
                     @item.getContentPreview()
                     <a asp-action="Details" asp-route-id="@item.PostId">Czytaj dalej</a>
                 </p>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PostId">Edytuj</a> |
+                <a asp-action="Delete" asp-route-id="@item.PostId">Usuń</a>
             </td>
         </tr>
     </table>

@@ -41,7 +41,7 @@ namespace NarwianskiZakatek.Controllers
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 
-        public async Task<IActionResult> Admin()
+        public async Task<IActionResult> Admin(string? message)
         {
             var username = HttpContext.User.Identity.Name;
             var Warnings = new List<string>();
@@ -117,7 +117,7 @@ namespace NarwianskiZakatek.Controllers
                 newPost.DateCreated= DateTime.Now;
                 _context.Add(newPost);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Admin", new { message = "Post został utworzony." });
             }
             return View(post);
         }
@@ -137,6 +137,7 @@ namespace NarwianskiZakatek.Controllers
             }
             return View(new PostViewModel()
             {
+                PhotoUrl = post.getFullPhotoPath(),
                 PostId = post.PostId,
                 Title = post.Title,
                 Content = post.Content

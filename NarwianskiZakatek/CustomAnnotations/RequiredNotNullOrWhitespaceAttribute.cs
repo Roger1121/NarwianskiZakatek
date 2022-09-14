@@ -7,7 +7,7 @@ namespace NarwianskiZakatek.CustomAnnotations
         public override bool IsValid(object? value)
         {
             var text = value as string;
-            return string.IsNullOrWhiteSpace(text);
+            return !string.IsNullOrWhiteSpace(text);
         }
     }
 }

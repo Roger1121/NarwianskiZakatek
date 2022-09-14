@@ -2,8 +2,15 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h1>Edycja posta</h1>
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+<h3>@Html.DisplayNameFor(model => model.DateCreated) @Html.DisplayFor(model => model.DateCreated)</h3>
+<img src="@Model.PhotoUrl" width="200" />
+<p>
+    @Html.DisplayFor(model => model.Content)
+</p>
+
 <hr />
+<h2>Edycja posta</h2>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">

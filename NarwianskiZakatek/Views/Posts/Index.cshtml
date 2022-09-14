@@ -2,9 +2,6 @@
 
 <h1>Witaj na stronie gospodarstwa agroturystycznego Narwiański Zakątek!</h1>
 <partial name="_Warning" />
-<p>
-    <a asp-action="Create">Dodaj posta</a>
-</p>
 @foreach (var item in Model)
 {
     <h1>
@@ -15,9 +12,16 @@
     </h4>
     <table>
         <tr>
-            <td>
-                <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110" />
-            </td>
+            @if (item.getFullPhotoPath() != null)
+            {
+                <td>
+                    <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110" />
+                </td>
+            }
+            else 
+            {
+                <td></td>
+            }
             <td>
                 <p style="text-align: justify;">
                     @item.getContentPreview()
