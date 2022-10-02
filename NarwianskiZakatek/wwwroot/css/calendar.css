@@ -1,4 +1,4 @@
-﻿#body {
+﻿#calendar_body {
     display: flex;
     margin-top: 35px;
     margin-bottom: 10px;
@@ -9,7 +9,7 @@
     border-color: #000000;
 }
 
-#header {
+#calendar_header {
     padding: 10px;
     color: #003c8f;
     font-size: 26px;
@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-#container {
+#calendar_container {
     width: 392px;
 }
 
@@ -44,7 +44,6 @@
     width: 50px;
     padding: 6px;
     height: 50px;
-    cursor: pointer;
     box-sizing: border-box;
     background-color: white;
     margin: 3px;

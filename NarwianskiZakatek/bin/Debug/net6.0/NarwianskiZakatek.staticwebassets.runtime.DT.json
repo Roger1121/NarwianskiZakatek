@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
     "/src/NarwianskiZakatek/wwwroot/",
-    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.8/staticwebassets/V5/",
+    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.9/staticwebassets/V5/",
     "/src/NarwianskiZakatek/obj/Debug/net6.0/scopedcss/bundle/"
   ],
   "Root": {
@@ -31,6 +31,14 @@
               "SubPath": "css/site.css"
             },
             "Patterns": null
+          },
+          "weather.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/weather.css"
+            },
+            "Patterns": null
           }
         },
         "Asset": null,
@@ -52,6 +60,92 @@
               "ContentRootIndex": 0,
               "SubPath": "graphics/Header.JPG"
             },
+            "Patterns": null
+          },
+          "weather": {
+            "Children": {
+              "clouds.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/clouds.svg"
+                },
+                "Patterns": null
+              },
+              "fog.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/fog.svg"
+                },
+                "Patterns": null
+              },
+              "hail.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/hail.svg"
+                },
+                "Patterns": null
+              },
+              "heavy_rain.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/heavy_rain.svg"
+                },
+                "Patterns": null
+              },
+              "small_rain.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/small_rain.svg"
+                },
+                "Patterns": null
+              },
+              "snow.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/snow.svg"
+                },
+                "Patterns": null
+              },
+              "snow_and_rain.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/snow_and_rain.svg"
+                },
+                "Patterns": null
+              },
+              "sun.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/sun.svg"
+                },
+                "Patterns": null
+              },
+              "sun_with_clouds.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/sun_with_clouds.svg"
+                },
+                "Patterns": null
+              },
+              "thunderstorm.svg": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/weather/thunderstorm.svg"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
             "Patterns": null
           }
         },

@@ -1,6 +1,6 @@
-﻿<div id="body">
-    <div id="container">
-        <div id="header">
+﻿<div id="calendar_body">
+    <div id="calendar_container">
+        <div id="calendar_header">
         </div>
 
         <div id="weekdays">
@@ -19,27 +19,25 @@
         let offset = 0;
 
         const calendar = document.getElementById('calendar');
-        const header = document.getElementById('header');
+        const header = document.getElementById('calendar_header');
         const weekdays = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela'];
 
         function load() {
             const date = new Date();
-
             const day = date.getDate();
-            const month = date.getMonth();
-            const year = date.getFullYear();
 
-            const firstDayOfMonth = new Date(year, month, 1);
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+            const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
             const weekday = firstDayOfMonth.toLocaleDateString('pl-pl', { weekday: 'long' });
+            const paddingDays = weekdays.indexOf(weekday);
+
             const dateString = date.toLocaleDateString('pl-pl', {
                 weekday: 'long',
                 day: 'numeric',
                 month: 'numeric',
                 year: 'numeric',
             });
-            const paddingDays = weekdays.indexOf(weekday);
-
+            
             for (let i = 1; i <= paddingDays + daysInMonth; i++) {
                 const daySquare = document.createElement('div');
                 daySquare.classList.add('day');

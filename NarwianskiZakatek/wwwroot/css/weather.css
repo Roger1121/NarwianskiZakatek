@@ -1,1 +1,59 @@
-﻿
+﻿#weather_body {
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+    background-color: #bdbdbd;
+    border-style: groove;
+    border-color: #000000;
+}
+
+#weather_container {
+    width: 392px;
+}
+
+#current_day {
+    margin: auto;
+    width: 30%;
+    background-color: #bbbbbb;
+}
+
+#icon_today {
+    width: 110px;
+}
+
+#temperature_today {
+
+}
+
+#description_today {
+
+}
+
+#date_today {
+
+}
+
+#forecast {
+    width: 100%;
+    display: flex;
+}
+
+.forecast_tile {
+    width: 55px;
+    margin: 5px;
+}
+
+.weather_icon {
+    width: 55px;
+}
+
+.weather_temperature {
+}
+
+.weather_description {
+}
+
+.weather_date {
+}

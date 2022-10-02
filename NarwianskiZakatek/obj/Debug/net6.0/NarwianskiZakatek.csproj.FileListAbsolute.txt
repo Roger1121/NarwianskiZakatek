@@ -46,7 +46,6 @@ C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Mess
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.Locator.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -543,3 +542,6 @@ C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\NarwianskiZakatek.genruntimeconfig.cache
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\ref\NarwianskiZakatek.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
