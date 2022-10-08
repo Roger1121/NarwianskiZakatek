@@ -4,14 +4,16 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     justify-content: center;
-    background-color: #bdbdbd;
-    border-style: groove;
-    border-color: #000000;
+    background-color: #1d4382;
+    border-style: outset;
+    border-radius: 25px;
+    border-color: #1d4382;
 }
 
 #calendar_header {
     padding: 10px;
-    color: #003c8f;
+    color: #ffffff;
+    font-weight: 600;
     font-size: 26px;
     font-family: sans-serif;
     display: flex;
@@ -25,7 +27,9 @@
 #weekdays {
     width: 100%;
     display: flex;
-    color: #1565c0;
+    font-weight: 400;
+    font-size: large;
+    color: #ffffff;
 }
 
     #weekdays div {
@@ -51,6 +55,7 @@
     display: flex;
     flex-direction: row;
     justify-content: right;
+    border-radius: 3px;
 }
 
     .day:hover {

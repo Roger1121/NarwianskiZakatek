@@ -85,13 +85,13 @@
         function load() {
             set_weather_today();
             
-            const url = 'https://api.weatherbit.io/v2.0/forecast/daily?key=b729919c22744e40a686085b39ad7038&lang=pl&city=Bialystok&days=6';
+            const url = 'https://api.weatherbit.io/v2.0/forecast/daily?key=b729919c22744e40a686085b39ad7038&lang=pl&city=Bialystok&days=4';
             const forecastDiv = document.getElementById('forecast');
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    for (let i = 0; i < 6; i++) {
+                    for (let i = 0; i < 4; i++) {
                         const forecastTile = document.createElement('div');
                         forecastTile.classList.add('forecast_tile');
 

@@ -4,9 +4,10 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     justify-content: center;
-    background-color: #bdbdbd;
-    border-style: groove;
-    border-color: #000000;
+    background-color: #1d4382;
+    border-style: outset;
+    border-color: #1d4382;
+    border-radius: 25px;
 }
 
 #weather_container {
@@ -15,8 +16,13 @@
 
 #current_day {
     margin: auto;
-    width: 30%;
-    background-color: #bbbbbb;
+    width: 45%;
+}
+
+#date_today {
+    color: #ffffff;
+    font-size: x-large;
+    font-weight: 700;
 }
 
 #icon_today {
@@ -24,36 +30,45 @@
 }
 
 #temperature_today {
-
+    color: #ffffff;
+    font-size: medium;
+    font-weight: 500;
 }
 
 #description_today {
-
-}
-
-#date_today {
-
+    color: #ffffff;
+    font-size: medium;
+    font-weight: 600;
 }
 
 #forecast {
     width: 100%;
     display: flex;
+    margin: 2px;
+    padding: 2px;
+    background-color: #0474ba;
+    border-style: outset;
+    border-color: #0474ba;
+    border-radius: 20px;
 }
 
 .forecast_tile {
-    width: 55px;
+    width: 90px;
     margin: 5px;
 }
 
 .weather_icon {
-    width: 55px;
-}
-
-.weather_temperature {
-}
-
-.weather_description {
+    width: auto;
 }
 
 .weather_date {
+    color: #ffffff;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.weather_temperature {
+    color: #ffffff;
+    font-size: small;
+    font-weight: 400;
 }

@@ -54,11 +54,11 @@
       },
       "graphics": {
         "Children": {
-          "Header.JPG": {
+          "header.jpg": {
             "Children": null,
             "Asset": {
               "ContentRootIndex": 0,
-              "SubPath": "graphics/Header.JPG"
+              "SubPath": "graphics/header.jpg"
             },
             "Patterns": null
           },

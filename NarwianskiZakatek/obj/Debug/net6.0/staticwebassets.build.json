@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QagG5fBfoDhRCsHD6HTXhEOjtD8E0Q1sgSSWwUoyV2Y=",
+  "Hash": "fMt1buRsYHd8v+r+0yemA8Sj2rCtRz97+MrYRotxilQ=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -1156,12 +1156,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\Header.JPG",
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\header.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
-      "RelativePath": "graphics/Header.JPG",
+      "RelativePath": "graphics/header.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,7 +1170,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\graphics\\Header.JPG"
+      "OriginalItemSpec": "wwwroot\\graphics\\header.jpg"
     },
     {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\clouds.svg",
