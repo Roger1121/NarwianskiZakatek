@@ -46,3 +46,4 @@ C:\Users\sleszczynski\Desktop\NarwianskiZakatek\bin\Debug\NarwianskiZakatek.pdb
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.Extensions.DependencyInjection.dll

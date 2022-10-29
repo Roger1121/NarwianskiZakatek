@@ -54,7 +54,9 @@ namespace NarwianskiZakatek.Models
                             Street = "Wiejska",
                             BuildingNumber = "45a",
                             PostalCode = "15-352",
-                            PostCity = "Białystok"
+                            PostCity = "Białystok",
+                            Name = "Jan",
+                            Surname = "Kowalski"
                         });
                         context.SaveChanges();
                         string userId = context.Users.Where(r => r.UserName == "leszczynski_szymon@wp.pl").ToList().FirstOrDefault().Id;
@@ -90,7 +92,9 @@ namespace NarwianskiZakatek.Models
                             Street = "Wiejska",
                             BuildingNumber = "45a",
                             PostalCode = "15-352",
-                            PostCity = "Białystok"
+                            PostCity = "Białystok",
+                            Name = "Jan",
+                            Surname = "Kowalski"
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "employee@test.pl").ToList().FirstOrDefault().Id;
@@ -121,7 +125,9 @@ namespace NarwianskiZakatek.Models
                             Street = "Wiejska",
                             BuildingNumber = "45a",
                             PostalCode = "15-352",
-                            PostCity = "Białystok"
+                            PostCity = "Białystok",
+                            Name = "Jan",
+                            Surname = "Kowalski"
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "user@test.pl").ToList().FirstOrDefault().Id;

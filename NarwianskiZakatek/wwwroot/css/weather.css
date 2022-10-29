@@ -4,9 +4,9 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     justify-content: center;
-    background-color: #1d4382;
+    background-color: #0d1259;
     border-style: outset;
-    border-color: #1d4382;
+    border-color: #0d1259;
     border-radius: 25px;
 }
 
@@ -63,7 +63,7 @@
 
 .weather_date {
     color: #ffffff;
-    font-size: medium;
+    font-size: small;
     font-weight: 500;
 }
 

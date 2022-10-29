@@ -545,3 +545,4 @@ C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\obj\Debug\net6.0\scop
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll

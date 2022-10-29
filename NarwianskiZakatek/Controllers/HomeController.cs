@@ -75,7 +75,7 @@ namespace NarwianskiZakatek.Controllers
 
                 if (viewModel.File != null)
                 {
-                    string path = "wwwroot/graphics/descriptions/" + DateTime.Now.Year;
+                    string path = "wwwroot/graphics/descriptions/";
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);

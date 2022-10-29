@@ -1,20 +1,25 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
+using NuGet.Protocol.Plugins;
 
 namespace NarwianskiZakatek.Controllers
 {
     public class ReservationsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IEmailService _sender;
 
-        public ReservationsController(ApplicationDbContext context)
+        public ReservationsController(ApplicationDbContext context, IEmailService sender)
         {
             _context = context;
+            _sender = sender;
         }
 
         [Authorize(Roles = "Admin,Employee")]
@@ -61,7 +66,7 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
-        public IActionResult Confirm(RoomsViewModel roomList)
+        public async Task<IActionResult> ConfirmAsync(RoomsViewModel roomList)
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
             Reservation reservation = new Reservation()
@@ -84,6 +89,7 @@ namespace NarwianskiZakatek.Controllers
             }
             reservation.Price = price * (roomList.EndDate.AddDays(1) - roomList.BeginDate).Days;
             _context.SaveChanges();
+            await _sender.ConfirmReservation(user.Email, reservation);
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została złożona." });
         }
 

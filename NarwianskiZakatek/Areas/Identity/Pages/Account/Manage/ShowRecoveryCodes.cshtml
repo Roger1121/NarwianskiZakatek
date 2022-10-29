@@ -1,0 +1,32 @@
+﻿@page
+@model ShowRecoveryCodesModel
+@{
+    ViewData["Title"] = "Kody odzyskiwania";
+    ViewData["ActivePage"] = "TwoFactorAuthentication";
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h3>@ViewData["Title"]</h3>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <strong>Zapisz te kody w bezpiecznym miejscu.</strong>
+    </p>
+    <p>
+        Jeżeli stracisz dostęp do urządzenia z aplikacją uwierzytelniającą i nie będziesz pamiętać kodów odzyskiwania, utracisz dostęp do konta.
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            <h5>Wygenerowane kody</h5>
+            <ol>
+                @for (var row = 0; row < Model.RecoveryCodes.Length; row++)
+                {
+                    <li>
+                        <code class="recovery-code">@Model.RecoveryCodes[row]</code>
+                    </li>
+                }
+            </ol>
+        </p>
+    </div>
+</div>

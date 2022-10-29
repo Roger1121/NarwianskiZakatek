@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NarwianskiZakatek", "NarwianskiZakatek\NarwianskiZakatek.csproj", "{73DE66B8-4A17-4DCC-B6B9-76718881A4EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NarwianskiZakatek", "NarwianskiZakatek\NarwianskiZakatek.csproj", "{73DE66B8-4A17-4DCC-B6B9-76718881A4EF}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7D68EA45-C1E9-412E-8771-30D0022B14FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67915B93-19F0-4D95-A74E-15E0E28C076C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

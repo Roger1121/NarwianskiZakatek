@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
     "/src/NarwianskiZakatek/wwwroot/",
-    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.9/staticwebassets/V5/",
+    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.10/staticwebassets/V5/",
     "/src/NarwianskiZakatek/obj/Debug/net6.0/scopedcss/bundle/"
   ],
   "Root": {
@@ -154,6 +154,14 @@
       },
       "js": {
         "Children": {
+          "qr.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/qr.js"
+            },
+            "Patterns": null
+          },
           "site.js": {
             "Children": null,
             "Asset": {
@@ -676,6 +684,14 @@
               }
             },
             "Asset": null,
+            "Patterns": null
+          },
+          "qrcode.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "lib/qrcode.js"
+            },
             "Patterns": null
           }
         },

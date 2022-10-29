@@ -5,6 +5,8 @@ namespace NarwianskiZakatek.Models
     public class AppUser : IdentityUser
     {
         public bool IsLocked { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Surname { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string? Street { get; set; }
         public string BuildingNumber { get; set; } = string.Empty;

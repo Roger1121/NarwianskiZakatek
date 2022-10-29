@@ -1,0 +1,25 @@
+﻿@page
+@model Disable2faModel
+@{
+    ViewData["Title"] = "Wyłącz uwierzytelnianie dwuskładnikowe";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h3>@ViewData["Title"]</h3>
+
+<div class="alert alert-warning" role="alert">
+    <p>
+        <strong>Ta akcja jedynie wyłącza uwierzytelnianie dwuskładnikowe.</strong>
+    </p>
+    <p>
+        Wyłączenie uwierzytelniania dwuskładnikowego nie spowoduje zmiany klucza użytego w aplikacji do uwierzytelniania.
+        Jeżeli chcesz zmienić klucz w aplikacji, powinienieś(powinnaś)  <a asp-page="./ResetAuthenticator">zresetować klucz uwierzytelniający</a>.
+    </p>
+</div>
+
+<div>
+    <form method="post">
+        <button class="btn btn-danger" type="submit">Wyłącz</button>
+    </form>
+</div>

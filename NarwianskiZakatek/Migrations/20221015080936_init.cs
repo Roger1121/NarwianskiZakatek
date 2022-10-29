@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace NarwianskiZakatek.Migrations
 {
-    public partial class InitDb : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,6 +30,8 @@ namespace NarwianskiZakatek.Migrations
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
                     IsLocked = table.Column<bool>(type: "boolean", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Surname = table.Column<string>(type: "text", nullable: false),
                     City = table.Column<string>(type: "text", nullable: false),
                     Street = table.Column<string>(type: "text", nullable: true),
                     BuildingNumber = table.Column<string>(type: "text", nullable: false),

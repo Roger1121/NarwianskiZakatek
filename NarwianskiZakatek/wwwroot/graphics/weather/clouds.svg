@@ -25,7 +25,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="8.3553674"
-     inkscape:cx="62.414969"
+     inkscape:cx="62.474811"
      inkscape:cy="35.546013"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -71,7 +71,7 @@
        x="6.0482574"
        y="10.90903" />
     <ellipse
-       style="fill:#214478;stroke-width:0.227184"
+       style="fill:#5f8dd3;stroke-width:0.227184;fill-opacity:1"
        id="path163-0"
        cx="-13.218387"
        cy="12.293973"
@@ -79,7 +79,7 @@
        ry="3.140244"
        transform="matrix(-1,0,0.0579831,0.99831756,0,0)" />
     <ellipse
-       style="fill:#214478;stroke-width:0.2582"
+       style="fill:#5f8dd3;stroke-width:0.2582"
        id="path273-2"
        cx="-8.8969526"
        cy="10.40273"
@@ -87,7 +87,7 @@
        ry="3.7712548"
        transform="scale(-1,1)" />
     <ellipse
-       style="fill:#214478;stroke-width:0.368713"
+       style="fill:#5f8dd3;stroke-width:0.368713"
        id="path277-6"
        cx="-4.4313469"
        cy="12.55037"
@@ -95,7 +95,7 @@
        ry="2.8578813"
        transform="scale(-1,1)" />
     <rect
-       style="fill:#214478;stroke-width:0.251611"
+       style="fill:#5f8dd3;stroke-width:0.251611"
        id="rect333-9"
        width="9.8798771"
        height="2.1533065"

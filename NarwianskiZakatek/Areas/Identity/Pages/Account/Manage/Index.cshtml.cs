@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NarwianskiZakatek.CustomAnnotations;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 
@@ -61,27 +62,40 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Phone]
             [Display(Name = "Numer telefonu")]
+            [Phone(ErrorMessage = "Nieprawidłowy numer telefonu")]
             public string PhoneNumber { get; set; }
 
             [Display(Name = "Miasto")]
+            [Required(ErrorMessage = "Pole wymagane")]
             public string City { get; set; }
 
             [Display(Name = "Ulica")]
             public string Street { get; set; }
 
             [Display(Name = "Numer budynku")]
+            [Required(ErrorMessage = "Pole wymagane")]
             public string BuildingNumber { get; set; }
 
             [Display(Name = "Numer lokalu")]
             public string? LocalNumber { get; set; }
 
             [Display(Name = "Kod pocztowy")]
+            [Required(ErrorMessage = "Pole wymagane")]
+            [PostalCode]
             public string PostalCode { get; set; }
 
             [Display(Name = "Poczta")]
+            [Required(ErrorMessage = "Pole wymagane")]
             public string PostCity { get; set; }
+
+            [Display(Name = "Imię/Imiona")]
+            [Required(ErrorMessage = "Pole wymagane")]
+            public string Name { get; set; }
+
+            [Display(Name = "Nazwisko")]
+            [Required(ErrorMessage = "Pole wymagane")]
+            public string Surname { get; set; }
         }
 
         private async Task LoadAsync(AppUser user)
@@ -99,7 +113,9 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
                 LocalNumber = user.LocalNumber,
                 PostalCode = user.PostalCode,
                 PostCity = user.PostCity,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Name = user.Name,
+                Surname = user.Surname
             };
         }
 
@@ -163,6 +179,14 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
             if(Input.PostCity != user.PostCity)
             {
                 user.PostCity = Input.PostCity;
+            }
+            if (Input.Name != user.Name)
+            {
+                user.Name = Input.Name;
+            }
+            if (Input.Surname != user.Surname)
+            {
+                user.Surname = Input.Surname;
             }
             _context.SaveChanges();
 
