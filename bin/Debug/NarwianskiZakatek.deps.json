@@ -8,6 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "NarwianskiZakatek/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Facebook": "6.0.10",
+          "Microsoft.AspNetCore.Authentication.Google": "6.0.10",
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "6.0.10",
+          "Microsoft.AspNetCore.Authentication.Twitter": "6.0.10",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.6",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.UI": "6.0.10",
@@ -55,6 +59,38 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
+      "Microsoft.AspNetCore.Authentication.Facebook/6.0.10": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "6.0.10.0",
+            "fileVersion": "6.0.1022.47617"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.10": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.10.0",
+            "fileVersion": "6.0.1022.47617"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/6.0.10": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
+            "assemblyVersion": "6.0.10.0",
+            "fileVersion": "6.0.1022.47617"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Twitter/6.0.10": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {
+            "assemblyVersion": "6.0.10.0",
+            "fileVersion": "6.0.1022.47617"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -2384,6 +2420,34 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/6.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3WSu0C1q7ngdVjdqxQaq26cr2n9LWa/Ve4A0I9DKZ1E5AqSum9XJ8gvbwdFxe3ucWBfdX1o9hxjj23q3oHhRlg==",
+      "path": "microsoft.aspnetcore.authentication.facebook/6.0.10",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.6.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D9ZgmzDU78XXp1j/Rk6JOYYhB4/lVtUlSfcBYMNF4ieSNm5gM2d+3RALxGZEjQxd6QL/7YGdCd3jygsLNltm1w==",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.10",
+      "hashPath": "microsoft.aspnetcore.authentication.google.6.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/6.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HkniAKvF2II7Bi7zy2Gy1y7nZpCLnDA65++laB4QyKDjBMv0CN3vPyGJmIbq+9Xl8EwNQS2MInvmWA4ymAVEmg==",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/6.0.10",
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.6.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Twitter/6.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y2G5Tv8YDg6mPNjmz0nXHHyr4Kb0aBkQZ9kTsVRXdD0Sfd+hH14WkeZPHgohqCZ5p93MHCTIOQor7tzWVSZQiw==",
+      "path": "microsoft.aspnetcore.authentication.twitter/6.0.10",
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.6.0.10.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
       "type": "package",

@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: NarwianskiZakatek/Dockerfile
+    ports:
+     - 8081:443
 
   postgres:
     image: postgres:latest

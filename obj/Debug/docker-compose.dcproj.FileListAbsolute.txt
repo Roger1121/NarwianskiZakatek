@@ -47,3 +47,7 @@ C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\sleszczynski\Desktop\NarwianskiZakatek\obj\Debug\docker-compose.dcproj.CopyComplete
 C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll

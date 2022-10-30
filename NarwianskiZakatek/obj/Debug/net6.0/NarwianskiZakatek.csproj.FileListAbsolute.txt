@@ -546,3 +546,7 @@ C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Micr
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Twitter.dll

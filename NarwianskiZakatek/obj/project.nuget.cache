@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B/6gI47jLt7EIYunglTgnUTpnFJD9h7wGN418G4pmwaNWGhayQ9RONJOl7kNMGZ/C0fzVmqqf+SlbDI4lLgMow==",
+  "dgSpecHash": "qg+JRhYNF+qOZ8D0Czjy9YOXZo0i1IVLpKH26L3ACNd7a9cnaVa/Zp1p79WnvNJNcPJprdAZnFv9A46/hITiJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,10 @@
     "C:\\Users\\leszc\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\6.0.10\\microsoft.aspnetcore.authentication.facebook.6.0.10.nupkg.sha512",
+    "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.10\\microsoft.aspnetcore.authentication.google.6.0.10.nupkg.sha512",
+    "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.authentication.microsoftaccount\\6.0.10\\microsoft.aspnetcore.authentication.microsoftaccount.6.0.10.nupkg.sha512",
+    "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.authentication.twitter\\6.0.10\\microsoft.aspnetcore.authentication.twitter.6.0.10.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.6\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.6.nupkg.sha512",
