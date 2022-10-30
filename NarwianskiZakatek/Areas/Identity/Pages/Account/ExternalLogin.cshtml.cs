@@ -2,22 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
 
 namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 {
@@ -28,7 +20,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly UserManager<AppUser> _userManager;
         private readonly IUserStore<AppUser> _userStore;
         private readonly IUserEmailStore<AppUser> _emailStore;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailSender;
         private readonly ILogger<ExternalLoginModel> _logger;
 
         public ExternalLoginModel(
@@ -36,7 +28,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             UserManager<AppUser> userManager,
             IUserStore<AppUser> userStore,
             ILogger<ExternalLoginModel> logger,
-            IEmailSender emailSender)
+            IEmailService emailSender)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -102,13 +94,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (remoteError != null)
             {
-                ErrorMessage = $"Error from external provider: {remoteError}";
+                ErrorMessage = $"Wystąpił błąd zewnętrznego dostawcy: {remoteError}";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information.";
+                ErrorMessage = "Wystąpił błąd podczas wczytywania informacji z zewnętrznego serwisu logowania.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
@@ -146,8 +138,19 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information during confirmation.";
+                ErrorMessage = "Wystąpił błąd podczas wczytywania informacji z zewnętrznego serwisu logowania.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
+            }
+            var usr = await _userManager.FindByEmailAsync(Input.Email);
+            if (usr!=null)
+            {
+                var result = await _userManager.AddLoginAsync(usr, info);
+                string message = "Nastąpił błąd podczas dodawania konta zewnętrznego. Spróbuj ponownie później.";
+                if (result.Succeeded)
+                {
+                    message = "Pomyślnie dodano konto zewnętrzne.";
+                }
+                return RedirectToPage("./Login", new { ReturnUrl = returnUrl, ErrorMessage = message });
             }
 
             if (ModelState.IsValid)
@@ -156,6 +159,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                await _userManager.AddToRoleAsync(user, "User");
 
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
@@ -165,19 +169,14 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                     {
                         _logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
 
-                        var userId = await _userManager.GetUserIdAsync(user);
-                        var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                        code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                         var callbackUrl = Url.Page(
-                            "/Account/ConfirmEmail",
-                            pageHandler: null,
-                            values: new { area = "Identity", userId = userId, code = code },
-                            protocol: Request.Scheme);
+                        "/Account/ConfirmEmail",
+                        pageHandler: null,
+                        values: new { area = "Identity" },
+                        protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        await _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
 
-                        // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {
                             return RedirectToPage("./RegisterConfirmation", new { Email = Input.Email });

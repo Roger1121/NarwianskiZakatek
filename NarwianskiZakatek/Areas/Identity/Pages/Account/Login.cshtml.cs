@@ -77,8 +77,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             public string Password { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task OnGetAsync(string returnUrl = null, string errorMessage = null)
         {
+            if (errorMessage != null && ErrorMessage == null)
+            {
+                ErrorMessage = errorMessage;
+            }
+
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);

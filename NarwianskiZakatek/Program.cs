@@ -43,12 +43,6 @@ builder.Services.AddAuthentication()
    {
        microsoftOptions.ClientId = config["Authentication:Microsoft:ClientId"];
        microsoftOptions.ClientSecret = config["Authentication:Microsoft:ClientSecret"];
-   })
-   .AddTwitter(twitterOptions =>
-   {
-       twitterOptions.ConsumerKey = config["Authentication:Twitter:ConsumerAPIKey"];
-       twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
-       twitterOptions.RetrieveUserDetails = true;
    });
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
