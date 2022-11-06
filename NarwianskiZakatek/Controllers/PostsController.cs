@@ -22,18 +22,21 @@ namespace NarwianskiZakatek.Controllers
         // GET: Posts
         public async Task<IActionResult> Index()
         {
-            var username = HttpContext.User.Identity.Name;
+            var username = HttpContext.User.Identity?.Name;
             var Warnings = new List<string>();
             if (username != null)
             {
                 var user = _context.Users.Where(u => u.UserName == username).First();
-                var warnings = _context.Warnings.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
-                foreach (var warning in warnings)
+                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
+                if (warnings != null)
                 {
-                    warning.WasDisplayed = true;
-                    Warnings.Add(warning.Message);
+                    foreach (var warning in warnings)
+                    {
+                        warning.WasDisplayed = true;
+                        Warnings.Add(warning.Message);
+                    }
+                    _context.SaveChanges();
                 }
-                _context.SaveChanges();
             }
             ViewBag.Warnings = Warnings;
             return _context.Posts != null ? 

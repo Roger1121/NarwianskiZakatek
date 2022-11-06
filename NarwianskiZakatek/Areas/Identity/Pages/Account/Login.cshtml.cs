@@ -107,15 +107,20 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                var user = _context.Users.Where(u => u.UserName == Input.Email).First();
+                var user = _context.Users.Where(u => u.UserName == Input.Email).FirstOrDefault();
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Nieprawidłowy login lub hasło.");
+                    return Page();
+                }
                 if (user.IsLocked)
                 {
                     ModelState.AddModelError(string.Empty, "Konto zostało zablokowane.");
                     return Page();
                 }
 
-                var role = _context.Roles.Where(r => r.NormalizedName == "ADMIN").First();
-                var userRole = _context.UserRoles.Where(u => u.UserId == user.Id && u.RoleId == role.Id).First();
+                var role = _context.Roles.Where(r => r.NormalizedName == "ADMIN").FirstOrDefault();
+                var userRole = _context.UserRoles.Where(u => u.UserId == user.Id && u.RoleId == role.Id).FirstOrDefault();
 
                 if (userRole != null)
                 {
@@ -139,7 +144,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Nieprawidłowa próba logowania.");
+                    ModelState.AddModelError(string.Empty, "Nieprawidłowy login lub hasło.");
                     return Page();
                 }
             }

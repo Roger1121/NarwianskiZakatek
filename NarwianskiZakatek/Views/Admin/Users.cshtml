@@ -10,35 +10,43 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.UserName)
+                Adres e-mail
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
+                Numer telefonu
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            
-            <td>
-                    <a asp-action="SendWarning" asp-route-userName="@item.UserName">Wyślij ostrzeżenie</a> |
-                    <a asp-action="LockAccount" asp-route-userName="@item.UserName">Zablokuj użytkownika</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+
+                <td>
+                    @if (ViewBag.CurrentUser != item.Email)
+                    {
+                        <text>
+                            <a asp-action="SendWarning" asp-route-userName="@item.UserName">Wyślij ostrzeżenie</a> |
+                        </text>
+                        if (!item.IsLocked)
+                        {
+                            <a asp-action="LockAccount" asp-route-userName="@item.UserName"> Zablokuj użytkownika </a>
+                        }
+                        else
+                        {
+                            <a asp-action="UnlockAccount" asp-route-userName="@item.UserName"> Odblokuj użytkownika </a>
+                        }
+
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
