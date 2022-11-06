@@ -2,15 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
+
 namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 {
     public class LoginWithRecoveryCodeModel : PageModel
@@ -18,15 +16,18 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<LoginWithRecoveryCodeModel> _logger;
+        public readonly CaptchaConfig _captchaConfig;
 
         public LoginWithRecoveryCodeModel(
             SignInManager<AppUser> signInManager,
             UserManager<AppUser> userManager,
-            ILogger<LoginWithRecoveryCodeModel> logger)
+            ILogger<LoginWithRecoveryCodeModel> logger,
+            CaptchaConfig captchaConfig)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _logger = logger;
+            _captchaConfig = captchaConfig;
         }
 
         /// <summary>

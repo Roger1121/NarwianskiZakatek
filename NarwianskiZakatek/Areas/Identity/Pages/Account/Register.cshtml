@@ -11,17 +11,17 @@
             <h3>Zaloguj się przy użyciu jednego z poniższych serwisów</h3>
             <hr />
             @{
-                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                    <div>
-                        <p>
-                            @foreach (var provider in Model.ExternalLogins)
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins)
                             {
-                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Zaloguj się, używając konta @provider.DisplayName" style="margin: 5px">@provider.DisplayName</button>
-                                <br />
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Zaloguj się, używając konta @provider.DisplayName" style="margin: 5px">@provider.DisplayName</button>
+                                    <br />
                             }
-                        </p>
-                    </div>
-                </form>
+                            </p>
+                        </div>
+                    </form>
             }
         </section>
     </div>
@@ -90,6 +90,8 @@
                 <label asp-for="Input.PostCity"></label>
                 <span asp-validation-for="Input.PostCity" class="text-danger"></span>
             </div>
+            <div id="captcha_div" class="g-recaptcha" style="margin: 5px" data-callback="enableBtn"></div>
+            <br/>
             <button id="registerSubmit" style="margin: 5px" type="submit" class="w-100 btn btn-lg btn-primary">Zarejestruj</button>
             <p>Jeżeli posiadasz już konto, przejdź <a href = "~/identity/account/login">tutaj</a>, aby się zalogować</p>
         </form>
@@ -98,4 +100,22 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            submitButton.disabled = true;
+        });
+
+        var onloadCallback = function () {
+            grecaptcha.render('captcha_div', {
+                'sitekey': '@Model._captchaConfig.PublicKey'
+            });
+        };
+
+        function enableBtn() {
+            submitButton.disabled = false;
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 }

@@ -22,11 +22,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IEmailService _emailSender;
+        public readonly CaptchaConfig _captchaConfig;
 
-        public ForgotPasswordModel(UserManager<AppUser> userManager, IEmailService emailSender)
+        public ForgotPasswordModel(UserManager<AppUser> userManager, IEmailService emailSender, CaptchaConfig captchaConfig)
         {
             _userManager = userManager;
             _emailSender = emailSender;
+            _captchaConfig = captchaConfig;
         }
 
         /// <summary>
@@ -71,7 +73,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                     values: new { },
                     protocol: Request.Scheme);
 
-                await _emailSender.ResetPassword(Input.Email, callbackUrl);
+                _emailSender.ResetPasswordAsync(Input.Email, callbackUrl);
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }

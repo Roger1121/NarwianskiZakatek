@@ -2,18 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
 
@@ -24,11 +17,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IEmailService _emailSender;
+        public readonly CaptchaConfig _captchaConfig;
 
-        public ResendEmailConfirmationModel(UserManager<AppUser> userManager, IEmailService emailSender)
+        public ResendEmailConfirmationModel(UserManager<AppUser> userManager, IEmailService emailSender, CaptchaConfig captchaConfig)
         {
             _userManager = userManager;
             _emailSender = emailSender;
+            _captchaConfig = captchaConfig;
         }
 
         /// <summary>
@@ -69,7 +64,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                         values: new { },
                         protocol: Request.Scheme);
 
-            await _emailSender.SendConfirmationEmailAsync(Input.Email, callbackUrl);
+            _emailSender.SendConfirmationEmailAsync(Input.Email, callbackUrl);
 
             ModelState.AddModelError(string.Empty, "Link aktywacyjny został wysłany. Sprawdź skrzynke pocztową.");
             return Page();

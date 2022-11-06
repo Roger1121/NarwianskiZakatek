@@ -175,7 +175,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                         values: new { area = "Identity" },
                         protocol: Request.Scheme);
 
-                        await _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
+                        _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
 
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {

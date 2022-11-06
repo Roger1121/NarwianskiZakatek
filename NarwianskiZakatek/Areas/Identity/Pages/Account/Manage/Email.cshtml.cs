@@ -122,7 +122,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
                     pageHandler: null,
                     values: new { area = "Identity" },
                     protocol: Request.Scheme);
-                await _emailSender.ChangeEmailAddress(email, Input.NewEmail, callbackUrl);
+                _emailSender.ChangeEmailAddress(email, Input.NewEmail, callbackUrl);
 
                 StatusMessage = "Na podany adres e-mail został wysłany link potwierdzający zmianę adresu.";
                 return RedirectToPage();
@@ -157,7 +157,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account.Manage
                 pageHandler: null,
                 values: new { area = "Identity" },
                 protocol: Request.Scheme);
-            await _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
+            _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
             StatusMessage = "Na twój obecny adres e-mail został wysłany link aktywacyjny.";
             return RedirectToPage();
         }

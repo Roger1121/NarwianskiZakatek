@@ -23,13 +23,15 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailService _emailSender;
+        public readonly CaptchaConfig _captchaConfig;
 
         public RegisterModel(
             UserManager<AppUser> userManager,
             IUserStore<AppUser> userStore,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailService emailSender)
+            IEmailService emailSender,
+            CaptchaConfig captchaConfig)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -38,6 +40,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _userManager.Options.SignIn.RequireConfirmedEmail = true;
+            _captchaConfig = captchaConfig;
         }
 
         /// <summary>
@@ -168,7 +171,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                         values: new { area = "Identity" },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
+                    _emailSender.SendConfirmationEmailAsync(user.Email, callbackUrl);
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

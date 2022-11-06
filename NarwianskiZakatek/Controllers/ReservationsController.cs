@@ -89,7 +89,7 @@ namespace NarwianskiZakatek.Controllers
             }
             reservation.Price = price * (roomList.EndDate.AddDays(1) - roomList.BeginDate).Days;
             _context.SaveChanges();
-            await _sender.ConfirmReservation(user.Email, reservation);
+            _sender.ConfirmReservationAsync(user.Email, reservation);
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została złożona." });
         }
 
@@ -123,8 +123,9 @@ namespace NarwianskiZakatek.Controllers
             if (reservation != null)
             {
                 _context.Reservations.Remove(reservation);
+                var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
+                _sender.CancelReservationAsync(user.Email, reservation);
             }
-
             _context.SaveChanges();
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
         }

@@ -23,6 +23,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton(config.GetSection("EmailConfig").Get<EmailConfig>());
 builder.Services.AddScoped<IEmailService, EmailService>();
 
+// Captcha config
+builder.Services.AddSingleton(config.GetSection("CaptchaConfig").Get<CaptchaConfig>());
+
 //External login config
 builder.Services.AddAuthentication()
    .AddGoogle(options =>

@@ -19,6 +19,8 @@
                 <label asp-for="Input.RecoveryCode" class="form-label"></label>
                 <span asp-validation-for="Input.RecoveryCode" class="text-danger"></span>
             </div>
+            <div id="captcha_div" class="g-recaptcha" style="margin: 5px" data-callback="enableBtn"></div>
+            <br />
             <button type="submit" class="w-100 btn btn-lg btn-primary" style="margin: 5px">Zaloguj</button>
         </form>
     </div>
@@ -26,4 +28,22 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            submitButton.disabled = true;
+        });
+
+        var onloadCallback = function () {
+            grecaptcha.render('captcha_div', {
+                'sitekey': '@Model._captchaConfig.PublicKey'
+            });
+        };
+
+        function enableBtn() {
+            submitButton.disabled = false;
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 }
