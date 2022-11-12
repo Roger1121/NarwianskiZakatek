@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NarwianskiZakatek.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221015080936_init")]
-    partial class init
+    [Migration("20221112093756_db_schema")]
+    partial class db_schema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -310,11 +310,8 @@ namespace NarwianskiZakatek.Migrations
 
             modelBuilder.Entity("NarwianskiZakatek.Models.Reservation", b =>
                 {
-                    b.Property<int>("ReservationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservationId"));
+                    b.Property<string>("ReservationId")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("BeginDate")
                         .HasColumnType("timestamp without time zone");
@@ -350,8 +347,9 @@ namespace NarwianskiZakatek.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservedRoomId"));
 
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("integer");
+                    b.Property<string>("ReservationId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("integer");

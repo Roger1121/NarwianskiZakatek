@@ -9,8 +9,8 @@ namespace NarwianskiZakatek.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<
-                    DbContextOptions<ApplicationDbContext>>()))
+            using (var context = new ApplicationDbContext(serviceProvider.
+                GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
                 try
                 {
@@ -59,21 +59,21 @@ namespace NarwianskiZakatek.Models
                             Surname = "Kowalski"
                         });
                         context.SaveChanges();
-                        string userId = context.Users.Where(r => r.UserName == "leszczynski_szymon@wp.pl").ToList().FirstOrDefault().Id;
+                        string userId = context.Users.Where(r => r.UserName == "leszczynski_szymon@wp.pl").ToList().First().Id;
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().First().Id
                         });
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "Employee").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "Employee").ToList().First().Id
                         });
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "Admin").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "Admin").ToList().First().Id
                         });
                         context.SaveChanges();
 
@@ -97,16 +97,16 @@ namespace NarwianskiZakatek.Models
                             Surname = "Kowalski"
                         });
                         context.SaveChanges();
-                        userId = context.Users.Where(r => r.UserName == "employee@test.pl").ToList().FirstOrDefault().Id;
+                        userId = context.Users.Where(r => r.UserName == "employee@test.pl").ToList().First().Id;
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().First().Id
                         });
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "Employee").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "Employee").ToList().First().Id
                         });
                         context.SaveChanges();
 
@@ -130,18 +130,18 @@ namespace NarwianskiZakatek.Models
                             Surname = "Kowalski"
                         });
                         context.SaveChanges();
-                        userId = context.Users.Where(r => r.UserName == "user@test.pl").ToList().FirstOrDefault().Id;
+                        userId = context.Users.Where(r => r.UserName == "user@test.pl").ToList().First().Id;
                         context.UserRoles.Add(new IdentityUserRole<string>()
                         {
                             UserId = userId,
-                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().FirstOrDefault().Id
+                            RoleId = context.Roles.Where(r => r.Name == "User").ToList().First().Id
                         });
                         context.SaveChanges();
                     }
                     #endregion
 
                     #region add descriptions
-                    if (!context.Descriptions.Any())
+                    if (context.Descriptions!=null && !context.Descriptions.Any())
                     {
                         context.Descriptions.Add(new Description()
                         {
@@ -174,7 +174,7 @@ namespace NarwianskiZakatek.Models
                     #endregion
 
                     #region add rooms
-                    if (!context.Rooms.Any())
+                    if (context.Rooms != null && !context.Rooms.Any())
                     {
                         context.Rooms.Add(new Room()
                         {

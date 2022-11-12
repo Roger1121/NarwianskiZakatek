@@ -29,7 +29,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin,Employee")]
-        public IActionResult DetailsFull(int id)
+        public IActionResult DetailsFull(string id)
         {
             Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).Include(r => r.User).First();
             List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
@@ -94,7 +94,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "User")]
-        public IActionResult Delete(int? id)
+        public IActionResult Delete(string? id)
         {
             if (id == null || _context.Reservations == null)
             {
@@ -130,7 +130,7 @@ namespace NarwianskiZakatek.Controllers
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
         }
         [Authorize(Roles = "Admin,Employee")]
-        public IActionResult DeleteAny(int? id)
+        public IActionResult DeleteAny(string? id)
         {
             if (id == null || _context.Reservations == null)
             {
@@ -166,7 +166,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "User")]
-        public IActionResult Rate(int reservationId)
+        public IActionResult Rate(string reservationId)
         {
             return View(new OpinionViewModel()
             {
@@ -187,7 +187,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "User")]
-        public IActionResult Details(int id)
+        public IActionResult Details(string id)
         {
             Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).First();
             List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();

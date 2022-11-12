@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace NarwianskiZakatek.Migrations
 {
-    public partial class init : Migration
+    public partial class db_schema : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -214,8 +214,7 @@ namespace NarwianskiZakatek.Migrations
                 name: "Reservations",
                 columns: table => new
                 {
-                    ReservationId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ReservationId = table.Column<string>(type: "text", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: false),
                     BeginDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     EndDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
@@ -262,7 +261,7 @@ namespace NarwianskiZakatek.Migrations
                     ReservedRoomId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     RoomId = table.Column<int>(type: "integer", nullable: false),
-                    ReservationId = table.Column<int>(type: "integer", nullable: false)
+                    ReservationId = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

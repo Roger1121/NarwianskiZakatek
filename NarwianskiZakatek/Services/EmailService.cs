@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
-using NarwianskiZakatek.Migrations;
 using NarwianskiZakatek.Models;
 using System.Net;
 using System.Net.Mail;

@@ -308,11 +308,8 @@ namespace NarwianskiZakatek.Migrations
 
             modelBuilder.Entity("NarwianskiZakatek.Models.Reservation", b =>
                 {
-                    b.Property<int>("ReservationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservationId"));
+                    b.Property<string>("ReservationId")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("BeginDate")
                         .HasColumnType("timestamp without time zone");
@@ -348,8 +345,9 @@ namespace NarwianskiZakatek.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReservedRoomId"));
 
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("integer");
+                    b.Property<string>("ReservationId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("integer");

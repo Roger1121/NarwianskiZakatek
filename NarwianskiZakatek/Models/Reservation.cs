@@ -4,9 +4,9 @@ namespace NarwianskiZakatek.Models
 {
     public class Reservation
     {
-        public int ReservationId { get; set; }
-        public string UserId { get; set; }
-        public AppUser User { get; set; }
+        public string ReservationId { get; set; } = Guid.NewGuid().ToString();
+        public string UserId { get; set; } = string.Empty;
+        public AppUser User { get; set; } = new AppUser();
 
         [Display(Name = "Data rozpoczęcia")]
         public DateTime BeginDate { get; set; }
@@ -18,6 +18,6 @@ namespace NarwianskiZakatek.Models
         public string? Opinion { get; set; }
         [Display(Name = "Ocena")]
         public int Rating { get; set; }
-        public virtual ICollection<ReservedRoom> ReservedRooms { get; set; }
+        public virtual ICollection<ReservedRoom>? ReservedRooms { get; set; }
     }
 }

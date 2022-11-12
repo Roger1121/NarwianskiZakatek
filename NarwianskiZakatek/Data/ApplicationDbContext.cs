@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Models;
+using System.Reflection.Metadata;
 
 namespace NarwianskiZakatek.Data
 {
@@ -10,6 +11,7 @@ namespace NarwianskiZakatek.Data
             : base(options)
         {
         }
+
         public DbSet<Description>? Descriptions { get; set; }
         public DbSet<Post>? Posts { get; set; }
         public DbSet<Reservation>? Reservations { get; set; }
