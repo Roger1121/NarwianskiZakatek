@@ -101,9 +101,9 @@ namespace NarwianskiZakatek.Controllers
             {
                 return NotFound();
             }
-
             var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
-            if (reservation == null)
+
+            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().Name)
             {
                 return NotFound();
             }
@@ -122,6 +122,10 @@ namespace NarwianskiZakatek.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
             }
             var reservation = _context.Reservations.Find(id);
+            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().Name)
+            {
+                return RedirectToAction("MyReservations", new { message = "Rezerwacja nie została znaleziona lub nie masz uprawnień do anulowania tej rezerwacji." });
+            }
             if (reservation != null)
             {
                 _context.Reservations.Remove(reservation);
@@ -194,7 +198,13 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "User")]
         public IActionResult Details(string id)
         {
-            Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).First();
+            var currentUserId = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First().Id;
+            List<Reservation> reservations = _context.Reservations.Where(m => m.ReservationId == id && m.UserId == currentUserId).Include(r => r.ReservedRooms).ToList();
+            if (reservations == null)
+            {
+                return NotFound();
+            }
+            var reservation = reservations.FirstOrDefault();
             List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
             ViewBag.Rooms = _context.Rooms.Where(r => reservedRooms.Contains(r.RoomId)).ToList();
             return View(reservation);
