@@ -93,6 +93,7 @@ namespace NarwianskiZakatek.Controllers
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została złożona." });
         }
 
+        [HttpGet]
         [Authorize(Roles = "User")]
         public IActionResult Delete(string? id)
         {
@@ -112,8 +113,9 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
+        public IActionResult DeletePost(string id)
         {
             if (_context.Reservations == null)
             {
@@ -129,6 +131,8 @@ namespace NarwianskiZakatek.Controllers
             _context.SaveChanges();
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
         }
+
+        [HttpGet]
         [Authorize(Roles = "Admin,Employee")]
         public IActionResult DeleteAny(string? id)
         {
@@ -148,8 +152,9 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin,Employee")]
+        [ActionName("DeleteAny")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteAny(int id)
+        public IActionResult DeleteAnyPost(string id)
         {
             if (_context.Reservations == null)
             {
