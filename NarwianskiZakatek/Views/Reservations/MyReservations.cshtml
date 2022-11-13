@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NarwianskiZakatek.Models.Reservation>
+﻿@model NarwianskiZakatek.Services.PaginatedList<NarwianskiZakatek.Models.Reservation>
 
 <h1>Moje rezerwacje</h1>
 <partial name="_StatusMessage" />
@@ -9,13 +9,46 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BeginDate)
+                @if (ViewBag.SortOrder == "begin")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc">
+                        Data rozpoczęcia
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
+                        Data rozpoczęcia
+                    </a>
+                }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndDate)
+                @if (ViewBag.SortOrder == "end")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc">
+                        Data zakończenia
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end">
+                        Data zakończenia
+                    </a>
+                }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price) zł
+                @if (ViewBag.SortOrder == "price")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc">
+                        Cena (zł)
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price">
+                        Cena (zł)
+                    </a>
+                }
             </th>
             <th></th>
         </tr>
@@ -34,7 +67,7 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a>
+                    <a asp-action="Details" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a> | 
                     @if (item.BeginDate > DateTime.Today)
                     {
                         <a asp-action="Delete" asp-route-id="@item.ReservationId">Anuluj rezerwację</a>
@@ -48,3 +81,19 @@
         }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "display:none;" : "";
+    var nextDisabled = !Model.HasNextPage ? "display:none;" : "";
+}
+
+<a asp-action="MyReservations"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="btn btn-default" style="@prevDisabled">
+    Poprzednia strona
+</a>
+<a asp-action="MyReservations"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="btn btn-default" style="@nextDisabled">
+    Kolejna strona
+</a>

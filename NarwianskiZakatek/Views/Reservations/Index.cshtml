@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NarwianskiZakatek.Models.Reservation>
+﻿@model NarwianskiZakatek.Services.PaginatedList<NarwianskiZakatek.Models.Reservation>
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -9,13 +9,46 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BeginDate)
+                @if (ViewBag.SortOrder == "begin")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc">
+                        Data rozpoczęcia
+                    </a>
+                }
+                else 
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
+                        Data rozpoczęcia
+                    </a>
+                }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndDate)
+                @if (ViewBag.SortOrder == "end")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc">
+                        Data zakończenia
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end">
+                        Data zakończenia
+                    </a>
+                }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price) zł
+                @if (ViewBag.SortOrder == "price")
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc">
+                        Cena (zł)
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price">
+                        Cena (zł)
+                    </a>
+                }
             </th>
             <th></th>
         </tr>
@@ -44,3 +77,19 @@
         }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "display:none;" : "";
+    var nextDisabled = !Model.HasNextPage ? "display:none;" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="btn btn-default" style="@prevDisabled">
+    Poprzednia strona
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="btn btn-default" style="@nextDisabled">
+    Kolejna strona
+</a>

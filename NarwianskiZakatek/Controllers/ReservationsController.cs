@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Foolproof;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 using NuGet.Protocol.Plugins;
+using System.Drawing.Printing;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -23,9 +25,40 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin,Employee")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? pageNumber, string? sortOrder)
         {
-            return View(_context.Reservations.ToList());
+            ViewBag.SortOrder = sortOrder;
+            var reservations = from r in _context.Reservations select r;
+            switch (sortOrder)
+            {
+                case "begin":
+                    reservations = reservations.OrderBy(r => r.BeginDate);
+                    break;
+                case "begin_desc":
+                    reservations = reservations.OrderByDescending(r => r.BeginDate);
+                    break;
+                case "end":
+                    reservations = reservations.OrderBy(r => r.EndDate);
+                    break;
+                case "end_desc":
+                    reservations = reservations.OrderByDescending(r => r.EndDate);
+                    break;
+                case "price":
+                    reservations = reservations.OrderBy(r => r.Price);
+                    break;
+                case "price desc":
+                    reservations = reservations.OrderByDescending(r => r.Price);
+                    break;
+                default:
+                    ViewBag.SortOrder = "begin";
+                    reservations = reservations.OrderBy(r => r.BeginDate);
+                    break;
+            }
+
+            int pageSize = 3;
+            return _context.Reservations != null ?
+                View(await PaginatedList<Reservation>.CreateAsync(reservations.AsNoTracking(), pageNumber ?? 1, pageSize)) :
+                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
         }
 
         [Authorize(Roles = "Admin,Employee")]
@@ -39,23 +72,64 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpGet]
         [Authorize(Roles = "User")]
-        public IActionResult Date()
+        public IActionResult Date(string? message)
         {
+            ViewBag.Message = message;
             return View();
         }
         [HttpGet]
         [Authorize(Roles = "User")]
-        public IActionResult MyReservations(string? message)
+        public async Task<IActionResult> MyReservations(string? message, int? pageNumber, string? sortOrder)
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
             ViewBag.Message = message;
-            return View(_context.Reservations.Where(r => r.UserId == user.Id));
+            int pageSize = 3;
+
+            ViewBag.SortOrder = sortOrder;
+            var reservations = _context.Reservations.Where(r => r.UserId == user.Id);
+            switch (sortOrder)
+            {
+                case "begin":
+                    reservations = reservations.OrderBy(r => r.BeginDate);
+                    break;
+                case "begin_desc":
+                    reservations = reservations.OrderByDescending(r => r.BeginDate);
+                    break;
+                case "end":
+                    reservations = reservations.OrderBy(r => r.EndDate);
+                    break;
+                case "end_desc":
+                    reservations = reservations.OrderByDescending(r => r.EndDate);
+                    break;
+                case "price":
+                    reservations = reservations.OrderBy(r => r.Price);
+                    break;
+                case "price desc":
+                    reservations = reservations.OrderByDescending(r => r.Price);
+                    break;
+                default:
+                    ViewBag.SortOrder = "begin";
+                    reservations = reservations.OrderBy(r => r.BeginDate);
+                    break;
+            }
+
+            return _context.Reservations != null ?
+                View(await PaginatedList<Reservation>.CreateAsync(reservations.AsNoTracking(), pageNumber ?? 1, pageSize)) :
+                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
         }
 
         [HttpPost]
         [Authorize(Roles = "User")]
         public IActionResult New(DateTime beginDate, DateTime endDate)
         {
+            if (beginDate <= DateTime.Now)
+            {
+                return RedirectToAction("Date", new { message = "Nie możesz rezerwować pobytu z datą przeszłą." });
+            }
+            if (endDate <= beginDate)
+            {
+                return RedirectToAction("Date", new { message = "Data zakończenia rezerwacji nie może być wcześniejsza, niż data rozpoczęcia." });
+            }
             ViewBag.RoomList = FindAvailableRooms(beginDate, endDate);
             return View(new RoomsViewModel()
             {

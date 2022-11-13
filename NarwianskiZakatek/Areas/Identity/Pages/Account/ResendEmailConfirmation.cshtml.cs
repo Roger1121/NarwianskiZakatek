@@ -15,13 +15,11 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ResendEmailConfirmationModel : PageModel
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly IEmailService _emailSender;
         public readonly CaptchaConfig _captchaConfig;
 
-        public ResendEmailConfirmationModel(UserManager<AppUser> userManager, IEmailService emailSender, CaptchaConfig captchaConfig)
+        public ResendEmailConfirmationModel(IEmailService emailSender, CaptchaConfig captchaConfig)
         {
-            _userManager = userManager;
             _emailSender = emailSender;
             _captchaConfig = captchaConfig;
         }

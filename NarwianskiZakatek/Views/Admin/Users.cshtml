@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NarwianskiZakatek.Models.AppUser>
+﻿@model NarwianskiZakatek.Services.PaginatedList<NarwianskiZakatek.Models.AppUser>
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -44,9 +44,43 @@
                             <a asp-action="UnlockAccount" asp-route-userName="@item.UserName"> Odblokuj użytkownika </a>
                         }
 
+                        if(ViewBag.Admins.Contains(item.Id))
+                        {
+                            <text>
+                                | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Usuń uprawnienia administratora </a>
+                            </text>                        }
+                        else if (ViewBag.Employees.Contains(item.Id))
+                        {
+                            <text>
+                                | <a asp-action="AddToRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Nadaj uprawnienia administratora </a>
+                                | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="EMPLOYEE"> Usuń uprawnienia pracownika </a>
+                            </text> 
+                        }
+                        else
+                        {
+                            <text>
+                                | <a asp-action="AddToRole" asp-route-userName="@item.UserName" asp-route-role="EMPLOYEE"> Nadaj uprawnienia pracownika </a>
+                            </text>
+                        }
                     }
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "display:none;" : "";
+    var nextDisabled = !Model.HasNextPage ? "display:none;" : "";
+}
+
+<a asp-action="Users"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="btn btn-default" style="@prevDisabled">
+    Poprzednia strona
+</a>
+<a asp-action="Users"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="btn btn-default" style="@nextDisabled">
+    Kolejna strona
+</a>

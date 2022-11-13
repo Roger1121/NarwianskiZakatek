@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
+using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatek.Controllers
@@ -22,20 +25,27 @@ namespace NarwianskiZakatek.Controllers
 
         // GET: Users
         [Authorize(Roles = "Admin")]
-        public ActionResult Users(string? message)
+        public async Task<IActionResult> Users(string? message, int? pageNumber)
         {
             ViewBag.Message = message;
             ViewBag.CurrentUser = HttpContext.User.Identity?.Name;
+
+            var adminId = _context.Roles.Where(r => r.NormalizedName == "ADMIN").First().Id;
+            var employeeId = _context.Roles.Where(r => r.NormalizedName == "EMPLOYEE").First().Id;
+
+            ViewBag.Admins = _context.UserRoles.Where(u => u.RoleId == adminId).Select( u => u.UserId).ToList();
+            ViewBag.Employees = _context.UserRoles.Where(u => u.RoleId == employeeId).Select(u => u.UserId).ToList();
+            int pageSize = 3;
             return _context.Users != null ?
-                        View(_context.Users.ToList()) :
-                        Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+                View(await PaginatedList<AppUser>.CreateAsync(_context.Users.OrderBy(u => u.NormalizedEmail).AsNoTracking(), pageNumber ?? 1, pageSize)) :
+                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
         }
 
         [Authorize(Roles = "Admin")]
         public ActionResult AddToRole(string role, string userName)
         {
             string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.Name == role).FirstOrDefault()?.Id;
+            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
             if (userId == null || roleId == null)
             {
                 return RedirectToAction("Users", new { message = "Wystąpił błąd podczas nadawania uprawnień użytkownikowi." });
@@ -53,7 +63,7 @@ namespace NarwianskiZakatek.Controllers
         public ActionResult RemoveFromRole(string role, string userName)
         {
             string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.Name == role).FirstOrDefault()?.Id;
+            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
             if (userId == null || roleId == null)
             {
                 return RedirectToAction("Users", new { message = "Wystąpił błąd podczas wycofywania uprawnień użytkownika." });
