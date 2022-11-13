@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatek.Controllers
@@ -20,7 +21,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Posts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pageNumber)
         {
             var username = HttpContext.User.Identity?.Name;
             var Warnings = new List<string>();
@@ -39,8 +40,11 @@ namespace NarwianskiZakatek.Controllers
                 }
             }
             ViewBag.Warnings = Warnings;
-            return _context.Posts != null ? 
-                          View(await _context.Posts.ToListAsync()) :
+
+
+            int pageSize = 3;
+            return _context.Posts != null ?  
+                View(await PaginatedList<Post>.CreateAsync(_context.Posts.AsNoTracking(), pageNumber ?? 1, pageSize)) :
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 

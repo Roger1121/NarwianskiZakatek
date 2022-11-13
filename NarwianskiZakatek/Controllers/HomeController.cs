@@ -22,30 +22,35 @@ namespace NarwianskiZakatek.Controllers
 
         public IActionResult Accomodation()
         {
-            _description = _context.Descriptions.Where(d => d.Title == "Noclegi").First();
+            if(_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == "Noclegi").First();
             return View(_description);
         }
         public IActionResult Catering()
         {
-            _description = _context.Descriptions.Where(d => d.Title == "Restauracja").First();
+            if (_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == "Restauracja").First();
             return View(_description);
         }
 
         public IActionResult Attractions()
         {
-            _description = _context.Descriptions.Where(d => d.Title == "Atrakcje").First();
+            if (_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == "Atrakcje").First();
             return View(_description);
         }
 
         public IActionResult Neighborhood()
         {
-            _description = _context.Descriptions.Where(d => d.Title == "Okolica").First();
+            if (_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == "Okolica").First();
             return View(_description);
         }
 
         public IActionResult About()
         {
-            _description = _context.Descriptions.Where(d => d.Title == "O nas").First();
+            if (_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == "O nas").First();
             return View(_description);
         }
 
@@ -57,7 +62,8 @@ namespace NarwianskiZakatek.Controllers
 
         public IActionResult Edit(string header)
         {
-            _description = _context.Descriptions.Where(d => d.Title == header).First();
+            if (_context.Descriptions != null)
+                _description = _context.Descriptions.Where(d => d.Title == header).First();
             return View(new DescriptionViewModel()
             {
                 PhotoUrl = _description.getFullPhotoPath(),
