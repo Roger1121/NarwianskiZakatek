@@ -6,6 +6,59 @@
 <h1>Użytkownicy</h1>
 
 <partial name="_StatusMessage" />
+
+<form asp-action="Users" method="get">
+    <div class="form-actions no-color">
+        <h3>Filtrowanie</h3>
+        <div class="row">
+            <div class="col-md-2">
+                <p>
+                    Adres email:
+                </p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="email" value="@ViewBag.Email" />
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>
+                    Numer telefonu:
+                </p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="phone" value="@ViewBag.Phone" />
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <p>
+                    Poziom uprawnień:
+                </p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="role" value="@ViewBag.Role" />
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    <input type="submit" value="Filtruj" style="margin: 5px" class="btn btn-primary" /> <a asp-action="Users">Wyczyść filtry</a>
+                </p>
+            </div>
+            <div class="col-md-8">
+                
+            </div>
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -14,6 +67,9 @@
             </th>
             <th>
                 Numer telefonu
+            </th>
+            <th>
+                Poziom uprawnień
             </th>
             <th></th>
         </tr>
@@ -28,7 +84,20 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                 </td>
-
+                <td>
+                    @if (ViewBag.Admins.Contains(item.Id))
+                    {
+                        <text>Admin</text>
+                    }
+                    else if (ViewBag.Employees.Contains(item.Id))
+                    {
+                        <text>Pracownik</text>
+                    }
+                    else
+                    {
+                        <text>Klient</text>
+                    }
+                </td>
                 <td>
                     @if (ViewBag.CurrentUser != item.Email)
                     {
@@ -44,17 +113,18 @@
                             <a asp-action="UnlockAccount" asp-route-userName="@item.UserName"> Odblokuj użytkownika </a>
                         }
 
-                        if(ViewBag.Admins.Contains(item.Id))
+                        if (ViewBag.Admins.Contains(item.Id))
                         {
                             <text>
                                 | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Usuń uprawnienia administratora </a>
-                            </text>                        }
+                            </text>
+                        }
                         else if (ViewBag.Employees.Contains(item.Id))
                         {
                             <text>
                                 | <a asp-action="AddToRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Nadaj uprawnienia administratora </a>
                                 | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="EMPLOYEE"> Usuń uprawnienia pracownika </a>
-                            </text> 
+                            </text>
                         }
                         else
                         {

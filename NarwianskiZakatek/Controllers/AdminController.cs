@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,20 +25,43 @@ namespace NarwianskiZakatek.Controllers
 
         // GET: Users
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Users(string? message, int? pageNumber)
+        public async Task<IActionResult> Users(string? message, int? pageNumber, string? email, string? phone, string? role)
         {
             ViewBag.Message = message;
             ViewBag.CurrentUser = HttpContext.User.Identity?.Name;
+            ViewBag.Phone = phone;
+            ViewBag.Email = email;
+            ViewBag.Role = role;
 
             var adminId = _context.Roles.Where(r => r.NormalizedName == "ADMIN").First().Id;
             var employeeId = _context.Roles.Where(r => r.NormalizedName == "EMPLOYEE").First().Id;
 
-            ViewBag.Admins = _context.UserRoles.Where(u => u.RoleId == adminId).Select( u => u.UserId).ToList();
-            ViewBag.Employees = _context.UserRoles.Where(u => u.RoleId == employeeId).Select(u => u.UserId).ToList();
+            var admins = _context.UserRoles.Where(u => u.RoleId == adminId).Select(u => u.UserId).ToList();
+            var employees = _context.UserRoles.Where(u => u.RoleId == employeeId).Select(u => u.UserId).ToList();
+
+            ViewBag.Admins = admins;
+            ViewBag.Employees = employees;
             int pageSize = 3;
-            return _context.Users != null ?
-                View(await PaginatedList<AppUser>.CreateAsync(_context.Users.OrderBy(u => u.NormalizedEmail).AsNoTracking(), pageNumber ?? 1, pageSize)) :
-                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+
+            var users = _context.Users.OrderBy(u => u.NormalizedEmail).AsNoTracking();
+            if (!string.IsNullOrEmpty(email))
+                users = users.Where(u => u.NormalizedEmail.Contains(email.ToUpper()));
+            if (!string.IsNullOrEmpty(phone))
+                users = users.Where(u => u.PhoneNumber.Contains(phone));
+            switch (role?.ToUpper())
+            {
+                case "ADMIN":
+                    users = users.Where(u => admins.Contains(u.Id));
+                    break;
+                case "PRACOWNIK":
+                    users = users.Where(u => employees.Contains(u.Id) && !admins.Contains(u.Id));
+                    break;
+                case "KLIENT":
+                    users = users.Where(u => !employees.Contains(u.Id));
+                    break;
+            }
+
+            return View(await PaginatedList<AppUser>.CreateAsync(users, pageNumber ?? 1, pageSize));
         }
 
         [Authorize(Roles = "Admin")]

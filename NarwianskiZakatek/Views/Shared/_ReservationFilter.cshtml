@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="form-actions no-color">
+    <h3>Filtrowanie</h3>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Data rozpoczęcia od:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="datetime-local" data-val="true" id="beginFrom" name="beginFrom" value="@ViewBag.BeginFrom">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Data rozpoczęcia do:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="datetime-local" data-val="true" id="beginTo" name="beginTo" value="@ViewBag.BeginTo">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Data zakończenia od:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="datetime-local" data-val="true" id="endFrom" name="endFrom" value="@ViewBag.EndFrom">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Data zakończenia do:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" type="datetime-local" data-val="true" id="endTo" name="endTo" value="@ViewBag.EndTo">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Cena od:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control valid" type="text" id="priceFrom" name="priceFrom" value="@ViewBag.PriceFrom">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                Cena od:
+            </p>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control valid" type="text" id="priceTo" name="priceTo" value="@ViewBag.PriceTo">
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#beginDateFrom").datepicker;
+            $("#beginDateTo").datepicker;
+            $("#endDateFrom").datepicker;
+            $("#endDateTo").datepicker;
+        });
+    </script>
+}

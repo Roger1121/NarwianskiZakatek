@@ -25,10 +25,44 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin,Employee")]
-        public async Task<IActionResult> Index(int? pageNumber, string? sortOrder)
+        public async Task<IActionResult> Index(int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
-            ViewBag.SortOrder = sortOrder;
             var reservations = from r in _context.Reservations select r;
+
+            ViewBag.BeginFrom = beginFrom;
+            ViewBag.BeginTo = beginTo;
+            ViewBag.EndFrom = endFrom;
+            ViewBag.EndTo = endTo;
+            ViewBag.PriceFrom = priceFrom;
+            ViewBag.PriceTo = priceTo;
+
+            if(beginFrom != null)
+            {
+                reservations = reservations.Where(r => r.BeginDate >= beginFrom);
+            }
+            if (beginTo != null)
+            {
+                reservations = reservations.Where(r => r.BeginDate <= beginTo);
+            }
+            if (endFrom != null)
+            {
+                reservations = reservations.Where(r => r.EndDate >= endFrom);
+            }
+            if (endTo != null)
+            {
+                reservations = reservations.Where(r => r.EndDate <= endTo);
+            }
+            if (priceFrom != null)
+            {
+                reservations = reservations.Where(r => r.Price >= priceFrom);
+            }
+            if (priceTo != null)
+            {
+                reservations = reservations.Where(r => r.Price <= priceTo);
+            }
+
+            ViewBag.SortOrder = sortOrder;
+            
             switch (sortOrder)
             {
                 case "begin":
@@ -79,7 +113,7 @@ namespace NarwianskiZakatek.Controllers
         }
         [HttpGet]
         [Authorize(Roles = "User")]
-        public async Task<IActionResult> MyReservations(string? message, int? pageNumber, string? sortOrder)
+        public async Task<IActionResult> MyReservations(string? message, int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
             ViewBag.Message = message;
@@ -87,6 +121,39 @@ namespace NarwianskiZakatek.Controllers
 
             ViewBag.SortOrder = sortOrder;
             var reservations = _context.Reservations.Where(r => r.UserId == user.Id);
+
+            ViewBag.BeginFrom = beginFrom;
+            ViewBag.BeginTo = beginTo;
+            ViewBag.EndFrom = endFrom;
+            ViewBag.EndTo = endTo;
+            ViewBag.PriceFrom = priceFrom;
+            ViewBag.PriceTo = priceTo;
+
+            if (beginFrom != null)
+            {
+                reservations = reservations.Where(r => r.BeginDate >= beginFrom);
+            }
+            if (beginTo != null)
+            {
+                reservations = reservations.Where(r => r.BeginDate <= beginTo);
+            }
+            if (endFrom != null)
+            {
+                reservations = reservations.Where(r => r.EndDate >= endFrom);
+            }
+            if (endTo != null)
+            {
+                reservations = reservations.Where(r => r.EndDate <= endTo);
+            }
+            if (priceFrom != null)
+            {
+                reservations = reservations.Where(r => r.Price >= priceFrom);
+            }
+            if (priceTo != null)
+            {
+                reservations = reservations.Where(r => r.Price <= priceTo);
+            }
+
             switch (sortOrder)
             {
                 case "begin":

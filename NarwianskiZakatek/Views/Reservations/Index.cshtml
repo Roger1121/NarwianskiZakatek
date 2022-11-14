@@ -5,6 +5,19 @@
 <h1>Lista rezerwacji</h1>
 <partial name="_StatusMessage" />
 
+<form asp-action="Index" method="get">
+    <partial name="_ReservationFilter" />
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <input type="submit" value="Filtruj" style="margin: 5px" class="btn btn-primary" /> <a asp-action="Index">Wyczyść filtry</a>
+            </p>
+        </div>
+        <div class="col-md-8">
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -15,7 +28,7 @@
                         Data rozpoczęcia
                     </a>
                 }
-                else 
+                else
                 {
                     <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
                         Data rozpoczęcia

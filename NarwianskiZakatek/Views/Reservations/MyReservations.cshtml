@@ -5,19 +5,33 @@
 <p>
     <a asp-action="Date">Zarezerwuj pobyt</a>
 </p>
+
+<form asp-action="MyReservations" method="get">
+    <partial name="_ReservationFilter" />
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <input type="submit" value="Filtruj" style="margin: 5px" class="btn btn-primary" /> <a asp-action="MyReservations">Wyczyść filtry</a>
+            </p>
+        </div>
+        <div class="col-md-8">
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @if (ViewBag.SortOrder == "begin")
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc">
                         Data rozpoczęcia
                     </a>
                 }
                 else
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
                         Data rozpoczęcia
                     </a>
                 }
@@ -25,13 +39,13 @@
             <th>
                 @if (ViewBag.SortOrder == "end")
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc">
                         Data zakończenia
                     </a>
                 }
                 else
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end">
                         Data zakończenia
                     </a>
                 }
@@ -39,13 +53,13 @@
             <th>
                 @if (ViewBag.SortOrder == "price")
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc">
                         Cena (zł)
                     </a>
                 }
                 else
                 {
-                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price">
                         Cena (zł)
                     </a>
                 }
