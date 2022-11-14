@@ -119,12 +119,12 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                     return Page();
                 }
 
-                var role = _context.Roles.Where(r => r.NormalizedName == "ADMIN").FirstOrDefault();
+                var role = _context.Roles.Where(r => r.NormalizedName == "EMPLOYEE").FirstOrDefault();
                 var userRole = _context.UserRoles.Where(u => u.UserId == user.Id && u.RoleId == role.Id).FirstOrDefault();
 
                 if (userRole != null)
                 {
-                    returnUrl = Url.Content("~/Admin/");
+                    returnUrl = Url.Content("~/Reservations/");
                 }
 
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
