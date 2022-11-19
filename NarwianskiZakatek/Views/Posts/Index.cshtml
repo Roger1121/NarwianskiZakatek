@@ -2,20 +2,21 @@
 
 <h1>Witaj na stronie gospodarstwa agroturystycznego Narwiański Zakątek!</h1>
 <partial name="_Warning" />
+<hr/>
 @foreach (var item in Model)
 {
-    <h1>
+    <h3>
         @item.Title
-    </h1>
-    <h4>
+    </h3>
+    <h5>
         @item.getDateWithFormat()
-    </h4>
+    </h5>
     <table>
         <tr>
             @if (item.getFullPhotoPath() != null)
             {
                 <td>
-                    <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110" />
+                    <img style="margin: 10px; object-fit: fill;" src="@item.getFullPhotoPath()" width="120" height="110" />
                 </td>
             }
             else 

@@ -622,7 +622,7 @@ namespace NarwianskiZakatek.Models
                         context.Posts.Add(new Post()
                         {
                             Title = "Nowa strona gospodarstwa",
-                            DateCreated = new DateTime(2022, 8, 15),
+                            DateCreated = new DateTime(2022, 8, 3),
                             PhotoUrl = "1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
                             Content = "Pragniemy przedstawić wam naszą nową stronę internetową, która powstała w ramach pracy inżynierskiej" +
                             " we współpracy z Politechniką Białostocką. Korzystając z nowej witryny możecie dowiedzieć się więcej o naszym gospodarstwie," +
@@ -632,8 +632,19 @@ namespace NarwianskiZakatek.Models
                         });
                         context.Posts.Add(new Post()
                         {
+                            Title = "Prace remontowe",
+                            DateCreated = new DateTime(2022, 8, 10),
+                            PhotoUrl = "5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG",
+                            Content = "Witajcie. Jak zapewne niektórzy z gości mogli już zauważyć, w naszym gospodarstwie zaczynają się prace remontowe związane z wymianami" +
+                            " dachów na budynkach gospodarczych. Z tego też powodu jesteśmy zmuszeni ograniczyć liczbę odwiedzających, za co bardzo serdecznie przepraszamy." +
+                            " Liczymy, że te niedogodności nie potrwają długo i wkrótce będziemy mogli wrócić do normalnego trybu pracy. Wszystkim gościom, których pobyt" +
+                            " będziemy zmuszeni anulować lub przesunąć (pomimo widniejących na stronie wolnych miejsc) postaramy się zrekompensować niedogodności poprzez" +
+                            " obniżenie ceny lub rezerwację nocy w jednym z zaprzyjaźnionych gospodarstw agroturystycznych w okolicy. Jeszcze raz przepraszamy za utrudnienia."
+                        });
+                        context.Posts.Add(new Post()
+                        {
                             Title = "Sejmiki bocianów",
-                            DateCreated = new DateTime(2022, 8, 15),
+                            DateCreated = new DateTime(2022, 8, 16),
                             PhotoUrl = "801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG",
                             Content = "W tym roku w okolicach naszego gospodarstwa możemy obserwować przepiękne zebrania bocianów szykujących się do odlotu" +
                             " nazywane Bocianimi sejmikami. Zebrania takie mogą liczyc nawet ok. 50 osobników w różnym wieku. Mają one na celu wspólne przygotowanie" +
@@ -644,8 +655,18 @@ namespace NarwianskiZakatek.Models
                         });
                         context.Posts.Add(new Post()
                         {
+                            Title = "Once in a blue moon",
+                            DateCreated = new DateTime(2022, 9, 25),
+                            PhotoUrl = "2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
+                            Content = "Niebieska pełnia, czyli druga pełnia księżyca występująca w jednym miesiącu, lub trzecia z czterech występujących w czasie jednej pory roku." +
+                            " Jest to zjawisko na tyle rzadkie, że w kulturze angielskiej doczekało się nawet swojego powiedzenia. Zwrot \"once in a blue moon\" (raz na niebieski księżyc" +
+                            " - tłum. autora) oznacza wydarzenie, które odbywa się bardzo rzadko. Faktycznie, ostatnia niebieska pełnia miała miejsce 22 sierpnia, a na kolejną przyjdzie" +
+                            " nam czekać ponad 2 lata, bo aż do 31 sierpnia 2023."
+                        });
+                        context.Posts.Add(new Post()
+                        {
                             Title = "Nocne warsztaty fotograficzne",
-                            DateCreated = new DateTime(2022, 8, 28),
+                            DateCreated = new DateTime(2022, 9, 1),
                             PhotoUrl = "441f0284-4df8-4d6e-b8ac-38bb960d5673.JPG",
                             Content = "Pomimo niesprzyjającej ostatnio pogody, udało nam się, we współpracy z zaprzyjaźnionym fotografem, zrealizować nocne warsztaty fotograficzne." +
                             " Uczestnicy mieli okazję dowiedzieć się, jak działa obiektyw aparatu oraz poznać podstawowe zasady kompozycji kadru i doboru ekspozycji." +
@@ -653,17 +674,75 @@ namespace NarwianskiZakatek.Models
                             " fotograficznych było wprowadzenie do obróbki zdjęć w programach takich, jak Gimp, czy Canon Digital Photo Professional. Dziękujemy wszystkim" +
                             " zainteresowanym za udział i liczymy, że podczas następnej edycji warsztatów będzie was jeszcze więcej."
                         });
-
                         context.Posts.Add(new Post()
                         {
                             Title = "Na grzyby...",
-                            DateCreated = new DateTime(2022, 9, 3),
+                            DateCreated = new DateTime(2022, 9, 9),
                             PhotoUrl = "69491762-d0a2-47ed-b920-864bd7bba243.JPG",
                             Content = "Przełom sierpnia i września, to doskonały czas, aby udać się do lasu w poszukiwaniu grzybów. Prawdziwki, podgrzybki czy kurki, są to grzyby," +
                             " które pospolicie występują w naszych lasach, a przyrządzane na setki różnych sposobów od lat wzbogacają smak potraw znajdujących się na naszych stołach." +
                             " Zupa kurkowa, kaszotto z borowikami czy kanie smażone w bułce tartej to tylko pojedyncze przykłady dań zawierających te \"małe leśne skurczybyki\"." +
                             " Ze względu na trwający już sezon, potrawy grzybowe powracają również do menu naszej restauracji i będą tam figurowały przez najblizsze tygodnie." +
                             " Zapraszamy do zapoznania się ze zaktualizowaną ofertą restauracji i życzymy smacznego."
+                        });
+                        context.Posts.Add(new Post()
+                        {
+                            Title = "Z archiwum NZ",
+                            DateCreated = new DateTime(2022, 9, 18),
+                            PhotoUrl = "e3c1b9a5-f6db-46c0-8d03-0b5487f3f089.JPG",
+                            Content = "Często zdarza się, że wydarzeń w naszym gospodarstwie jest tak dużo, że nie jesteśmy w stanie opowiedzieć wam o wszystkich. Część postów trafia wtedy" +
+                            " do naszego lokalnego archiwum, dzięki czemu możemy dzielić się nimi z wami w czasie, gdy dzieje się mniej. Jako że ostatnimi czasy pogoda wyjątkowo nie sprzyja" +
+                            " spędzaniu czasu na dworze, zapraszamy do lektury posta od Narwiańskiego Zakątka. Dzisiaj, tak bardziej historycznie, przyjrzymy się trochę bliżej kościołowi" +
+                            " farnemu w Białymstoku... a konkretnie XX-wiecznej dobudówce do XVII-wiecznego kościoła farnego. W ramach polityki rusyfikacji ludności polskiej nie pozwalano na" +
+                            " budowę nowej świątyni. Wierni dostali jednak od władzy carskiej zgodę na rozbudowę istniejącego kościoła ufundowanego przez Wiesiołowskich. Przybudówka, powstająca" +
+                            " w miejscu prezbiterium Starego Kościoła, rozrosła się jednak do tego stopnia, że de facto zaczęto ją wykorzystywać jako pełnoprawny kościół. W ten sposób powstał" +
+                            " budynek, który znamy dzisiaj jako bazylikę archikatedralną Wniebowzięcia Najświętszej Maryi Panny w Białymstoku."
+                        });
+                        context.Posts.Add(new Post()
+                        {
+                            Title = "Uwaga! Łosie",
+                            DateCreated = new DateTime(2022, 9, 27),
+                            PhotoUrl = "b8109a75-693d-4ae6-bfe0-c6ead1af5911.JPG",
+                            Content = "Moi drodzy. W związku z trwającym sezonem jesienno-zimowym apelujemy do was o ostrożność na drogach. Coraz częściej docierają do nas informacje" +
+                            " o spotykanych przez was dzikich zwierzętach, w szczególności łosiach. Przypominamy, że zderzenie samochodu z łosiem może skończyć się bardzo tragicznie" +
+                            " zarówno dla kierowcy samochodu, jak i jego pasażerów. Dodatkowo gęste mgły często ograniczają widoczność i znacznie skracają czas na reakcję po dostrzeżeniu" +
+                            " zwierzęcia. Kierowco, jeżeli widzisz znak ostrzegawczy, zdejmij nogę z gazu, on nie stoi tam bez powodu. Bardzo cieszymy się z liczby odwiedzających nas gości," +
+                            " ale bardzo zależy nam, abyście wszyscy dotarli do nas bezpiecznie. Trzymajcie się ciepło i do zobaczenia."
+                        });
+                        context.Posts.Add(new Post()
+                        {
+                            Title = "Historycznie - parafia w Choroszczy",
+                            DateCreated = new DateTime(2022, 10, 12),
+                            PhotoUrl = "ea230ca0-f403-414d-8563-d691c6692548.JPG",
+                            Content = "Dzisiaj ponownie mamy dla was posta z serii o lokalnej historii, jednak tym razem będzie on dotyczył parafii w Choroszczy. Pierwsze wzmianki o istniejącej" +
+                            " w Choroszczy parafii rzymskokatolickiej z drewnianym kościołem pochodzą z 22 października 1459 roku. W roku 1507 król Zygmunt Stary nadaje Choroszczy prawa miejskie." +
+                            " W 1654 roku wojewoda trocki, Mikołaj Stefan Pac, herbu Gozdawa funduje w Choroszczy drewniany klasztor, przy kościele zbudowanym przez jego rodziców Stefana i" +
+                            " Marcjannę Paców i powierza prowadzenie parafii ojcom dominikanom. Po dwóch pożarach w 1683 i 1707, hetman wielki koronny, kasztelan krakowski Jan Klemens Branicki" +
+                            " w 1756 roku buduje tu murowany klasztor i kościół, konsekrowany w 1770 roku. W 1832 roku dominikanie zostali przez rząd carski wysiedleni do Różanegostoku, a parafia" +
+                            " przeszła pod zarząd księży diecezjalnych. W 1915 roku podczas działań wojennych kościół został ponownie uszkodzony, a w 1938 roku z nieustalonych przyczyn spłonęło" +
+                            " prawie całe wnętrze kościoła i dach. W roku 1944 wojska niemieckie wysadziły wieżę, która zniszczyła sklepienie świątyni. Kościół odbudowano w latach 1945 - 1947" +
+                            " i w takiej formie przetrwał on już do chwili obecnej."
+                        });
+                        context.Posts.Add(new Post()
+                        {
+                            Title = "Historycznie - kościół Św. Jadwigi Królowej",
+                            DateCreated = new DateTime(2022, 10, 22),
+                            PhotoUrl = "28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.JPG",
+                            Content = "Dzisiaj znowu wracamy do serii postów historycznych i tak... znowu będziemy opowiadać historię pewnego kościoła - kościoła Św. Jadwigi Królowej. Jego budowa" +
+                            " została zlecona w kwietniu 1983 roku. Początkowo planowano nadanie mu tytułu Św. Maksymiliana Marii Kolbego, jednak w maju 1983 Kuria przesłała informację, iż" +
+                            " pierwszeństwo w otrzymaniu tego tytułu ma budujący się już kościół na Pietraszach. Ostatecznie kościołowi i parafii w osiedlu Słoneczny Stok nadano tytuł bł. Jadwigi" +
+                            " Królowej. \nKościół posiada dwie oddzielone od siebie i niezależne części - górną i dolną.Dolna część została oddana do użytku przed ukończeniem całej budowy, aby można" +
+                            " w niej było odprawiać nabożeństwa."
+                        });
+                        context.Posts.Add(new Post()
+                        {
+                            Title = "Warsztaty florystyczne",
+                            DateCreated = new DateTime(2022, 10, 30),
+                            PhotoUrl = "5e93e30b-1c15-4156-b319-0294d5d30cc5.JPG",
+                            Content = "Dzięki uprzejmości znajomej kwiaciarki nasze gospodarstwo agroturystyczne miało przyjemność organizować w ostatnim czasie warsztaty florystyczne. Szczególne" +
+                            " zainteresowanie wzbudziły one wśród pań, które miały okazję zapoznac się ze sposobami kompozycji bukietów i wiązanek, a dla niektórych okazały się prawdziwą lekcją" +
+                            " cierpliwości i pokory. Wbrew pozorom, wiązanie bukietu wcale nie należy do prostych czynności i wymaga niezwykłej precyzji, staranności i zaangażowania. Szczególnie" +
+                            " panowie biorący udział w warsztatach na pewno już nigdy nie spojrzą w ten sam sposób na bukiet zamawiany w kwiaciarni dla ukochanej."
                         });
                         context.SaveChanges();
                     }

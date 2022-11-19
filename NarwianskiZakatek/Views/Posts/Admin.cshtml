@@ -8,14 +8,15 @@
 <p>
     <a asp-action="Create">Dodaj posta</a>
 </p>
+<hr />
 @foreach (var item in Model)
 {
-    <h1>
+    <h3>
         @item.Title
-    </h1>
-    <h4>
+    </h3>
+    <h5>
         @item.getDateWithFormat()
-    </h4>
+    </h5>
     <table>
         <tr>
             <td>
