@@ -41,7 +41,7 @@ namespace NarwianskiZakatek.Controllers
 
             ViewBag.Admins = admins;
             ViewBag.Employees = employees;
-            int pageSize = 3;
+            int pageSize = 10;
 
             var users = _context.Users.OrderBy(u => u.NormalizedEmail).AsNoTracking();
             if (!string.IsNullOrEmpty(email))

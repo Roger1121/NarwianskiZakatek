@@ -89,7 +89,7 @@ namespace NarwianskiZakatek.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 10;
             return _context.Reservations != null ?
                 View(await PaginatedList<Reservation>.CreateAsync(reservations.AsNoTracking(), pageNumber ?? 1, pageSize)) :
                           Problem("Entity set 'ApplicationDbContext.Users'  is null.");
@@ -117,7 +117,7 @@ namespace NarwianskiZakatek.Controllers
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
             ViewBag.Message = message;
-            int pageSize = 3;
+            int pageSize = 10;
 
             ViewBag.SortOrder = sortOrder;
             var reservations = _context.Reservations.Where(r => r.UserId == user.Id);

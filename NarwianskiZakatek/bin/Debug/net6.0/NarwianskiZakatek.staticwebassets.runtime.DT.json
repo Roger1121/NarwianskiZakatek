@@ -54,6 +54,36 @@
       },
       "graphics": {
         "Children": {
+          "descriptions": {
+            "Children": {
+              "2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/descriptions/2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG"
+                },
+                "Patterns": null
+              },
+              "9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/descriptions/9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG"
+                },
+                "Patterns": null
+              },
+              "d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "graphics/descriptions/d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG"
+                },
+                "Patterns": null
+              }
+            },
+            "Asset": null,
+            "Patterns": null
+          },
           "header.jpg": {
             "Children": null,
             "Asset": {
