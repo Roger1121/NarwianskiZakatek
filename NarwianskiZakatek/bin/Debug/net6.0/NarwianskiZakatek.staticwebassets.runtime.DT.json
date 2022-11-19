@@ -92,6 +92,26 @@
             },
             "Patterns": null
           },
+          "posts": {
+            "Children": {
+              "2022": {
+                "Children": {
+                  "1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG": {
+                    "Children": null,
+                    "Asset": {
+                      "ContentRootIndex": 0,
+                      "SubPath": "graphics/posts/2022/1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG"
+                    },
+                    "Patterns": null
+                  }
+                },
+                "Asset": null,
+                "Patterns": null
+              }
+            },
+            "Asset": null,
+            "Patterns": null
+          },
           "weather": {
             "Children": {
               "clouds.svg": {

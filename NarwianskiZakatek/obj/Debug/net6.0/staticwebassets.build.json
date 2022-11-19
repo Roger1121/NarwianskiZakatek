@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dj0j++kyimlw1SqoKiVM6xINbLqGtmx5mZxVx2OwfpE=",
+  "Hash": "PS8VNPX97i6Quk1BTZIqJMZR/KHxvmdbVWWwqPlucpE=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -1222,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\graphics\\header.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "graphics/posts/2022/1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG"
     },
     {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\clouds.svg",

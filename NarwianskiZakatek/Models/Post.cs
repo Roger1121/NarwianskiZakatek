@@ -1,4 +1,7 @@
-﻿namespace NarwianskiZakatek.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace NarwianskiZakatek.Models
 {
     public class Post
     {
@@ -6,6 +9,7 @@
 
         public string Title { get; set; } = string.Empty;
 
+        [Display(Name = "Data dodania")]
         public DateTime DateCreated { get; set; }
 
         public string Content { get; set; } = string.Empty;
@@ -25,8 +29,8 @@
         public string getFullPhotoPath()
         {
             if (PhotoUrl == null)
-                return null;
-            return "/graphics/posts/" + PhotoUrl;
+                return "";
+            return "/graphics/posts/" + DateCreated.Year + "/" + PhotoUrl;
         }
     }
 }
