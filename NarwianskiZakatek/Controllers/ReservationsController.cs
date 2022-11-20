@@ -235,16 +235,16 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Delete(string? id)
         {
             if (id == null || _context.Reservations == null)
             {
                 return NotFound();
             }
-            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
 
-            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().Name)
+            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
+            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
             {
                 return NotFound();
             }
@@ -263,7 +263,7 @@ namespace NarwianskiZakatek.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
             }
             var reservation = _context.Reservations.Find(id);
-            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().Name)
+            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
             {
                 return RedirectToAction("MyReservations", new { message = "Rezerwacja nie została znaleziona lub nie masz uprawnień do anulowania tej rezerwacji." });
             }
@@ -309,6 +309,8 @@ namespace NarwianskiZakatek.Controllers
             if (reservation != null)
             {
                 _context.Reservations.Remove(reservation);
+                var user = _context.Users.Where(u => u.Id == reservation.UserId).First();
+                _sender.CancelReservationAsync(user.Email, reservation);
             }
 
             _context.SaveChanges();

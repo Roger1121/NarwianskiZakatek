@@ -146,7 +146,8 @@ namespace NarwianskiZakatek.Controllers
                 PhotoUrl = post.getFullPhotoPath(),
                 PostId = post.PostId,
                 Title = post.Title,
-                Content = post.Content
+                Content = post.Content,
+                DateCreated = post.DateCreated
             });
         }
 

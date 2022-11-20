@@ -2,7 +2,6 @@
 
 <h3>Czy na pewno chcesz anulować tę rezerwację?</h3>
 <div>
-    <h4>Reservation</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -28,6 +27,6 @@
     <form asp-action="DeleteAny">
         <input type="hidden" asp-for="ReservationId" />
         <input type="submit" value="Anuluj rezerwację" class="btn btn-danger" /> |
-        <a asp-action="MyReservations">Powrót do listy</a>
+        <a asp-action="Index">Powrót do listy</a>
     </form>
 </div>

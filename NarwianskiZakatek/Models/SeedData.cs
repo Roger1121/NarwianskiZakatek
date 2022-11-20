@@ -362,8 +362,8 @@ namespace NarwianskiZakatek.Models
                         {
                             User = user,
                             UserId = user.Id,
-                            BeginDate = new DateTime(2022, 7, 8),
-                            EndDate = new DateTime(2022, 7, 10),
+                            BeginDate = new DateTime(2022, 11,19),
+                            EndDate = new DateTime(2022, 11, 21),
                             Price = price,
                             Opinion = ""
                         };
@@ -391,8 +391,8 @@ namespace NarwianskiZakatek.Models
                         {
                             User = user,
                             UserId = user.Id,
-                            BeginDate = new DateTime(2022, 8, 8),
-                            EndDate = new DateTime(2022, 8, 14),
+                            BeginDate = new DateTime(2022, 12, 8),
+                            EndDate = new DateTime(2022, 12, 14),
                             Price = price,
                             Opinion = ""
                         };
