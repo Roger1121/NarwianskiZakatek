@@ -11,10 +11,11 @@
 }
 
 #weather_container {
-    width: 392px;
+    width: 100%;
 }
 
 #current_day {
+    justify-content: center;
     margin: auto;
     width: 45%;
 }
@@ -26,7 +27,7 @@
 }
 
 #icon_today {
-    width: 110px;
+    width: 100%;
 }
 
 #temperature_today {
@@ -42,9 +43,11 @@
 }
 
 #forecast {
-    width: 100%;
-    display: flex;
-    margin: 2px;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 6px;
+    margin: 12px 8px;
     padding: 2px;
     background-color: #0474ba;
     border-style: outset;
@@ -53,12 +56,13 @@
 }
 
 .forecast_tile {
-    width: 90px;
-    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .weather_icon {
-    width: auto;
+    width: 100%;
 }
 
 .weather_date {
