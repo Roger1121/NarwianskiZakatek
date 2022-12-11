@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NarwianskiZakatek.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221112093756_db_schema")]
-    partial class db_schema
+    [Migration("20221211091738_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -370,6 +370,9 @@ namespace NarwianskiZakatek.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoomId"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");

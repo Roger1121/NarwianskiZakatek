@@ -20,6 +20,9 @@ namespace NarwianskiZakatek.Models
         [Display(Name = "Cena za noc")]
         [Range(0, int.MaxValue, ErrorMessage = "Cena musi być liczbą dodatnią")]
         public decimal Price { get; set; }
+
+        [Display(Name = "Dostępny")]
+        public bool IsActive { get; set; }
         public virtual ICollection<ReservedRoom>? ReservedRooms { get; set; }
 
         public override string ToString()

@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using System.Data;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -15,6 +17,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Rooms
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Index()
         {
               return _context.Rooms != null ? 
@@ -23,6 +26,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Rooms/Create
+        [Authorize(Roles = "Admin,Employee")]
         public IActionResult Create()
         {
             return View();
@@ -33,7 +37,8 @@ namespace NarwianskiZakatek.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoomNumber,RoomCapacity")] Room room)
+        [Authorize(Roles = "Admin,Employee")]
+        public async Task<IActionResult> Create([Bind("RoomNumber,RoomCapacity,Price,IsActive")] Room room)
         {
             if (ModelState.IsValid)
             {
@@ -46,6 +51,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Rooms/Edit/5
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Rooms == null)
@@ -66,7 +72,8 @@ namespace NarwianskiZakatek.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RoomId,RoomNumber,RoomCapacity")] Room room)
+        [Authorize(Roles = "Admin,Employee")]
+        public async Task<IActionResult> Edit(int id, [Bind("RoomId,RoomNumber,RoomCapacity,Price,IsActive")] Room room)
         {
             if (id != room.RoomId)
             {
@@ -97,6 +104,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Rooms/Delete/5
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Rooms == null)
@@ -117,6 +125,7 @@ namespace NarwianskiZakatek.Controllers
         // POST: Rooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Rooms == null)
