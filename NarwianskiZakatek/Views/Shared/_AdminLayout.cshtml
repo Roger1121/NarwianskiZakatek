@@ -18,12 +18,15 @@
         <div class="container-fluid no-pad">
             <img class="fit" src="~/graphics/Header.jpg" runat="server" />
             <div class="top-right">
-                <a class="pagetitle" style="" asp-area="" asp-controller="" asp-action="Index">Narwiański Zakątek</a>
+                <a class="pagetitle fs-1" style="" asp-area="" asp-controller="" asp-action="Index">Narwiański Zakątek</a>
             </div>
         </div>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="Noclegi">Noclegi</a>
