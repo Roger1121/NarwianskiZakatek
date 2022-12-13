@@ -365,8 +365,8 @@ namespace NarwianskiZakatek.Controllers
         private List<int> GetIdsOfReservedRooms(DateTime beginDate, DateTime endDate)
         {
             List<ReservedRoom> reservedRooms = _context.ReservedRooms
-                .Where(r => (r.Reservation.BeginDate >= beginDate && r.Reservation.BeginDate <= endDate)
-                         || (r.Reservation.EndDate >= beginDate && r.Reservation.BeginDate <= endDate)).ToList();
+                .Where(r => !r.Reservation.IsCancelled && ((r.Reservation.BeginDate >= beginDate && r.Reservation.BeginDate <= endDate)
+                         || (r.Reservation.EndDate >= beginDate && r.Reservation.BeginDate <= endDate))).ToList();
             return reservedRooms.Select(r => r.RoomId).Distinct().ToList();
         }
     }
