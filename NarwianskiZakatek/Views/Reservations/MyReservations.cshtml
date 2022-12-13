@@ -64,6 +64,9 @@
                     </a>
                 }
             </th>
+            <th>
+                Status rezerwacji
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -79,6 +82,28 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @if (item.IsCancelled)
+                    {
+                        <text>Anulowana</text>
+                    }
+                    else if (item.BeginDate > DateTime.Today)
+                    {
+                        <text>Złożona</text>
+                    }
+                    else if (item.EndDate >= DateTime.Today)
+                    {
+                        <text>W trakcie</text>
+                    }
+                    else if (item.Opinion == null)
+                    {
+                        <text>Zakończona</text>
+                    }
+                    else
+                    {
+                        <text>Oceniona</text>
+                    }
                 </td>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a>

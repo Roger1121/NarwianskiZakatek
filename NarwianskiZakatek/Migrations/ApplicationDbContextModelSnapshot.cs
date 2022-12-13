@@ -317,6 +317,9 @@ namespace NarwianskiZakatek.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Opinion")
                         .HasColumnType("text");
 

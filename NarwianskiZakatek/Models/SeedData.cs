@@ -333,8 +333,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 12, 1),
                             EndDate = new DateTime(2022, 12, 6),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -362,8 +361,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 6, 6),
                             EndDate = new DateTime(2022, 6, 13),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -391,8 +389,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 11,19),
                             EndDate = new DateTime(2022, 11, 21),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -420,8 +417,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 12, 8),
                             EndDate = new DateTime(2022, 12, 14),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -449,8 +445,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 4, 1),
                             EndDate = new DateTime(2022, 4, 3),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -510,8 +505,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 9, 7),
                             EndDate = new DateTime(2022, 9, 10),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -539,8 +533,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 6, 6),
                             EndDate = new DateTime(2022, 6, 13),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -568,8 +561,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 7, 8),
                             EndDate = new DateTime(2022, 7, 10),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -597,8 +589,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 8, 8),
                             EndDate = new DateTime(2022, 8, 14),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 
@@ -626,8 +617,7 @@ namespace NarwianskiZakatek.Models
                             UserId = user.Id,
                             BeginDate = new DateTime(2022, 4, 8),
                             EndDate = new DateTime(2022, 4, 11),
-                            Price = price,
-                            Opinion = ""
+                            Price = price
                         };
                         context.Reservations.Add(reservation);
 

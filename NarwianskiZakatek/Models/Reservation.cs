@@ -18,6 +18,7 @@ namespace NarwianskiZakatek.Models
         public string? Opinion { get; set; }
         [Display(Name = "Ocena")]
         public int Rating { get; set; }
+        public bool IsCancelled { get; set; } = false;
         public virtual ICollection<ReservedRoom>? ReservedRooms { get; set; }
     }
 }

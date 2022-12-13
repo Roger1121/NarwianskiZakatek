@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NarwianskiZakatek.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221211091738_init")]
-    partial class init
+    [Migration("20221213102552_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -318,6 +318,9 @@ namespace NarwianskiZakatek.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Opinion")
                         .HasColumnType("text");

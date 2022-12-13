@@ -269,7 +269,8 @@ namespace NarwianskiZakatek.Controllers
             }
             if (reservation != null)
             {
-                _context.Reservations.Remove(reservation);
+                reservation.IsCancelled = true;
+                _context.SaveChanges();
                 var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
                 _sender.CancelReservationAsync(user.Email, reservation);
             }
@@ -308,7 +309,8 @@ namespace NarwianskiZakatek.Controllers
             var reservation = _context.Reservations.Find(id);
             if (reservation != null)
             {
-                _context.Reservations.Remove(reservation);
+                reservation.IsCancelled = true;
+                _context.SaveChanges();
                 var user = _context.Users.Where(u => u.Id == reservation.UserId).First();
                 _sender.CancelReservationAsync(user.Email, reservation);
             }
