@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NarwianskiZakatek.Models.Post>
+﻿@model NarwianskiZakatek.Services.PaginatedList<NarwianskiZakatek.Models.Post>
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -34,3 +34,21 @@
         </tr>
     </table>
 }
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "pointer-events: none" : "";
+    var nextDisabled = !Model.HasNextPage ? "pointer-events: none" : "";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary" : "btn btn-primary";
+}
+
+<a asp-action="Admin"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="@prevClass" style="@prevDisabled">
+    Poprzednia strona
+</a>
+<a asp-action="Admin"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="@nextClass" style="@nextDisabled">
+    Kolejna strona
+</a>

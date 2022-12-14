@@ -86,14 +86,14 @@ namespace NarwianskiZakatek.Controllers
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(viewModel.File.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(viewModel.File.FileName).ToLower();
 
                     using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
                     {
                         viewModel.File.CopyTo(stream);
                         if(description.PhotoUrl != null)
                         {
-                            System.IO.File.Delete(description.getFullPhotoPath());
+                            System.IO.File.Delete("wwwroot" + description.getFullPhotoPath());
                         }
                         description.PhotoUrl = fileName;
                     }

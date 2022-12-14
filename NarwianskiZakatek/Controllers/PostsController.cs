@@ -13,7 +13,7 @@ namespace NarwianskiZakatek.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<AppUser> _userManager;
 
-        public PostsController(UserManager<AppUser> userManager, 
+        public PostsController(UserManager<AppUser> userManager,
             ApplicationDbContext context)
         {
             _userManager = userManager;
@@ -42,29 +42,17 @@ namespace NarwianskiZakatek.Controllers
             ViewBag.Warnings = Warnings;
 
             int pageSize = 10;
-            return _context.Posts != null ?  
+            return _context.Posts != null ?
                 View(await PaginatedList<Post>.CreateAsync(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber ?? 1, pageSize)) :
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 
-        public async Task<IActionResult> Admin(string? message)
+        public async Task<IActionResult> Admin(string? message, int? pageNumber)
         {
-            var username = HttpContext.User.Identity.Name;
-            var Warnings = new List<string>();
-            if (username != null)
-            {
-                var user = _context.Users.Where(u => u.UserName == username).First();
-                var warnings = _context.Warnings.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
-                foreach (var warning in warnings)
-                {
-                    warning.WasDisplayed = true;
-                    Warnings.Add(warning.Message);
-                }
-                _context.SaveChanges();
-            }
-            ViewBag.Warnings = Warnings;
-            return _context.Posts != null ? 
-                          View(await _context.Posts.OrderByDescending(p => p.DateCreated).ToListAsync()) :
+            ViewBag.Message = message;
+            int pageSize = 10;
+            return _context.Posts != null ?
+                View(await PaginatedList<Post>.CreateAsync(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber ?? 1, pageSize)) :
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 
@@ -109,18 +97,18 @@ namespace NarwianskiZakatek.Controllers
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(post.File.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(post.File.FileName).ToLower();
 
                     using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
                     {
                         post.File.CopyTo(stream);
-                        newPost.PhotoUrl = DateTime.Now.Year + "/" + fileName;
+                        newPost.PhotoUrl = fileName;
                     }
                 }
 
                 newPost.Content = post.Content;
                 newPost.Title = post.Title;
-                newPost.DateCreated= DateTime.Now;
+                newPost.DateCreated = DateTime.Now;
                 _context.Add(newPost);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Admin", new { message = "Post został utworzony." });
@@ -170,23 +158,23 @@ namespace NarwianskiZakatek.Controllers
                     Post post = _context.Posts.Where(p => p.PostId == editedPost.PostId).First();
                     post.Title = editedPost.Title;
                     post.Content = editedPost.Content;
-                    if(editedPost.File != null)
+                    if (editedPost.File != null)
                     {
                         string path = "wwwroot/graphics/posts/" + DateTime.Now.Year;
                         if (!Directory.Exists(path))
                         {
                             Directory.CreateDirectory(path);
                         }
-                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(editedPost.File.FileName);
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(editedPost.File.FileName).ToLower();
 
                         using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
                         {
                             editedPost.File.CopyTo(stream);
                             if (post.PhotoUrl != null)
                             {
-                                System.IO.File.Delete(post.getFullPhotoPath());
+                                System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
                             }
-                            post.PhotoUrl = DateTime.Now.Year + "/" + fileName;
+                            post.PhotoUrl = fileName;
                         }
                     }
                     _context.Update(post);
@@ -240,18 +228,18 @@ namespace NarwianskiZakatek.Controllers
             {
                 if (post.PhotoUrl != null)
                 {
-                    System.IO.File.Delete(post.getFullPhotoPath());
+                    System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
                 }
                 _context.Posts.Remove(post);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PostExists(int id)
         {
-          return (_context.Posts?.Any(e => e.PostId == id)).GetValueOrDefault();
+            return (_context.Posts?.Any(e => e.PostId == id)).GetValueOrDefault();
         }
     }
 }
