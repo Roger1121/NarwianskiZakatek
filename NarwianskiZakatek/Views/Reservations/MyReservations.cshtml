@@ -25,13 +25,13 @@
             <th>
                 @if (ViewBag.SortOrder == "begin")
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin_desc" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Data rozpoczęcia
                     </a>
                 }
                 else
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="begin" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Data rozpoczęcia
                     </a>
                 }
@@ -39,13 +39,13 @@
             <th>
                 @if (ViewBag.SortOrder == "end")
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end_desc" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Data zakończenia
                     </a>
                 }
                 else
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="end" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Data zakończenia
                     </a>
                 }
@@ -53,13 +53,13 @@
             <th>
                 @if (ViewBag.SortOrder == "price")
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price_desc" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Cena (zł)
                     </a>
                 }
                 else
                 {
-                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price">
+                    <a asp-action="MyReservations" asp-route-pageNumber="@(Model.PageIndex)" asp-route-sortOrder="price" asp-route-beginFrom="@ViewBag.BeginFrom" asp-route-beginTo="@ViewBag.BeginTo" asp-route-endFrom="@ViewBag.EndFrom" asp-route-endTo="@ViewBag.EndTo" asp-route-priceFrom="@ViewBag.PriceFrom" asp-route-priceTo="@ViewBag.PriceTo">
                         Cena (zł)
                     </a>
                 }
@@ -124,17 +124,19 @@
 </table>
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "display:none;" : "";
-    var nextDisabled = !Model.HasNextPage ? "display:none;" : "";
+    var prevDisabled = !Model.HasPreviousPage ? "pointer-events: none" : "";
+    var nextDisabled = !Model.HasNextPage ? "pointer-events: none" : "";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary" : "btn btn-primary";
 }
 
 <a asp-action="MyReservations"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="btn btn-default" style="@prevDisabled">
+   class="@prevClass" style="@prevDisabled">
     Poprzednia strona
 </a>
 <a asp-action="MyReservations"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="btn btn-default" style="@nextDisabled">
+   class="@nextClass" style="@nextDisabled">
     Kolejna strona
 </a>

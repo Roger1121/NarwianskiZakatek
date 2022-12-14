@@ -12,7 +12,7 @@ namespace NarwianskiZakatek.Models
         public DateTime BeginDate { get; set; }
         [Display(Name = "Data zakończenia")]
         public DateTime EndDate { get; set; }
-        [Display(Name = "Cena za dobę")]
+        [Display(Name = "Łączny koszt rezerwacji")]
         public decimal Price { get; set; }
         [Display(Name = "Opinia")]
         public string? Opinion { get; set; }

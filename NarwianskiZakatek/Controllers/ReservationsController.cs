@@ -1,6 +1,4 @@
-﻿using Foolproof;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity.UI.Services;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,8 +6,6 @@ using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
-using NuGet.Protocol.Plugins;
-using System.Drawing.Printing;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -91,7 +87,7 @@ namespace NarwianskiZakatek.Controllers
 
             int pageSize = 10;
             return _context.Reservations != null ?
-                View(await PaginatedList<Reservation>.CreateAsync(reservations.AsNoTracking(), pageNumber ?? 1, pageSize)) :
+                View(await PaginatedList<Reservation>.CreateAsync(reservations.Include(r => r.User).AsNoTracking(), pageNumber ?? 1, pageSize)) :
                           Problem("Entity set 'ApplicationDbContext.Users'  is null.");
         }
 
@@ -320,11 +316,11 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "User")]
-        public IActionResult Rate(string reservationId)
+        public IActionResult Rate(string id)
         {
             return View(new OpinionViewModel()
             {
-                ReservationId = reservationId
+                ReservationId = id
             });
         }
 

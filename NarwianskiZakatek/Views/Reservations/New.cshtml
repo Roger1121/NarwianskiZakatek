@@ -1,22 +1,22 @@
 ﻿@model NarwianskiZakatek.ViewModels.RoomsViewModel
 
 <div class="row">
-    <label>Wybierz układ pokoi</label>
+    <h3>Wybierz układ pokoi</h3>
     <form asp-action="Confirm">
-        <div class="form-group">
+        <div class="form-group" style="margin: 5px;">
             <label asp-for="BeginDate" class="control-label"></label>
             <input asp-for="BeginDate" class="form-control" readonly />
             <span asp-validation-for="BeginDate" class="text-danger"></span>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="margin: 5px;">
             <label asp-for="EndDate" class="control-label"></label>
             <input asp-for="EndDate" class="form-control" readonly />
             <span asp-validation-for="EndDate" class="text-danger"></span>
         </div>
         <select id="roomSelect" asp-for="@Model.Rooms" asp-items="(List<SelectListItem>)ViewBag.RoomList"
-                class="multi-select" multiple="multiple">
+                class="multi-select" multiple="multiple" style="margin: 5px;">
         </select>
-        <div class="form-group">
+        <div class="form-group" style="margin: 5px;">
             <input type="submit" value="Złóż rezerwację" class="btn btn-primary" />
         </div>
     </form>

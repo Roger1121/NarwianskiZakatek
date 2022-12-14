@@ -459,6 +459,37 @@ namespace NarwianskiZakatek.Models
                         }
                         context.SaveChanges();
 
+                        //user 7-13
+                        for (int i = 1; i < 7; i++)
+                        {
+                            rooms = context.Rooms.ToList().GetRange(0, 3);
+                            price = 0;
+                            foreach (var room in rooms)
+                            {
+                                price += room.Price;
+                            }
+                            price *= 7;
+                            reservation = new Reservation()
+                            {
+                                User = user,
+                                UserId = user.Id,
+                                BeginDate = new DateTime(2023, i, 1),
+                                EndDate = new DateTime(2023, i, 3),
+                                Price = price
+                            };
+                            context.Reservations.Add(reservation);
+
+                            foreach (var room in rooms)
+                            {
+                                context.ReservedRooms.Add(new ReservedRoom()
+                                {
+                                    ReservationId = reservation.ReservationId,
+                                    RoomId = room.RoomId
+                                });
+                            }
+                            context.SaveChanges();
+                        }
+
                         // 7
                         user = context.Users.Where(u => u.UserName == "nzemployee279@gmail.com").First();
                         rooms = context.Rooms.ToList().GetRange(3, 2);

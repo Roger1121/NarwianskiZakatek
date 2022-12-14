@@ -2,25 +2,25 @@
 
 <h1>Ocena pobytu</h1>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Rate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group" style="margin: 5px;">
                 <label asp-for="ReservationId" class="control-label"></label>
                 <input asp-for="ReservationId" class="form-control" readonly/>
                 <span asp-validation-for="ReservationId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin: 5px;">
                 <label asp-for="Rating" class="control-label"></label>
                 <input asp-for="Rating" class="form-control" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin: 5px;">
                 <label asp-for="Opinion" class="control-label"></label>
                 <input asp-for="Opinion" class="form-control" />
                 <span asp-validation-for="Opinion" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin: 5px;">
                 <input type="submit" value="Dodaj opinię" class="btn btn-primary" />
             </div>
         </form>
