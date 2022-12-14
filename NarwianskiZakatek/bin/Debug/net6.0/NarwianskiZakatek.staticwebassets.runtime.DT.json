@@ -96,27 +96,11 @@
             "Children": {
               "2022": {
                 "Children": {
-                  "09472774-3203-44d3-9a59-f0ce1987017a.jpg": {
-                    "Children": null,
-                    "Asset": {
-                      "ContentRootIndex": 0,
-                      "SubPath": "graphics/posts/2022/09472774-3203-44d3-9a59-f0ce1987017a.jpg"
-                    },
-                    "Patterns": null
-                  },
                   "1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG": {
                     "Children": null,
                     "Asset": {
                       "ContentRootIndex": 0,
                       "SubPath": "graphics/posts/2022/1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG"
-                    },
-                    "Patterns": null
-                  },
-                  "28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg": {
-                    "Children": null,
-                    "Asset": {
-                      "ContentRootIndex": 0,
-                      "SubPath": "graphics/posts/2022/28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg"
                     },
                     "Patterns": null
                   },
@@ -144,14 +128,6 @@
                     },
                     "Patterns": null
                   },
-                  "5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg": {
-                    "Children": null,
-                    "Asset": {
-                      "ContentRootIndex": 0,
-                      "SubPath": "graphics/posts/2022/5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg"
-                    },
-                    "Patterns": null
-                  },
                   "69491762-d0a2-47ed-b920-864bd7bba243.jpg": {
                     "Children": null,
                     "Asset": {
@@ -165,14 +141,6 @@
                     "Asset": {
                       "ContentRootIndex": 0,
                       "SubPath": "graphics/posts/2022/801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG"
-                    },
-                    "Patterns": null
-                  },
-                  "8fd2f393-4201-480c-aed6-ae82fcd59ff8.jpg": {
-                    "Children": null,
-                    "Asset": {
-                      "ContentRootIndex": 0,
-                      "SubPath": "graphics/posts/2022/8fd2f393-4201-480c-aed6-ae82fcd59ff8.jpg"
                     },
                     "Patterns": null
                   },

@@ -191,7 +191,7 @@ namespace NarwianskiZakatek.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Admin", new { message = "Post został zaktualizowany." });
             }
             return View(editedPost);
         }
@@ -234,7 +234,7 @@ namespace NarwianskiZakatek.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Admin", new { message = "Post został usunięty." });
         }
 
         private bool PostExists(int id)
