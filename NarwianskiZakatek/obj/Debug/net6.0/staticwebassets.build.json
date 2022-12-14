@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8eeEgSaAk4cnN0aGirn0/exClWYFluTE7+75vij4C9M=",
+  "Hash": "08lTVCXWB1QSGK8hFe8smBNUsOW+uKo11ZvQ95Gsn3Q=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -1241,6 +1241,23 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG"
     },
     {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "graphics/posts/2022/28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg"
+    },
+    {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
@@ -1290,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "graphics/posts/2022/5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg"
     },
     {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\69491762-d0a2-47ed-b920-864bd7bba243.jpg",
