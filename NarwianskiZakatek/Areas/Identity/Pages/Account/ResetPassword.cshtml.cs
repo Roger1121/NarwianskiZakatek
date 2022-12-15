@@ -17,11 +17,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     {
         private readonly UserManager<AppUser> _userManager;
         public readonly CaptchaConfig _captchaConfig;
+        private readonly ICaptchaService _captchaService;
 
-        public ResetPasswordModel(UserManager<AppUser> userManager, CaptchaConfig captchaConfig)
+        public ResetPasswordModel(UserManager<AppUser> userManager, CaptchaConfig captchaConfig, ICaptchaService captchaService)
         {
             _userManager = userManager;
             _captchaConfig = captchaConfig;
+            _captchaService = captchaService;
         }
 
         /// <summary>
@@ -71,7 +73,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             public string Code { get; set; }
-
+            public string Captcha { get; set; }
         }
 
         public IActionResult OnGet(string code = null)
@@ -92,7 +94,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !await _captchaService.IsValid(Input.Captcha))
             {
                 return Page();
             }

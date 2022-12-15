@@ -25,6 +25,8 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Captcha config
 builder.Services.AddSingleton(config.GetSection("CaptchaConfig").Get<CaptchaConfig>());
+builder.Services.AddScoped<ICaptchaService, CaptchaService>();
+builder.Services.AddHttpClient<CaptchaService>();
 
 //External login config
 builder.Services.AddAuthentication()

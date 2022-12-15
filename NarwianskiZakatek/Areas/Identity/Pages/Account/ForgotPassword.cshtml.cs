@@ -23,12 +23,14 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly UserManager<AppUser> _userManager;
         private readonly IEmailService _emailSender;
         public readonly CaptchaConfig _captchaConfig;
+        private readonly ICaptchaService _captchaService;
 
-        public ForgotPasswordModel(UserManager<AppUser> userManager, IEmailService emailSender, CaptchaConfig captchaConfig)
+        public ForgotPasswordModel(UserManager<AppUser> userManager, IEmailService emailSender, CaptchaConfig captchaConfig, ICaptchaService captchaService)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _captchaConfig = captchaConfig;
+            _captchaService = captchaService;
         }
 
         /// <summary>
@@ -51,11 +53,12 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+            public string Captcha { get; set; }
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && await _captchaService.IsValid(Input.Captcha))
             {
                 var user = await _userManager.FindByEmailAsync(Input.Email);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))

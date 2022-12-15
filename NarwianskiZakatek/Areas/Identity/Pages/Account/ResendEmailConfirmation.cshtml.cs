@@ -17,11 +17,13 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
     {
         private readonly IEmailService _emailSender;
         public readonly CaptchaConfig _captchaConfig;
+        private readonly ICaptchaService _captchaService;
 
-        public ResendEmailConfirmationModel(IEmailService emailSender, CaptchaConfig captchaConfig)
+        public ResendEmailConfirmationModel(IEmailService emailSender, CaptchaConfig captchaConfig, ICaptchaService captchaService)
         {
             _emailSender = emailSender;
             _captchaConfig = captchaConfig;
+            _captchaService = captchaService;
         }
 
         /// <summary>
@@ -44,6 +46,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+            public string Captcha { get; set; }
         }
 
         public void OnGet()
@@ -52,7 +55,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !await _captchaService.IsValid(Input.Captcha))
             {
                 return Page();
             }

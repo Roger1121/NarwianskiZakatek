@@ -17,17 +17,20 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<LoginWithRecoveryCodeModel> _logger;
         public readonly CaptchaConfig _captchaConfig;
+        private readonly ICaptchaService _captchaService;
 
         public LoginWithRecoveryCodeModel(
             SignInManager<AppUser> signInManager,
             UserManager<AppUser> userManager,
             ILogger<LoginWithRecoveryCodeModel> logger,
-            CaptchaConfig captchaConfig)
+            CaptchaConfig captchaConfig,
+            ICaptchaService captchaService)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _logger = logger;
             _captchaConfig = captchaConfig;
+            _captchaService = captchaService;
         }
 
         /// <summary>
@@ -58,6 +61,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             [DataType(DataType.Text)]
             [Display(Name = "Kod odzyskiwania")]
             public string RecoveryCode { get; set; }
+            public string Captcha { get; set; }
         }
 
         public async Task<IActionResult> OnGetAsync(string returnUrl = null)
@@ -76,7 +80,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || !await _captchaService.IsValid(Input.Captcha))
             {
                 return Page();
             }

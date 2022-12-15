@@ -23,6 +23,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailService _emailSender;
+        private readonly ICaptchaService _captchaService;
         public readonly CaptchaConfig _captchaConfig;
 
         public RegisterModel(
@@ -31,7 +32,8 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailService emailSender,
-            CaptchaConfig captchaConfig)
+            CaptchaConfig captchaConfig,
+            ICaptchaService captchaService)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -41,6 +43,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             _emailSender = emailSender;
             _userManager.Options.SignIn.RequireConfirmedEmail = true;
             _captchaConfig = captchaConfig;
+            _captchaService = captchaService;
         }
 
         /// <summary>
@@ -130,6 +133,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
             [Display(Name = "Nazwisko")]
             [Required(ErrorMessage = "Pole wymagane")]
             public string Surname { get; set; }
+            public string Captcha { get; set; }
         }
 
 
@@ -143,7 +147,7 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && await _captchaService.IsValid(Input.Captcha))
             {
                 var user = CreateUser();
 

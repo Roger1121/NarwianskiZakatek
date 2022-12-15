@@ -21,6 +21,7 @@
             </div>
             <div id="captcha_div" class="g-recaptcha" style="margin: 5px" data-callback="enableBtn"></div>
             <br />
+            <input type="hidden" asp-for="Input.Captcha" />
             <button type="submit" class="w-100 btn btn-lg btn-primary" style="margin: 5px">Zaloguj</button>
         </form>
     </div>
@@ -32,15 +33,16 @@
         $(document).ready(function () {
             submitButton.disabled = true;
         });
-
+        var captchaId;
         var onloadCallback = function () {
-            grecaptcha.render('captcha_div', {
+            captchaId = grecaptcha.render('captcha_div', {
                 'sitekey': '@Model._captchaConfig.PublicKey'
             });
         };
 
         function enableBtn() {
             submitButton.disabled = false;
+            document.getElementById('Input_Captcha').value = grecaptcha.getResponse(captchaId);
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
