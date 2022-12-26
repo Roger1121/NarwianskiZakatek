@@ -65,6 +65,8 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddToRole(string role, string userName)
         {
             string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
@@ -83,6 +85,8 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RemoveFromRole(string role, string userName)
         {
             string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
@@ -113,6 +117,7 @@ namespace NarwianskiZakatek.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SendWarning(WarningViewModel model)
         {
             var userId = _context.Users.Where(u => u.UserName == model.UserName).First().Id;
@@ -130,6 +135,8 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult LockAccount(string userName)
         {
             var user = _context.Users.Where(u => u.UserName == userName).First();
@@ -139,6 +146,8 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult UnlockAccount(string userName)
         {
             var user = _context.Users.Where(u => u.UserName == userName).First();

@@ -73,6 +73,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(DescriptionViewModel viewModel)
         {
             if (ModelState.IsValid)

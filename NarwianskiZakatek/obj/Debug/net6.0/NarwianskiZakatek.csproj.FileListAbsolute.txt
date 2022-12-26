@@ -558,3 +558,4 @@ C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Syst
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

@@ -53,7 +53,6 @@
                 </p>
             </div>
             <div class="col-md-8">
-                
             </div>
         </div>
     </div>
@@ -101,36 +100,51 @@
                 <td>
                     @if (ViewBag.CurrentUser != item.Email)
                     {
-                        <text>
-                            <a asp-action="SendWarning" asp-route-userName="@item.UserName">Wyślij ostrzeżenie</a> |
-                        </text>
+                        <a asp-action="SendWarning" asp-route-userName="@item.UserName" class="btn btn-primary" style="margin: 5px">Wyślij ostrzeżenie</a>
                         if (!item.IsLocked)
                         {
-                            <a asp-action="LockAccount" asp-route-userName="@item.UserName"> Zablokuj użytkownika </a>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="submit" asp-action="LockAccount" value="Zablokuj użytkownika" class="btn btn-primary" style="margin: 5px"/>
+                            </form>
                         }
                         else
                         {
-                            <a asp-action="UnlockAccount" asp-route-userName="@item.UserName"> Odblokuj użytkownika </a>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="submit" asp-action="UnlockAccount" value="Odblokuj użytkownika" class="btn btn-primary" style="margin: 5px" />
+                            </form>
                         }
 
                         if (ViewBag.Admins.Contains(item.Id))
                         {
-                            <text>
-                                | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Usuń uprawnienia administratora </a>
-                            </text>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="hidden" value="ADMIN" name="role" id="role" />
+                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia administratora" class="btn btn-primary" style="margin: 5px" />
+                            </form>
                         }
                         else if (ViewBag.Employees.Contains(item.Id))
                         {
-                            <text>
-                                | <a asp-action="AddToRole" asp-route-userName="@item.UserName" asp-route-role="ADMIN"> Nadaj uprawnienia administratora </a>
-                                | <a asp-action="RemoveFromRole" asp-route-userName="@item.UserName" asp-route-role="EMPLOYEE"> Usuń uprawnienia pracownika </a>
-                            </text>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="hidden" value="ADMIN" name="role" id="role" />
+                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia administratora" class="btn btn-primary" style="margin: 5px" />
+                            </form>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="hidden" value="EMPLOYEE" name="role" id="role" />
+                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia pracownika" class="btn btn-primary" style="margin: 5px" />
+                            </form>
                         }
                         else
                         {
-                            <text>
-                                | <a asp-action="AddToRole" asp-route-userName="@item.UserName" asp-route-role="EMPLOYEE"> Nadaj uprawnienia pracownika </a>
-                            </text>
+                            <form method="post">
+                                <input type="hidden" value="@item.UserName" name="userName" id="userName" />
+                                <input type="hidden" value="EMPLOYEE" name="role" id="role" />
+                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia pracownika" class="btn btn-primary" style="margin: 5px" />
+                            </form>
+                            <br>
                         }
                     }
                 </td>

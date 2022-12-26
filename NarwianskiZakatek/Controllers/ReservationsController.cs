@@ -183,6 +183,7 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
+        [ValidateAntiForgeryToken]
         public IActionResult New(DateTime beginDate, DateTime endDate)
         {
             if (beginDate <= DateTime.Now)
@@ -203,6 +204,7 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmAsync(RoomsViewModel roomList)
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
@@ -326,6 +328,7 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User")]
+        [ValidateAntiForgeryToken]
         public IActionResult Rate(OpinionViewModel opinion)
         {
             //save opinion

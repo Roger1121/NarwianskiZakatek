@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
     "/src/NarwianskiZakatek/wwwroot/",
-    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.10/staticwebassets/V5/",
+    "/root/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.12/staticwebassets/V5/",
     "/src/NarwianskiZakatek/obj/Debug/net6.0/scopedcss/bundle/"
   ],
   "Root": {

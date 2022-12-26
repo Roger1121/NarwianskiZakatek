@@ -127,7 +127,15 @@ namespace NarwianskiZakatek.Areas.Identity.Pages.Account
                     returnUrl = Url.Content("~/Reservations/");
                 }
 
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
+                role = _context.Roles.Where(r => r.NormalizedName == "ADMIN").FirstOrDefault();
+                userRole = _context.UserRoles.Where(u => u.UserId == user.Id && u.RoleId == role.Id).FirstOrDefault();
+
+                if (userRole != null)
+                {
+                    returnUrl = Url.Content("~/Admin/Users");
+                }
+
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("Zalogowano pomyślnie.");

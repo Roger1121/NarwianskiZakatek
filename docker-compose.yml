@@ -1,12 +1,6 @@
 version: '3.4'
 
 services:
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-
   narwianskizakatek:
     image: ${DOCKER_REGISTRY-}narwianskizakatek
     build:
