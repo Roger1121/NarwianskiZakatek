@@ -13,16 +13,16 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger" style="margin: 5px"></div>
-            <div class="form-floating" style="margin: 5px">
+            <div asp-validation-summary="ModelOnly" class="text-danger with-margin"></div>
+            <div class="form-floating with-margin">
                 <input asp-for="Input.RecoveryCode" class="form-control" autocomplete="off" />
                 <label asp-for="Input.RecoveryCode" class="form-label"></label>
                 <span asp-validation-for="Input.RecoveryCode" class="text-danger"></span>
             </div>
-            <div id="captcha_div" class="g-recaptcha" style="margin: 5px" data-callback="enableBtn"></div>
+            <div id="captcha_div" class="g-recaptcha with-margin" data-callback="enableBtn"></div>
             <br />
             <input type="hidden" asp-for="Input.Captcha" />
-            <button id="submitButton" type="submit" class="w-100 btn btn-lg btn-primary" style="margin: 5px">Zaloguj</button>
+            <button id="submitButton" type="submit" class="w-100 btn btn-lg btn-primary with-margin">Zaloguj</button>
         </form>
     </div>
 </div>

@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-4">
             <p>
-                <input type="submit" value="Filtruj" style="margin: 5px" class="btn btn-primary" /> <a asp-action="MyReservations">Wyczyść filtry</a>
+                <input type="submit" value="Filtruj" class="btn btn-primary with-margin" /> <a asp-action="MyReservations">Wyczyść filtry</a>
             </p>
         </div>
         <div class="col-md-8">
@@ -124,19 +124,17 @@
 </table>
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "pointer-events: none" : "";
-    var nextDisabled = !Model.HasNextPage ? "pointer-events: none" : "";
-    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary" : "btn btn-primary";
-    var nextClass = !Model.HasNextPage ? "btn btn-secondary" : "btn btn-primary";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
 }
 
 <a asp-action="MyReservations"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="@prevClass" style="@prevDisabled">
+   class="@prevClass">
     Poprzednia strona
 </a>
 <a asp-action="MyReservations"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="@nextClass" style="@nextDisabled">
+   class="@nextClass">
     Kolejna strona
 </a>

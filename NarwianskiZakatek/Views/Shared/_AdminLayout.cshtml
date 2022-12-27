@@ -13,12 +13,12 @@
     <link href="~/css/weather.css" rel="stylesheet" />
 </head>
 
-<body class="bg-black" style="padding-bottom:60px">
+<body class="bg-black with-bottom-space">
     <header>
         <div class="container-fluid no-pad">
             <img class="fit" src="~/graphics/Header.jpg" runat="server" />
             <div class="top-right">
-                <a class="pagetitle fs-1" style="" asp-area="" asp-controller="" asp-action="Index">Narwiański Zakątek</a>
+                <a class="pagetitle fs-1" asp-action="Index">Narwiański Zakątek</a>
             </div>
         </div>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -29,31 +29,31 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="Noclegi">Noclegi</a>
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Edit" asp-route-header="Noclegi">Noclegi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="Restauracja">Restauracja</a>
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Edit" asp-route-header="Restauracja">Restauracja</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="Atrakcje">Atrakcje</a>
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Edit" asp-route-header="Atrakcje">Atrakcje</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="Okolica">Okolica</a>
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Edit" asp-route-header="Okolica">Okolica</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Reservations" asp-action="Index">Rezerwacje</a>
+                            <a class="nav-link text-light" asp-controller="Reservations" asp-action="Index">Rezerwacje</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Edit" asp-route-header="O nas">O nas</a>
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="Edit" asp-route-header="O nas">O nas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Users">Użytkownicy</a>
+                            <a class="nav-link text-light" asp-controller="Admin" asp-action="Users">Użytkownicy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Rooms" asp-action="Index">Pokoje</a>
+                            <a class="nav-link text-light" asp-controller="Rooms" asp-action="Index">Pokoje</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Posts" asp-action="Admin">Posty</a>
+                            <a class="nav-link text-light" asp-controller="Posts" asp-action="Admin">Posty</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -85,7 +85,7 @@
     @RenderSection("css", required: false)
 </body>
 <footer class="border-top footer text-muted footer-custom">
-    <div class="container" style="color: black">
+    <div class="container black">
         &copy; @DateTime.Now.Year - Narwiański Zakątek
     </div>
 </footer>

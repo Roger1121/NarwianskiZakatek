@@ -56,7 +56,8 @@ namespace NarwianskiZakatek.Models
                             PostalCode = "15-352",
                             PostCity = "Białystok",
                             Name = "Jan",
-                            Surname = "Kowalski"
+                            Surname = "Kowalski",
+                            LockoutEnabled = true
                         });
                         context.SaveChanges();
                         string userId = context.Users.Where(r => r.UserName == "narwianskizakatek@gmail.com").ToList().First().Id;
@@ -94,7 +95,8 @@ namespace NarwianskiZakatek.Models
                             PostalCode = "15-352",
                             PostCity = "Białystok",
                             Name = "Jan",
-                            Surname = "Kowalski"
+                            Surname = "Kowalski",
+                            LockoutEnabled = true
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "nzemployee279@gmail.com").ToList().First().Id;
@@ -127,7 +129,8 @@ namespace NarwianskiZakatek.Models
                             PostalCode = "15-352",
                             PostCity = "Białystok",
                             Name = "Jan",
-                            Surname = "Kowalski"
+                            Surname = "Kowalski",
+                            LockoutEnabled = true
                         });
                         context.SaveChanges();
                         userId = context.Users.Where(r => r.UserName == "nzuser639@gmail.com").ToList().First().Id;

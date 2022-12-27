@@ -38,27 +38,27 @@
 
             if (Model.IsMachineRemembered)
             {
-                <form method="post" style="display: inline-block">
-                    <button type="submit" class="btn btn-primary" style="margin: 5px">Zapomnij tę przeglądarkę</button>
+                <form method="post" class="inline-display">
+                    <button type="submit" class="btn btn-primary with-margin">Zapomnij tę przeglądarkę</button>
                 </form>
                 <br />
             }
-            <a asp-page="./Disable2fa" class="btn btn-primary" style="margin: 5px">Wyłącz uwierzytelnianie dwuskładnikowe</a>
+            <a asp-page="./Disable2fa" class="btn btn-primary with-margin">Wyłącz uwierzytelnianie dwuskładnikowe</a>
             <br />
-            <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary" style="margin: 5px">Resetuj kody odzyskiwania</a>
+    <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary with-margin">Resetuj kody odzyskiwania</a>
             <hr />
         }
 
         <h4>Aplikacja uwierzytelniająca</h4>
         @if (!Model.HasAuthenticator)
         {
-            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary" style="margin: 5px">Dodaj nową aplikację uwierzytelniającą</a>
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary with-margin">Dodaj nową aplikację uwierzytelniającą</a>
         }
         else
         {
-            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary" style="margin: 5px">Ustaw aplikację uwierzytelniającą</a>
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary with-margin">Ustaw aplikację uwierzytelniającą</a>
             <br />
-            <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary" style="margin: 5px">Resetuj aplikację uwierzytelniającą</a>
+            <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary with-margin">Resetuj aplikację uwierzytelniającą</a>
         }
     }
     else

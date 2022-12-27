@@ -16,7 +16,7 @@
             @if (item.getFullPhotoPath() != null)
             {
                 <td>
-                    <img style="margin: 10px; object-fit: fill;" src="@item.getFullPhotoPath()" width="120" height="110" />
+                    <img class="image" src="@item.getFullPhotoPath()" width="120" height="110" />
                 </td>
             }
             else 
@@ -24,7 +24,7 @@
                 <td></td>
             }
             <td>
-                <p style="text-align: justify;">
+                <p class="text-content">
                     @item.getContentPreview()
                     <a asp-action="Details" asp-route-id="@item.PostId">Czytaj dalej</a>
                 </p>
@@ -34,19 +34,17 @@
 }
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "pointer-events: none" : "";
-    var nextDisabled = !Model.HasNextPage ? "pointer-events: none" : "";
-    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary" : "btn btn-primary";
-    var nextClass = !Model.HasNextPage ? "btn btn-secondary" : "btn btn-primary";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
 }
 
 <a asp-action="Index"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="@prevClass" style="@prevDisabled">
+   class="@prevClass">
     Poprzednia strona
 </a>
 <a asp-action="Index"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="@nextClass" style="@nextDisabled">
+   class="@nextClass">
     Kolejna strona
 </a>

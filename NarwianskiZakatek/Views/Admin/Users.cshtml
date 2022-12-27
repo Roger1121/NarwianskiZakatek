@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-4">
                 <p>
-                    <input type="submit" value="Filtruj" style="margin: 5px" class="btn btn-primary" /> <a asp-action="Users">Wyczyść filtry</a>
+                    <input type="submit" value="Filtruj" class="btn btn-primary with-margin" /> <a asp-action="Users">Wyczyść filtry</a>
                 </p>
             </div>
             <div class="col-md-8">
@@ -100,19 +100,19 @@
                 <td>
                     @if (ViewBag.CurrentUser != item.Email)
                     {
-                        <a asp-action="SendWarning" asp-route-userName="@item.UserName" class="btn btn-primary" style="margin: 5px">Wyślij ostrzeżenie</a>
+                        <a asp-action="SendWarning" asp-route-userName="@item.UserName" class="btn btn-primary with-margin">Wyślij ostrzeżenie</a>
                         if (!item.IsLocked)
                         {
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
-                                <input type="submit" asp-action="LockAccount" value="Zablokuj użytkownika" class="btn btn-primary" style="margin: 5px"/>
+                                <input type="submit" asp-action="LockAccount" value="Zablokuj użytkownika" class="btn btn-primary with-margin"/>
                             </form>
                         }
                         else
                         {
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
-                                <input type="submit" asp-action="UnlockAccount" value="Odblokuj użytkownika" class="btn btn-primary" style="margin: 5px" />
+                                <input type="submit" asp-action="UnlockAccount" value="Odblokuj użytkownika" class="btn btn-primary with-margin"/>
                             </form>
                         }
 
@@ -121,7 +121,7 @@
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
                                 <input type="hidden" value="ADMIN" name="role" id="role" />
-                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia administratora" class="btn btn-primary" style="margin: 5px" />
+                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia administratora" class="btn btn-primary with-margin"/>
                             </form>
                         }
                         else if (ViewBag.Employees.Contains(item.Id))
@@ -129,12 +129,12 @@
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
                                 <input type="hidden" value="ADMIN" name="role" id="role" />
-                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia administratora" class="btn btn-primary" style="margin: 5px" />
+                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia administratora" class="btn btn-primary with-margin"/>
                             </form>
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
                                 <input type="hidden" value="EMPLOYEE" name="role" id="role" />
-                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia pracownika" class="btn btn-primary" style="margin: 5px" />
+                                <input type="submit" asp-action="RemoveFromRole" value="Usuń uprawnienia pracownika" class="btn btn-primary with-margin"/>
                             </form>
                         }
                         else
@@ -142,7 +142,7 @@
                             <form method="post">
                                 <input type="hidden" value="@item.UserName" name="userName" id="userName" />
                                 <input type="hidden" value="EMPLOYEE" name="role" id="role" />
-                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia pracownika" class="btn btn-primary" style="margin: 5px" />
+                                <input type="submit" asp-action="AddToRole" value="Nadaj uprawnienia pracownika" class="btn btn-primary with-margin"/>
                             </form>
                             <br>
                         }
@@ -154,17 +154,17 @@
 </table>
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "display:none;" : "";
-    var nextDisabled = !Model.HasNextPage ? "display:none;" : "";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
 }
 
 <a asp-action="Users"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="btn btn-default" style="@prevDisabled">
+   class="@prevClass">
     Poprzednia strona
 </a>
 <a asp-action="Users"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="btn btn-default" style="@nextDisabled">
+   class="@nextClass">
     Kolejna strona
 </a>

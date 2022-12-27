@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Zaloguj do serwisu";
 }
-<br/>
+<br />
 <div class="row">
     <div class="col-md-4 col-md-offset-2">
         <section>
@@ -13,13 +13,12 @@
             @{
                 <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                     <div>
-                        <p>
-                            @foreach (var provider in Model.ExternalLogins)
-                            {
-                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Zaloguj się, używając konta @provider.DisplayName" style="margin: 5px">@provider.DisplayName</button>
-                                <br />
-                            }
-                        </p>
+                        @foreach (var provider in Model.ExternalLogins)
+                        {
+                            <p>
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Zaloguj się, używając konta @provider.DisplayName">@provider.DisplayName</button>
+                            </p>
+                        }
                     </div>
                 </form>
             }
@@ -31,18 +30,18 @@
                 <h2>Logowanie</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-floating" style="margin: 5px">
+                <div class="form-floating with-margin">
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                     <label asp-for="Input.Email" class="form-label"></label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
-                <div class="form-floating" style="margin: 5px">
+                <div class="form-floating with-margin">
                     <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
                     <label asp-for="Input.Password" class="form-label"></label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div>
-                    <button id="login-submit" style="margin: 5px" type="submit" class="w-100 btn btn-lg btn-primary">Zaloguj</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary with-margin">Zaloguj</button>
                 </div>
                 <div>
                     <p>

@@ -32,12 +32,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <form id="send-code" method="post">
-                        <div class="form-floating" style="margin: 5px">
+                        <div class="form-floating with-margin">
                             <input asp-for="Input.Code" class="form-control" autocomplete="off" />
                             <label asp-for="Input.Code" class="control-label form-label">Kod weryfikacyjny</label>
                             <span asp-validation-for="Input.Code" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="w-100 btn btn-lg btn-primary" style="margin: 5px">Zweryfikuj</button>
+                        <button type="submit" class="w-100 btn btn-lg btn-primary with-margin">Zweryfikuj</button>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     </form>
                 </div>

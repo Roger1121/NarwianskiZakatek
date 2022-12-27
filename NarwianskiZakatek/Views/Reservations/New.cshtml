@@ -3,20 +3,20 @@
 <div class="row">
     <h3>Wybierz układ pokoi</h3>
     <form asp-action="Confirm">
-        <div class="form-group" style="margin: 5px;">
+        <div class="form-group with-margin">
             <label asp-for="BeginDate" class="control-label"></label>
             <input asp-for="BeginDate" class="form-control" readonly />
             <span asp-validation-for="BeginDate" class="text-danger"></span>
         </div>
-        <div class="form-group" style="margin: 5px;">
+        <div class="form-group with-margin">
             <label asp-for="EndDate" class="control-label"></label>
             <input asp-for="EndDate" class="form-control" readonly />
             <span asp-validation-for="EndDate" class="text-danger"></span>
         </div>
         <select id="roomSelect" asp-for="@Model.Rooms" asp-items="(List<SelectListItem>)ViewBag.RoomList"
-                class="multi-select" multiple="multiple" style="margin: 5px;">
+                class="multi-select with-margin" multiple="multiple">
         </select>
-        <div class="form-group" style="margin: 5px;">
+        <div class="form-group with-margin">
             <input type="submit" value="Złóż rezerwację" class="btn btn-primary" />
         </div>
     </form>
@@ -25,4 +25,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    }
+}

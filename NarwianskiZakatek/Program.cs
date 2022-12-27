@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
+using System.Security.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -85,6 +86,12 @@ builder.Services.AddAuthentication()
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 var app = builder.Build();
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Content-Security-Policy", "frame-src maps.google.com; script-src 'self' www.google.com www.gstatic.com; connect-src api.weatherbit.io; style-src 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE=' 'self'; default-src 'self';");
+    await next();
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

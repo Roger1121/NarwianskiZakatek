@@ -17,12 +17,12 @@
     <div class="col-md-6">
         <form asp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating" style="margin: 5px">
+            <div class="form-floating with-margin">
                 <input asp-for="Input.Email" class="form-control" autocomplete="email" />
                 <label asp-for="Input.Email" class="form-label"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary" style="margin: 5px">Zarejestruj</button>
+            <button type="submit" class="w-100 btn btn-lg btn-primary with-margin">Zarejestruj</button>
         </form>
     </div>
 </div>

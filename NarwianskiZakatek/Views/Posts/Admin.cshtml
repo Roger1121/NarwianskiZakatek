@@ -20,10 +20,10 @@
     <table>
         <tr>
             <td>
-                <img style="margin: 10px; object-fit: contain;" src="@item.getFullPhotoPath()" width="120" height="110" />
+                <img class="image" src="@item.getFullPhotoPath()" width="120" height="110" />
             </td>
             <td>
-                <p style="text-align: justify;">
+                <p class="text-content">
                     @item.getContentPreview()
                 </p>
             </td>
@@ -36,19 +36,17 @@
 }
 
 @{
-    var prevDisabled = !Model.HasPreviousPage ? "pointer-events: none" : "";
-    var nextDisabled = !Model.HasNextPage ? "pointer-events: none" : "";
-    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary" : "btn btn-primary";
-    var nextClass = !Model.HasNextPage ? "btn btn-secondary" : "btn btn-primary";
+    var prevClass = !Model.HasPreviousPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
+    var nextClass = !Model.HasNextPage ? "btn btn-secondary disabled-button" : "btn btn-primary";
 }
 
 <a asp-action="Admin"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
-   class="@prevClass" style="@prevDisabled">
+   class="@prevClass">
     Poprzednia strona
 </a>
 <a asp-action="Admin"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
-   class="@nextClass" style="@nextDisabled">
+   class="@nextClass">
     Kolejna strona
 </a>

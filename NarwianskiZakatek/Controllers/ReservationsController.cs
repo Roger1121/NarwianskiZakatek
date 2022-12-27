@@ -242,9 +242,13 @@ namespace NarwianskiZakatek.Controllers
             }
 
             var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
-            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            if (reservation == null)
             {
                 return NotFound();
+            }
+            if(HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            {
+                return LocalRedirect("/Identity/Account/AccessDenied");
             }
 
             return View(reservation);
@@ -261,9 +265,13 @@ namespace NarwianskiZakatek.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
             }
             var reservation = _context.Reservations.Find(id);
-            if (reservation == null || HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            if (reservation == null)
             {
-                return RedirectToAction("MyReservations", new { message = "Rezerwacja nie została znaleziona lub nie masz uprawnień do anulowania tej rezerwacji." });
+                return NotFound();
+            }
+            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            {
+                return LocalRedirect("/Identity/Account/AccessDenied");
             }
             if (reservation != null)
             {
@@ -320,6 +328,11 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "User")]
         public IActionResult Rate(string id)
         {
+            var reservation = _context.Reservations.Where(r => r.ReservationId == id).First();
+            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            {
+                return LocalRedirect("/Identity/Account/AccessDenied");
+            }
             return View(new OpinionViewModel()
             {
                 ReservationId = id
@@ -331,8 +344,12 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Rate(OpinionViewModel opinion)
         {
-            //save opinion
             var reservation = _context.Reservations.Where(r => r.ReservationId == opinion.ReservationId).First();
+            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            {
+                return LocalRedirect("/Identity/Account/AccessDenied");
+            }
+            //save opinion
             reservation.Opinion = opinion.Opinion;
             reservation.Rating = opinion.Rating;
             _context.SaveChanges();
@@ -344,9 +361,9 @@ namespace NarwianskiZakatek.Controllers
         {
             var currentUserId = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First().Id;
             List<Reservation> reservations = _context.Reservations.Where(m => m.ReservationId == id && m.UserId == currentUserId).Include(r => r.ReservedRooms).ToList();
-            if (reservations == null)
+            if (reservations == null || reservations.Count == 0)
             {
-                return NotFound();
+                return LocalRedirect("/Identity/Account/AccessDenied");
             }
             var reservation = reservations.FirstOrDefault();
             List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
@@ -356,9 +373,9 @@ namespace NarwianskiZakatek.Controllers
         private List<SelectListItem> FindAvailableRooms(DateTime beginDate, DateTime endDate)
         {
             var reservedRooms = GetIdsOfReservedRooms(beginDate, endDate);
-            var rooms = _context.Rooms.Where(r => !reservedRooms.Contains(r.RoomId));
-            var list = rooms.Select(r => new SelectListItem { Value = r.RoomId.ToString(), Text = r.ToString() }).ToList();
-            return list;
+            var rooms = _context.Rooms?.Where(r => !reservedRooms.Contains(r.RoomId));
+            var list = rooms?.Select(r => new SelectListItem { Value = r.RoomId.ToString(), Text = r.ToString() }).ToList();
+            return list ?? new List<SelectListItem>();
         }
 
         private List<int> GetIdsOfReservedRooms(DateTime beginDate, DateTime endDate)

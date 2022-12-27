@@ -5,22 +5,22 @@
     <div class="col-md-6">
         <form asp-action="Rate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group" style="margin: 5px;">
+            <div class="form-group with-margin">
                 <label asp-for="ReservationId" class="control-label"></label>
                 <input asp-for="ReservationId" class="form-control" readonly/>
                 <span asp-validation-for="ReservationId" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 5px;">
+            <div class="form-group with-margin">
                 <label asp-for="Rating" class="control-label"></label>
                 <input asp-for="Rating" class="form-control" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 5px;">
+            <div class="form-group with-margin">
                 <label asp-for="Opinion" class="control-label"></label>
                 <input asp-for="Opinion" class="form-control" />
                 <span asp-validation-for="Opinion" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 5px;">
+            <div class="form-group with-margin">
                 <input type="submit" value="Dodaj opinię" class="btn btn-primary" />
             </div>
         </form>
