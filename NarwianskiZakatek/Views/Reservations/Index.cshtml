@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <h1>Lista rezerwacji</h1>
+<partial name="_Warning" />
 <partial name="_StatusMessage" />
 
 <form asp-action="Index" method="get">
@@ -112,7 +113,7 @@
                 </td>
                 <td>
                     <a asp-action="DetailsFull" asp-route-id="@item.ReservationId">Szczegóły rezerwacji</a>
-                    @if (item.BeginDate > DateTime.Today)
+                    @if (item.BeginDate > DateTime.Today && !item.IsCancelled)
                     {
                         <text> | </text>
                         <a asp-action="DeleteAny" asp-route-id="@item.ReservationId">Anuluj rezerwację</a>

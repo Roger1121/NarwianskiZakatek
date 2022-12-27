@@ -103,24 +103,23 @@ namespace NarwianskiZakatek.Controllers
                         description.PhotoUrl = fileName;
                     }
                 }
+                else if (description.PhotoUrl != null)
+                {
+                    System.IO.File.Delete("wwwroot" + description.getFullPhotoPath());
+                    description.PhotoUrl = null;
+                }
 
                 description.Content = viewModel.Content;
                 description.Title = viewModel.Title;
                 _context.SaveChanges();
 
-                switch (description.Title)
+                description = _context.Descriptions.Where(d => d.Title == viewModel.Title).First();
+                return View(new DescriptionViewModel()
                 {
-                    case "Noclegi":
-                        return RedirectToAction("Accomodation");
-                    case "O nas":
-                        return RedirectToAction("About");
-                    case "Restauracja":
-                        return RedirectToAction("Catering");
-                    case "Atrakcje":
-                        return RedirectToAction("Attractions");
-                    case "Okolica":
-                        return RedirectToAction("Neighborhood");
-                }
+                    PhotoUrl = description.getFullPhotoPath(),
+                    Title = description.Title,
+                    Content = description.Content
+                }); 
             }
             return View();
         }

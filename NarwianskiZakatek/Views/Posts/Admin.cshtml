@@ -20,7 +20,10 @@
     <table>
         <tr>
             <td>
-                <img class="image" src="@item.getFullPhotoPath()" width="120" height="110" />
+                @if (item.PhotoUrl != null)
+                {
+                    <img class="image" src="@item.getFullPhotoPath()" width="120" height="110" />
+                }
             </td>
             <td>
                 <p class="text-content">

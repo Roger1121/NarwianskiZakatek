@@ -23,6 +23,24 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Index(int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
+            var username = HttpContext.User.Identity?.Name;
+            var Warnings = new List<string>();
+            if (username != null)
+            {
+                var user = _context.Users.Where(u => u.UserName == username).First();
+                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
+                if (warnings != null)
+                {
+                    foreach (var warning in warnings)
+                    {
+                        warning.WasDisplayed = true;
+                        Warnings.Add(warning.Message);
+                    }
+                    _context.SaveChanges();
+                }
+            }
+            ViewBag.Warnings = Warnings;
+
             var reservations = from r in _context.Reservations select r;
 
             ViewBag.BeginFrom = beginFrom;
@@ -342,16 +360,16 @@ namespace NarwianskiZakatek.Controllers
         [HttpPost]
         [Authorize(Roles = "User,Admin,Employee")]
         [ValidateAntiForgeryToken]
-        public IActionResult Rate(OpinionViewModel opinion)
+        public IActionResult Rate(OpinionViewModel opinionViewModel)
         {
-            var reservation = _context.Reservations.Where(r => r.ReservationId == opinion.ReservationId).First();
+            var reservation = _context.Reservations.Where(r => r.ReservationId == opinionViewModel.ReservationId).First();
             if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
             {
                 return LocalRedirect("/Identity/Account/AccessDenied");
             }
             //save opinion
-            reservation.Opinion = opinion.Opinion;
-            reservation.Rating = opinion.Rating;
+            reservation.Opinion = opinionViewModel.Opinion;
+            reservation.Rating = opinionViewModel.Rating;
             _context.SaveChanges();
             return RedirectToAction("MyReservations", new { message = "Dziękujemy za udzielenie opinii." });
         }

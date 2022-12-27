@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
-using System.Security.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -17,6 +16,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 // Identity config
 builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
+    .AddErrorDescriber<LocalizedIdentityErrorDescriber>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<IdentityOptions>(options =>

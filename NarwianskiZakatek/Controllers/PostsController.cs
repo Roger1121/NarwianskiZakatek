@@ -183,6 +183,11 @@ namespace NarwianskiZakatek.Controllers
                             post.PhotoUrl = fileName;
                         }
                     }
+                    else if(post.PhotoUrl != null)
+                    {
+                        System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
+                        post.PhotoUrl = null;
+                    }
                     _context.Update(post);
                     await _context.SaveChangesAsync();
                 }

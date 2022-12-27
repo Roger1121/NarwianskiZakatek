@@ -70,9 +70,13 @@
     </tbody>
 </table>
 <div>
-    @if (Model.BeginDate > DateTime.Today)
+    @if (Model.BeginDate > DateTime.Today && !Model.IsCancelled)
     {
         <a asp-action="Delete" asp-route-id="@Model.ReservationId">Anuluj rezerwację</a>
+    }
+    else if (Model.EndDate < DateTime.Today && string.IsNullOrWhiteSpace(Model.Opinion) && !Model.IsCancelled)
+    {
+        <a asp-action="Rate" asp-route-id="@Model.ReservationId">Oceń pobyt</a>
     }
 </div>
 <div>

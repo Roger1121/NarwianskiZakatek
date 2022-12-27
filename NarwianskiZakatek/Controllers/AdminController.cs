@@ -27,6 +27,24 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Users(string? message, int? pageNumber, string? email, string? phone, string? role)
         {
+            var username = HttpContext.User.Identity?.Name;
+            var Warnings = new List<string>();
+            if (username != null)
+            {
+                var user = _context.Users.Where(u => u.UserName == username).First();
+                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
+                if (warnings != null)
+                {
+                    foreach (var warning in warnings)
+                    {
+                        warning.WasDisplayed = true;
+                        Warnings.Add(warning.Message);
+                    }
+                    _context.SaveChanges();
+                }
+            }
+            ViewBag.Warnings = Warnings;
+
             ViewBag.Message = message;
             ViewBag.CurrentUser = HttpContext.User.Identity?.Name;
             ViewBag.Phone = phone;
@@ -120,14 +138,14 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SendWarning(WarningViewModel model)
         {
-            var userId = _context.Users.Where(u => u.UserName == model.UserName).First().Id;
+            var user = _context.Users.Where(u => u.UserName == model.UserName).First();
             if (_context.Warnings == null)
             {
                 return RedirectToAction("Users", new { message = "Wystąpił błąd podczas wysyłania ostrzeżenia." });
             }
-            _context.Warnings.Add(new Models.Warning()
+            _context.Warnings.Add(new Warning()
             {
-                UserId = userId,
+                User = user,
                 Message = model.Message
             });
             _context.SaveChanges();

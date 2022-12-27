@@ -1,7 +1,7 @@
 ﻿@model NarwianskiZakatek.Models.Post
 
 <h1>@Html.DisplayFor(model => model.Title)</h1>
-<h3>@Html.DisplayNameFor(model => model.DateCreated) @Html.DisplayFor(model => model.DateCreated)</h3>
+<h3>@Html.DisplayNameFor(model => model.DateCreated) @Model.getDateWithFormat()</h3>
 <img src="@Model.getFullPhotoPath()" width="100%" />
 <p>
     @Html.DisplayFor(model => model.Content)

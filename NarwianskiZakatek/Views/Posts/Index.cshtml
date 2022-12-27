@@ -13,16 +13,12 @@
     </h5>
     <table>
         <tr>
-            @if (item.getFullPhotoPath() != null)
-            {
-                <td>
+            <td>
+                @if (item.PhotoUrl != null)
+                {
                     <img class="image" src="@item.getFullPhotoPath()" width="120" height="110" />
-                </td>
-            }
-            else 
-            {
-                <td></td>
-            }
+                }
+            </td>
             <td>
                 <p class="text-content">
                     @item.getContentPreview()

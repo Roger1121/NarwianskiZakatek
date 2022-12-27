@@ -90,7 +90,7 @@
     </tbody>
 </table>
 <div>
-    @if (Model.BeginDate > DateTime.Today)
+    @if (Model.BeginDate > DateTime.Today && !Model.IsCancelled)
     {
         <a asp-action="DeleteAny" asp-route-id="@Model.ReservationId">Anuluj rezerwację</a>
     }

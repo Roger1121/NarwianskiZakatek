@@ -5,7 +5,7 @@ namespace NarwianskiZakatek.ViewModels
     public class OpinionViewModel
     {
         [Display(Name = "Numer rezerwacji")]
-        public string ReservationId { get; set; }
+        public string ReservationId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Nie wystawiono oceny")]
         [Range(0, 10, ErrorMessage = "Ocena musi być liczbą z zakresu od 0 do 10")]
@@ -13,6 +13,7 @@ namespace NarwianskiZakatek.ViewModels
         public int Rating { get; set; }
 
         [Display(Name = "Opis")]
+        [Required(ErrorMessage = "Pole wymagane")]
         public string Opinion { get; set; } = string.Empty;
 
     }
