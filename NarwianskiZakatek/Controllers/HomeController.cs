@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.ViewModels;
+using System.Data;
 using System.Diagnostics;
 
 namespace NarwianskiZakatek.Controllers
@@ -60,6 +62,7 @@ namespace NarwianskiZakatek.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         public IActionResult Edit(string header)
         {
             if (_context.Descriptions != null)
@@ -74,6 +77,7 @@ namespace NarwianskiZakatek.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Employee")]
         public IActionResult Edit(DescriptionViewModel viewModel)
         {
             if (ModelState.IsValid)

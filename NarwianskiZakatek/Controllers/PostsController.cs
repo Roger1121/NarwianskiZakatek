@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
+using System.Data;
 
 namespace NarwianskiZakatek.Controllers
 {
@@ -47,6 +49,7 @@ namespace NarwianskiZakatek.Controllers
                           Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Admin(string? message, int? pageNumber)
         {
             ViewBag.Message = message;
@@ -74,7 +77,7 @@ namespace NarwianskiZakatek.Controllers
             return View(post);
         }
 
-        // GET: Posts/Create
+        [Authorize(Roles = "Admin,Employee")]
         public IActionResult Create()
         {
             return View();
@@ -83,6 +86,7 @@ namespace NarwianskiZakatek.Controllers
         // POST: Posts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin,Employee")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,DateCreated,Content,File")] PostViewModel post)
@@ -117,6 +121,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Posts/Edit/5
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Posts == null)
@@ -144,6 +149,7 @@ namespace NarwianskiZakatek.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Edit(int id, PostViewModel editedPost)
         {
             if (id != editedPost.PostId)
@@ -197,6 +203,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         // GET: Posts/Delete/5
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Posts == null)
@@ -217,6 +224,7 @@ namespace NarwianskiZakatek.Controllers
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Posts == null)

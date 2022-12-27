@@ -101,14 +101,14 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Date(string? message)
         {
             ViewBag.Message = message;
             return View();
         }
         [HttpGet]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         public async Task<IActionResult> MyReservations(string? message, int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
             var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
@@ -182,7 +182,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         [ValidateAntiForgeryToken]
         public IActionResult New(DateTime beginDate, DateTime endDate)
         {
@@ -203,7 +203,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmAsync(RoomsViewModel roomList)
         {
@@ -255,7 +255,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(string id)
@@ -325,7 +325,7 @@ namespace NarwianskiZakatek.Controllers
             return RedirectToAction("Index", new { message = "Rezerwacja została anulowana." });
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Rate(string id)
         {
             var reservation = _context.Reservations.Where(r => r.ReservationId == id).First();
@@ -340,7 +340,7 @@ namespace NarwianskiZakatek.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         [ValidateAntiForgeryToken]
         public IActionResult Rate(OpinionViewModel opinion)
         {
@@ -356,7 +356,7 @@ namespace NarwianskiZakatek.Controllers
             return RedirectToAction("MyReservations", new { message = "Dziękujemy za udzielenie opinii." });
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Details(string id)
         {
             var currentUserId = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First().Id;
