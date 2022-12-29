@@ -18,11 +18,6 @@ namespace NarwianskiZakatek.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         // GET: Users
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Users(string? message, int? pageNumber, string? email, string? phone, string? role)

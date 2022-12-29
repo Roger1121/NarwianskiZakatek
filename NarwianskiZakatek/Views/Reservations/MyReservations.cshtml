@@ -75,10 +75,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BeginDate)
+                    @item.BeginDate.ToString("dd/MM/yyyy")
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
+                    @item.EndDate.ToString("dd/MM/yyyy")
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)

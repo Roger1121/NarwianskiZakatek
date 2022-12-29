@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <h1>@Html.DisplayFor(model => model.Title)</h1>
-<h3>@Html.DisplayNameFor(model => model.DateCreated) @Html.DisplayFor(model => model.DateCreated)</h3>
+<h3>@Html.DisplayNameFor(model => model.DateCreated) @Model.DateCreated.ToString("dd/MM/yyyy")</h3>
 <img src="@Model.PhotoUrl" width="200" />
 <p>
     @Html.DisplayFor(model => model.Content)
