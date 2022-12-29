@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 using System.Data;
 
@@ -10,13 +11,11 @@ namespace NarwianskiZakatek.Controllers
 {
     public class RoomsController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IEmailService _sender;
+        private readonly IRoomsService _service;
 
-        public RoomsController(ApplicationDbContext context, IEmailService sender)
+        public RoomsController(IRoomsService repository)
         {
-            _context = context;
-            _sender = sender;
+            _service = repository;
         }
 
         // GET: Rooms
@@ -24,9 +23,7 @@ namespace NarwianskiZakatek.Controllers
         public async Task<IActionResult> Index(string? message)
         {
             ViewBag.Message = message;
-            return _context.Rooms != null ?
-                        View(await _context.Rooms.OrderBy(r => r.RoomNumber).ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Rooms'  is null.");
+            return View(await _service.GetRooms());
         }
 
         // GET: Rooms/Create
@@ -46,8 +43,7 @@ namespace NarwianskiZakatek.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(room);
-                await _context.SaveChangesAsync();
+                _service.AddRoom(room);
                 return RedirectToAction(nameof(Index));
             }
             var errors = ModelState.Values.SelectMany(v => v.Errors);
@@ -58,12 +54,11 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Rooms == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var room = await _context.Rooms.FindAsync(id);
+            var room = await _service.Get((int)id);
             if (room == null)
             {
                 return NotFound();
@@ -86,40 +81,16 @@ namespace NarwianskiZakatek.Controllers
 
             if (ModelState.IsValid)
             {
-                string message = "Pokój został zaktualizowany.";
+                string message;
                 try
                 {
-                    var oldRoom = _context.Rooms.Where(r => r.RoomId == id).AsNoTracking().First();
-                    if(oldRoom.IsActive && !room.IsActive)
-                    {
-                        var reservationIds = _context.ReservedRooms.Where(rr => rr.RoomId == oldRoom.RoomId).Select(rr => rr.ReservationId).ToList();
-                        var reservations = _context.Reservations.Where(r => reservationIds.Contains(r.ReservationId)).Include(r => r.User).ToList();
-                        for (int i = 0; i < reservations.Count; i++)
-                        {
-                            reservations[i].IsCancelled = true;
-                            _sender.CancelReservationAsync(reservations[i].User.Email, reservations[i]);
-                        }
-                        message = "Pokój został zaktualizowany. Pokój został wyłączony z użycia, a wszystkie nadchodzące rezerwacje tego pokoju zostały odwołane.";
-                    }
-                    
-                    _context.Update(room);
-                    await _context.SaveChangesAsync();
+                    message = await _service.UpdateRoom(room);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoomExists(room.RoomId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
-                return RedirectToAction("Index", new
-                {
-                    message = message
-                });
+                return RedirectToAction("Index", new { message = message });
             }
             return View(room);
         }
@@ -128,13 +99,11 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Rooms == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var room = await _context.Rooms
-                .FirstOrDefaultAsync(m => m.RoomId == id);
+            var room = await _service.Get((int)id);
             if (room == null)
             {
                 return NotFound();
@@ -151,28 +120,13 @@ namespace NarwianskiZakatek.Controllers
         {
             string message = "Pokój nie został usunięty, gdyż istnieją w systemie powiązane z nim rezerwacje." +
                 " Jeżeli chcesz wycofać pokój z użytku, zmień jego dostępność w oknie edycji pokoju.";
-            if (_context.Rooms == null)
+
+            var room = await _service.Get((int)id);
+            if (await _service.Delete(room))
             {
-                return Problem("Entity set 'ApplicationDbContext.Rooms'  is null.");
-            }
-            var room = await _context.Rooms.FindAsync(id);
-            bool canDelete = room?.ReservedRooms?.Count == 0;
-            if (room != null && canDelete)
-            {
-                _context.Rooms.Remove(room);
                 message = "Pomyślnie usunięto pokój o numerze " + room.RoomNumber + ".";
             }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index", new
-            {
-                message = message
-            });
-        }
-
-        private bool RoomExists(int id)
-        {
-            return (_context.Rooms?.Any(e => e.RoomId == id)).GetValueOrDefault();
+            return RedirectToAction("Index", new { message = message });
         }
     }
 }

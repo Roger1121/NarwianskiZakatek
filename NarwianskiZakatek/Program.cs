@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +57,8 @@ builder.Services.AddHsts(options =>
 // SMTP config
 builder.Services.AddSingleton(config.GetSection("EmailConfig").Get<EmailConfig>());
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IRoomsService, RoomsService>();
+builder.Services.AddScoped<IDescriptionsService, DescriptionsService>();
 
 // Captcha config
 builder.Services.AddSingleton(config.GetSection("CaptchaConfig").Get<CaptchaConfig>());
@@ -123,8 +126,13 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var db = services.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
+    if (db.Database.IsRelational())
+    {
+        db.Database.Migrate();
+    }
     SeedData.Initialize(services);
 }
 
 app.Run();
+
+public partial class Program { }

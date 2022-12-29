@@ -390,7 +390,7 @@ namespace NarwianskiZakatek.Models
                         {
                             User = user,
                             UserId = user.Id,
-                            BeginDate = new DateTime(2022, 11,19),
+                            BeginDate = new DateTime(2022, 11, 19),
                             EndDate = new DateTime(2022, 11, 21),
                             Price = price
                         };
