@@ -1,4 +1,5 @@
 ﻿using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatek.Repositories
@@ -8,7 +9,7 @@ namespace NarwianskiZakatek.Repositories
         bool AddToRole(string role, string userName);
         AppUser GetUserByUsername(string username);
         List<string> GetUserIdsByRoleName(string role);
-        Task<List<AppUser>> GetUsersByParams(string? email, string? phone, string? role, int? pageNumber, int? pageSize);
+        Task<PaginatedList<AppUser>> GetUsersByParams(string? email, string? phone, string? role, int? pageNumber, int? pageSize);
         List<string> GetUserWarnings(string username);
         void LockAccount(string userName);
         bool RemoveFromRole(string role, string userName);

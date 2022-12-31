@@ -9,10 +9,9 @@ namespace NarwianskiZakatek.Data
 {
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public ApplicationDbContext() : base(new DbContextOptions<ApplicationDbContext>()) { }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -25,11 +24,11 @@ namespace NarwianskiZakatek.Data
             builder.Entity<IdentityRole>().ToTable("Roles");
         }
 
-        public DbSet<Description>? Descriptions { get; set; }
-        public DbSet<Post>? Posts { get; set; }
-        public DbSet<Reservation>? Reservations { get; set; }
-        public DbSet<ReservedRoom>? ReservedRooms { get; set; }
-        public DbSet<Room>? Rooms { get; set; }
-        public DbSet<Warning>? Warnings { get; set; }
+        public virtual DbSet<Description>? Descriptions { get; set; }
+        public virtual DbSet<Post>? Posts { get; set; }
+        public virtual DbSet<Reservation>? Reservations { get; set; }
+        public virtual DbSet<ReservedRoom>? ReservedRooms { get; set; }
+        public virtual DbSet<Room>? Rooms { get; set; }
+        public virtual DbSet<Warning>? Warnings { get; set; }
     }
 }

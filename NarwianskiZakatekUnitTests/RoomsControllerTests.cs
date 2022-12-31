@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Routing;
 using Moq;
 using NarwianskiZakatek.Controllers;
+using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
 
@@ -167,7 +168,8 @@ namespace NarwianskiZakatekUnitTests
 
             var controller = new RoomsController(mockRoomService.Object);
             var result = controller.DeleteConfirmed(1).Result as RedirectToActionResult;
-            Assert.AreEqual(expectedRedirectValues.ToString(), result.RouteValues.ToString());
+            Assert.AreEqual(expectedRedirectValues.Values.ElementAt(1), result.ActionName);
+            Assert.AreEqual(expectedRedirectValues.Values.ElementAt(0), result.RouteValues.ElementAt(0).Value);
         }
 
         [TestMethod]
@@ -189,8 +191,8 @@ namespace NarwianskiZakatekUnitTests
 
             var controller = new RoomsController(mockRoomService.Object);
             var result = controller.DeleteConfirmed(1).Result as RedirectToActionResult;
-            Assert.AreEqual(expectedRedirectValues.ToString(), result.RouteValues.ToString());
+            Assert.AreEqual(expectedRedirectValues.Values.ElementAt(1), result.ActionName);
+            Assert.AreEqual(expectedRedirectValues.Values.ElementAt(0), result.RouteValues.ElementAt(0).Value);
         }
-
     }
 }

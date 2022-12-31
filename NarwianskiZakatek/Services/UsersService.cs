@@ -46,7 +46,7 @@ namespace NarwianskiZakatek.Repositories
             return _context.UserRoles.Where(u => u.RoleId == roleId).Select(u => u.UserId).ToList();
         }
 
-        public async Task<List<AppUser>> GetUsersByParams(string? email, string? phone, string? role, int? pageNumber, int? pageSize)
+        public async Task<PaginatedList<AppUser>> GetUsersByParams(string? email, string? phone, string? role, int? pageNumber, int? pageSize)
         {
             var employees = GetUserIdsByRoleName("Employee");
             var admins = GetUserIdsByRoleName("Admin");
