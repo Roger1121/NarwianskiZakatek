@@ -2,11 +2,6 @@
 using NarwianskiZakatek.Controllers;
 using NarwianskiZakatek.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using NarwianskiZakatek.Models;
-using NarwianskiZakatek.Services;
-using System.Drawing.Printing;
-using System.Security.Principal;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using NarwianskiZakatek.ViewModels;
 
