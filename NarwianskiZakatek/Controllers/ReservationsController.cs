@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 
@@ -11,37 +12,20 @@ namespace NarwianskiZakatek.Controllers
 {
     public class ReservationsController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IEmailService _sender;
+        private readonly IReservationsService _service;
+        private readonly IUsersService _userService;
 
-        public ReservationsController(ApplicationDbContext context, IEmailService sender)
+        public ReservationsController(IReservationsService service, IUsersService userService)
         {
-            _context = context;
-            _sender = sender;
+            _service = service;
+            _userService = userService;
         }
 
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Index(int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
             var username = HttpContext.User.Identity?.Name;
-            var Warnings = new List<string>();
-            if (username != null)
-            {
-                var user = _context.Users.Where(u => u.UserName == username).First();
-                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
-                if (warnings != null)
-                {
-                    foreach (var warning in warnings)
-                    {
-                        warning.WasDisplayed = true;
-                        Warnings.Add(warning.Message);
-                    }
-                    _context.SaveChanges();
-                }
-            }
-            ViewBag.Warnings = Warnings;
-
-            var reservations = from r in _context.Reservations select r;
+            ViewBag.Warnings = _userService.GetUserWarnings(username);
 
             ViewBag.BeginFrom = beginFrom;
             ViewBag.BeginTo = beginTo;
@@ -49,72 +33,16 @@ namespace NarwianskiZakatek.Controllers
             ViewBag.EndTo = endTo;
             ViewBag.PriceFrom = priceFrom;
             ViewBag.PriceTo = priceTo;
-
-            if(beginFrom != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate >= beginFrom);
-            }
-            if (beginTo != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate <= beginTo);
-            }
-            if (endFrom != null)
-            {
-                reservations = reservations.Where(r => r.EndDate >= endFrom);
-            }
-            if (endTo != null)
-            {
-                reservations = reservations.Where(r => r.EndDate <= endTo);
-            }
-            if (priceFrom != null)
-            {
-                reservations = reservations.Where(r => r.Price >= priceFrom);
-            }
-            if (priceTo != null)
-            {
-                reservations = reservations.Where(r => r.Price <= priceTo);
-            }
-
             ViewBag.SortOrder = sortOrder;
-            
-            switch (sortOrder)
-            {
-                case "begin":
-                    reservations = reservations.OrderBy(r => r.BeginDate);
-                    break;
-                case "begin_desc":
-                    reservations = reservations.OrderByDescending(r => r.BeginDate);
-                    break;
-                case "end":
-                    reservations = reservations.OrderBy(r => r.EndDate);
-                    break;
-                case "end_desc":
-                    reservations = reservations.OrderByDescending(r => r.EndDate);
-                    break;
-                case "price":
-                    reservations = reservations.OrderBy(r => r.Price);
-                    break;
-                case "price desc":
-                    reservations = reservations.OrderByDescending(r => r.Price);
-                    break;
-                default:
-                    ViewBag.SortOrder = "begin";
-                    reservations = reservations.OrderBy(r => r.BeginDate);
-                    break;
-            }
 
-            int pageSize = 10;
-            return _context.Reservations != null ?
-                View(await PaginatedList<Reservation>.CreateAsync(reservations.Include(r => r.User).AsNoTracking(), pageNumber ?? 1, pageSize)) :
-                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+            return View(await _service.GetReservationsByParams(10, pageNumber, sortOrder, beginFrom, beginTo, endFrom, endTo, priceFrom, priceTo, null));
         }
 
         [Authorize(Roles = "Admin,Employee")]
         public IActionResult DetailsFull(string id)
         {
-            Reservation reservation = _context.Reservations.Where(m => m.ReservationId == id).Include(r => r.ReservedRooms).Include(r => r.User).First();
-            List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
-            ViewBag.Rooms = _context.Rooms.Where(r => reservedRooms.Contains(r.RoomId)).ToList();
+            Reservation reservation = _service.GetReservation(id);
+            ViewBag.Rooms = _service.GetRoomsByReservation(reservation);
             return View(reservation);
         }
 
@@ -129,13 +57,9 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "User,Admin,Employee")]
         public async Task<IActionResult> MyReservations(string? message, int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo)
         {
-            var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
+            var user = _userService.GetUserByUsername(HttpContext.User.Identity.Name);
             ViewBag.Message = message;
-            int pageSize = 10;
-
             ViewBag.SortOrder = sortOrder;
-            var reservations = _context.Reservations.Where(r => r.UserId == user.Id);
-
             ViewBag.BeginFrom = beginFrom;
             ViewBag.BeginTo = beginTo;
             ViewBag.EndFrom = endFrom;
@@ -143,60 +67,7 @@ namespace NarwianskiZakatek.Controllers
             ViewBag.PriceFrom = priceFrom;
             ViewBag.PriceTo = priceTo;
 
-            if (beginFrom != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate >= beginFrom);
-            }
-            if (beginTo != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate <= beginTo);
-            }
-            if (endFrom != null)
-            {
-                reservations = reservations.Where(r => r.EndDate >= endFrom);
-            }
-            if (endTo != null)
-            {
-                reservations = reservations.Where(r => r.EndDate <= endTo);
-            }
-            if (priceFrom != null)
-            {
-                reservations = reservations.Where(r => r.Price >= priceFrom);
-            }
-            if (priceTo != null)
-            {
-                reservations = reservations.Where(r => r.Price <= priceTo);
-            }
-
-            switch (sortOrder)
-            {
-                case "begin":
-                    reservations = reservations.OrderBy(r => r.BeginDate);
-                    break;
-                case "begin_desc":
-                    reservations = reservations.OrderByDescending(r => r.BeginDate);
-                    break;
-                case "end":
-                    reservations = reservations.OrderBy(r => r.EndDate);
-                    break;
-                case "end_desc":
-                    reservations = reservations.OrderByDescending(r => r.EndDate);
-                    break;
-                case "price":
-                    reservations = reservations.OrderBy(r => r.Price);
-                    break;
-                case "price desc":
-                    reservations = reservations.OrderByDescending(r => r.Price);
-                    break;
-                default:
-                    ViewBag.SortOrder = "begin";
-                    reservations = reservations.OrderBy(r => r.BeginDate);
-                    break;
-            }
-
-            return _context.Reservations != null ?
-                View(await PaginatedList<Reservation>.CreateAsync(reservations.AsNoTracking(), pageNumber ?? 1, pageSize)) :
-                          Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+            return View(await _service.GetReservationsByParams(10, pageNumber, sortOrder, beginFrom, beginTo, endFrom, endTo, priceFrom, priceTo, user.Id));
         }
 
         [HttpPost]
@@ -212,7 +83,7 @@ namespace NarwianskiZakatek.Controllers
             {
                 return RedirectToAction("Date", new { message = "Data zakończenia rezerwacji nie może być wcześniejsza, niż data rozpoczęcia." });
             }
-            ViewBag.RoomList = FindAvailableRooms(beginDate, endDate);
+            ViewBag.RoomList = _service.FindAvailableRooms(beginDate, endDate);
             return View(new RoomsViewModel()
             {
                 BeginDate = beginDate,
@@ -225,28 +96,7 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmAsync(RoomsViewModel roomList)
         {
-            var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
-            Reservation reservation = new Reservation()
-            {
-                BeginDate = roomList.BeginDate,
-                EndDate = roomList.EndDate,
-                User = user
-            };
-            _context.Add(reservation);
-            _context.SaveChanges();
-            decimal price = 0;
-            foreach (int roomId in roomList.Rooms)
-            {
-                _context.Add(new ReservedRoom()
-                {
-                    RoomId = roomId,
-                    Reservation = reservation
-                });
-                price += _context.Rooms.Where(r => r.RoomId == roomId).First().Price;
-            }
-            reservation.Price = price * (roomList.EndDate.AddDays(1) - roomList.BeginDate).Days;
-            _context.SaveChanges();
-            _sender.ConfirmReservationAsync(user.Email, reservation);
+            _service.AddReservation(roomList, HttpContext.User.Identity.Name);
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została złożona." });
         }
 
@@ -254,21 +104,19 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Delete(string? id)
         {
-            if (id == null || _context.Reservations == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
+            var reservation = _service.GetReservation(id);
             if (reservation == null)
             {
                 return NotFound();
             }
-            if(HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            if (HttpContext.User.Identity.Name != reservation.User.UserName)
             {
                 return LocalRedirect("/Identity/Account/AccessDenied");
             }
-
             return View(reservation);
         }
 
@@ -278,27 +126,16 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(string id)
         {
-            if (_context.Reservations == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
-            }
-            var reservation = _context.Reservations.Find(id);
+            var reservation = _service.GetReservation(id);
             if (reservation == null)
             {
                 return NotFound();
             }
-            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            if (HttpContext.User.Identity.Name != reservation.User.UserName)
             {
                 return LocalRedirect("/Identity/Account/AccessDenied");
             }
-            if (reservation != null)
-            {
-                reservation.IsCancelled = true;
-                _context.SaveChanges();
-                var user = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First();
-                _sender.CancelReservationAsync(user.Email, reservation);
-            }
-            _context.SaveChanges();
+            _service.CancelReservation(reservation);
             return RedirectToAction("MyReservations", new { message = "Rezerwacja została anulowana." });
         }
 
@@ -306,18 +143,12 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public IActionResult DeleteAny(string? id)
         {
-            if (id == null || _context.Reservations == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var reservation = _context.Reservations.FirstOrDefault(m => m.ReservationId == id);
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-
-            return View(reservation);
+            var reservation = _service.GetReservation(id);
+            return reservation == null ? NotFound() : View(reservation);
         }
 
         [HttpPost]
@@ -326,35 +157,25 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteAnyPost(string id)
         {
-            if (_context.Reservations == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Reservations'  is null.");
-            }
-            var reservation = _context.Reservations.Find(id);
-            if (reservation != null)
-            {
-                reservation.IsCancelled = true;
-                _context.SaveChanges();
-                var user = _context.Users.Where(u => u.Id == reservation.UserId).First();
-                _sender.CancelReservationAsync(user.Email, reservation);
-            }
-
-            _context.SaveChanges();
+            var reservation = _service.GetReservation(id);
+            _service.CancelReservation(reservation);
             return RedirectToAction("Index", new { message = "Rezerwacja została anulowana." });
         }
 
         [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Rate(string id)
         {
-            var reservation = _context.Reservations.Where(r => r.ReservationId == id).First();
-            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            var reservation = _service.GetReservation(id);
+            if (HttpContext.User.Identity.Name != reservation.User.UserName)
             {
                 return LocalRedirect("/Identity/Account/AccessDenied");
             }
-            return View(new OpinionViewModel()
-            {
-                ReservationId = id
-            });
+            return HttpContext.User.Identity.Name != reservation.User.UserName ?
+                LocalRedirect("/Identity/Account/AccessDenied") :
+                View(new OpinionViewModel()
+                {
+                    ReservationId = id
+                });
         }
 
         [HttpPost]
@@ -362,46 +183,22 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Rate(OpinionViewModel opinionViewModel)
         {
-            var reservation = _context.Reservations.Where(r => r.ReservationId == opinionViewModel.ReservationId).First();
-            if (HttpContext.User.Identity.Name != _context.Users.Where(u => u.Id == reservation.UserId).First().UserName)
+            var reservation = _service.GetReservation(opinionViewModel.ReservationId);
+            if (HttpContext.User.Identity.Name != reservation.User.UserName)
             {
                 return LocalRedirect("/Identity/Account/AccessDenied");
             }
-            //save opinion
-            reservation.Opinion = opinionViewModel.Opinion;
-            reservation.Rating = opinionViewModel.Rating;
-            _context.SaveChanges();
+            _service.RateReservation(opinionViewModel, reservation);
             return RedirectToAction("MyReservations", new { message = "Dziękujemy za udzielenie opinii." });
         }
 
         [Authorize(Roles = "User,Admin,Employee")]
         public IActionResult Details(string id)
         {
-            var currentUserId = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name).First().Id;
-            List<Reservation> reservations = _context.Reservations.Where(m => m.ReservationId == id && m.UserId == currentUserId).Include(r => r.ReservedRooms).ToList();
-            if (reservations == null || reservations.Count == 0)
-            {
-                return LocalRedirect("/Identity/Account/AccessDenied");
-            }
-            var reservation = reservations.FirstOrDefault();
-            List<int> reservedRooms = reservation.ReservedRooms.Select(r => r.RoomId).Distinct().ToList();
-            ViewBag.Rooms = _context.Rooms.Where(r => reservedRooms.Contains(r.RoomId)).ToList();
-            return View(reservation);
-        }
-        private List<SelectListItem> FindAvailableRooms(DateTime beginDate, DateTime endDate)
-        {
-            var reservedRooms = GetIdsOfReservedRooms(beginDate, endDate);
-            var rooms = _context.Rooms?.Where(r => !reservedRooms.Contains(r.RoomId));
-            var list = rooms?.Select(r => new SelectListItem { Value = r.RoomId.ToString(), Text = r.ToString() }).ToList();
-            return list ?? new List<SelectListItem>();
-        }
-
-        private List<int> GetIdsOfReservedRooms(DateTime beginDate, DateTime endDate)
-        {
-            List<ReservedRoom> reservedRooms = _context.ReservedRooms
-                .Where(r => !r.Reservation.IsCancelled && ((r.Reservation.BeginDate >= beginDate && r.Reservation.BeginDate <= endDate)
-                         || (r.Reservation.EndDate >= beginDate && r.Reservation.BeginDate <= endDate))).ToList();
-            return reservedRooms.Select(r => r.RoomId).Distinct().ToList();
+            Reservation reservation = _service.GetReservation(id);
+            ViewBag.Rooms = _service.GetRoomsByReservation(reservation);
+            return HttpContext.User.Identity.Name != reservation.User.UserName ?
+                LocalRedirect("/Identity/Account/AccessDenied") : View(reservation);
         }
     }
 }

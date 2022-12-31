@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 
@@ -11,11 +12,11 @@ namespace NarwianskiZakatek.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IUsersService _service; 
 
-        public AdminController(ApplicationDbContext context)
+        public AdminController(IUsersService service)
         {
-            _context = context;
+            _service = service;
         }
 
         // GET: Users
@@ -23,22 +24,7 @@ namespace NarwianskiZakatek.Controllers
         public async Task<IActionResult> Users(string? message, int? pageNumber, string? email, string? phone, string? role)
         {
             var username = HttpContext.User.Identity?.Name;
-            var Warnings = new List<string>();
-            if (username != null)
-            {
-                var user = _context.Users.Where(u => u.UserName == username).First();
-                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
-                if (warnings != null)
-                {
-                    foreach (var warning in warnings)
-                    {
-                        warning.WasDisplayed = true;
-                        Warnings.Add(warning.Message);
-                    }
-                    _context.SaveChanges();
-                }
-            }
-            ViewBag.Warnings = Warnings;
+            ViewBag.Warnings = _service.GetUserWarnings(username);
 
             ViewBag.Message = message;
             ViewBag.CurrentUser = HttpContext.User.Identity?.Name;
@@ -46,35 +32,10 @@ namespace NarwianskiZakatek.Controllers
             ViewBag.Email = email;
             ViewBag.Role = role;
 
-            var adminId = _context.Roles.Where(r => r.NormalizedName == "ADMIN").First().Id;
-            var employeeId = _context.Roles.Where(r => r.NormalizedName == "EMPLOYEE").First().Id;
+            ViewBag.Admins = _service.GetUserIdsByRoleName("Admin");
+            ViewBag.Employees = _service.GetUserIdsByRoleName("Employee");
 
-            var admins = _context.UserRoles.Where(u => u.RoleId == adminId).Select(u => u.UserId).ToList();
-            var employees = _context.UserRoles.Where(u => u.RoleId == employeeId).Select(u => u.UserId).ToList();
-
-            ViewBag.Admins = admins;
-            ViewBag.Employees = employees;
-            int pageSize = 10;
-
-            var users = _context.Users.OrderBy(u => u.NormalizedEmail).AsNoTracking();
-            if (!string.IsNullOrEmpty(email))
-                users = users.Where(u => u.NormalizedEmail.Contains(email.ToUpper()));
-            if (!string.IsNullOrEmpty(phone))
-                users = users.Where(u => u.PhoneNumber.Contains(phone));
-            switch (role?.ToUpper())
-            {
-                case "ADMIN":
-                    users = users.Where(u => admins.Contains(u.Id));
-                    break;
-                case "PRACOWNIK":
-                    users = users.Where(u => employees.Contains(u.Id) && !admins.Contains(u.Id));
-                    break;
-                case "KLIENT":
-                    users = users.Where(u => !employees.Contains(u.Id));
-                    break;
-            }
-
-            return View(await PaginatedList<AppUser>.CreateAsync(users, pageNumber ?? 1, pageSize));
+            return View(await _service.GetUsersByParams(email, phone, role, pageNumber, 10));
         }
 
         [Authorize(Roles = "Admin")]
@@ -82,18 +43,10 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddToRole(string role, string userName)
         {
-            string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
-            if (userId == null || roleId == null)
+            if (!_service.AddToRole(role, userName))
             {
                 return RedirectToAction("Users", new { message = "Wystąpił błąd podczas nadawania uprawnień użytkownikowi." });
             }
-            _context.UserRoles.Add(new IdentityUserRole<string>()
-            {
-                RoleId = roleId,
-                UserId = userId
-            });
-            _context.SaveChanges();
             return RedirectToAction("Users", new { message = "Pomyślnie zmieniono rolę użytkownika." });
         }
 
@@ -102,18 +55,10 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RemoveFromRole(string role, string userName)
         {
-            string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
-            if (userId == null || roleId == null)
+            if (!_service.RemoveFromRole(role, userName))
             {
                 return RedirectToAction("Users", new { message = "Wystąpił błąd podczas wycofywania uprawnień użytkownika." });
             }
-            _context.UserRoles.Remove(new IdentityUserRole<string>()
-            {
-                RoleId = roleId,
-                UserId = userId
-            });
-            _context.SaveChanges();
             return RedirectToAction("Users", new { message = "Pomyślnie zmieniono rolę użytkownika." });
         }
 
@@ -133,17 +78,7 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SendWarning(WarningViewModel model)
         {
-            var user = _context.Users.Where(u => u.UserName == model.UserName).First();
-            if (_context.Warnings == null)
-            {
-                return RedirectToAction("Users", new { message = "Wystąpił błąd podczas wysyłania ostrzeżenia." });
-            }
-            _context.Warnings.Add(new Warning()
-            {
-                User = user,
-                Message = model.Message
-            });
-            _context.SaveChanges();
+            _service.SendWarning(model);
             return RedirectToAction("Users", new { message = "Wysłano ostrzeżenie użytkownikowi." });
         }
 
@@ -152,9 +87,7 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LockAccount(string userName)
         {
-            var user = _context.Users.Where(u => u.UserName == userName).First();
-            user.IsLocked = true;
-            _context.SaveChanges();
+            _service.LockAccount(userName);
             return RedirectToAction("Users", new { message = "Konto użytkownika zostało zablokowane." });
         }
 
@@ -163,9 +96,7 @@ namespace NarwianskiZakatek.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UnlockAccount(string userName)
         {
-            var user = _context.Users.Where(u => u.UserName == userName).First();
-            user.IsLocked = false;
-            _context.SaveChanges();
+            _service.UnlockAccount(userName);
             return RedirectToAction("Users", new { message = "Konto użytkownika zostało odblokowane." });
         }
     }

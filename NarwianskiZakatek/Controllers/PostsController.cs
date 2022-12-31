@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
+using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 using NarwianskiZakatek.ViewModels;
 using System.Data;
@@ -12,41 +13,23 @@ namespace NarwianskiZakatek.Controllers
 {
     public class PostsController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly IPostsService _service;
+        private readonly IUsersService _userService;
 
-        public PostsController(UserManager<AppUser> userManager,
-            ApplicationDbContext context)
+        public PostsController(IPostsService service, IUsersService userService)
         {
-            _userManager = userManager;
-            _context = context;
+            _service = service;
+            _userService = userService;
         }
 
         // GET: Posts
         public async Task<IActionResult> Index(int? pageNumber)
         {
             var username = HttpContext.User.Identity?.Name;
-            var Warnings = new List<string>();
-            if (username != null)
-            {
-                var user = _context.Users.Where(u => u.UserName == username).First();
-                var warnings = _context.Warnings?.Where(w => w.UserId == user.Id && w.WasDisplayed == false).ToList();
-                if (warnings != null)
-                {
-                    foreach (var warning in warnings)
-                    {
-                        warning.WasDisplayed = true;
-                        Warnings.Add(warning.Message);
-                    }
-                    _context.SaveChanges();
-                }
-            }
-            ViewBag.Warnings = Warnings;
+            ViewBag.Warnings = _userService.GetUserWarnings(username);
 
             int pageSize = 10;
-            return _context.Posts != null ?
-                View(await PaginatedList<Post>.CreateAsync(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber ?? 1, pageSize)) :
-                          Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
+            return View(await _service.GetPostsPage(pageNumber ?? 1, pageSize));
         }
 
         [Authorize(Roles = "Admin,Employee")]
@@ -54,27 +37,19 @@ namespace NarwianskiZakatek.Controllers
         {
             ViewBag.Message = message;
             int pageSize = 10;
-            return _context.Posts != null ?
-                View(await PaginatedList<Post>.CreateAsync(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber ?? 1, pageSize)) :
-                          Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
+            return View(await _service.GetPostsPage(pageNumber ?? 1, pageSize));
         }
 
         // GET: Posts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Posts == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var post = await _context.Posts
-                .FirstOrDefaultAsync(m => m.PostId == id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-
-            return View(post);
+            var post = await _service.GetPostDetails((int)id);
+            return post == null ? NotFound() : View(post);
         }
 
         [Authorize(Roles = "Admin,Employee")]
@@ -93,28 +68,7 @@ namespace NarwianskiZakatek.Controllers
         {
             if (ModelState.IsValid)
             {
-                Post newPost = new Post();
-                if (post.File != null)
-                {
-                    string path = "wwwroot/graphics/posts/" + DateTime.Now.Year;
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(post.File.FileName).ToLower();
-
-                    using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                    {
-                        post.File.CopyTo(stream);
-                        newPost.PhotoUrl = fileName;
-                    }
-                }
-
-                newPost.Content = post.Content;
-                newPost.Title = post.Title;
-                newPost.DateCreated = DateTime.Now;
-                _context.Add(newPost);
-                await _context.SaveChangesAsync();
+                _service.CreatePost(post);
                 return RedirectToAction("Admin", new { message = "Post został utworzony." });
             }
             return View(post);
@@ -124,17 +78,13 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Posts == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var post = await _context.Posts.FindAsync(id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-            return View(new PostViewModel()
+            var post = await _service.GetPostDetails((int)id);
+            return post == null ? NotFound() : View(new PostViewModel()
             {
                 PhotoUrl = post.getFullPhotoPath(),
                 PostId = post.PostId,
@@ -157,51 +107,8 @@ namespace NarwianskiZakatek.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && await _service.UpdatePost(editedPost))
             {
-                try
-                {
-                    Post post = _context.Posts.Where(p => p.PostId == editedPost.PostId).First();
-                    post.Title = editedPost.Title;
-                    post.Content = editedPost.Content;
-                    if (editedPost.File != null)
-                    {
-                        string path = "wwwroot/graphics/posts/" + DateTime.Now.Year;
-                        if (!Directory.Exists(path))
-                        {
-                            Directory.CreateDirectory(path);
-                        }
-                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(editedPost.File.FileName).ToLower();
-
-                        using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                        {
-                            editedPost.File.CopyTo(stream);
-                            if (post.PhotoUrl != null)
-                            {
-                                System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
-                            }
-                            post.PhotoUrl = fileName;
-                        }
-                    }
-                    else if(post.PhotoUrl != null)
-                    {
-                        System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
-                        post.PhotoUrl = null;
-                    }
-                    _context.Update(post);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PostExists(editedPost.PostId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
                 return RedirectToAction("Admin", new { message = "Post został zaktualizowany." });
             }
             return View(editedPost);
@@ -211,19 +118,13 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Posts == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var post = await _context.Posts
-                .FirstOrDefaultAsync(m => m.PostId == id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-
-            return View(post);
+            var post = await _service.GetPostDetails((int)id);
+            return post == null ? NotFound() : View(post);
         }
 
         // POST: Posts/Delete/5
@@ -232,27 +133,8 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Posts == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Posts'  is null.");
-            }
-            var post = await _context.Posts.FindAsync(id);
-            if (post != null)
-            {
-                if (post.PhotoUrl != null)
-                {
-                    System.IO.File.Delete("wwwroot" + post.getFullPhotoPath());
-                }
-                _context.Posts.Remove(post);
-            }
-
-            await _context.SaveChangesAsync();
+            _service.Delete(id);
             return RedirectToAction("Admin", new { message = "Post został usunięty." });
-        }
-
-        private bool PostExists(int id)
-        {
-            return (_context.Posts?.Any(e => e.PostId == id)).GetValueOrDefault();
         }
     }
 }

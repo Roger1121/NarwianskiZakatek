@@ -57,8 +57,13 @@ builder.Services.AddHsts(options =>
 // SMTP config
 builder.Services.AddSingleton(config.GetSection("EmailConfig").Get<EmailConfig>());
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+//Services
 builder.Services.AddScoped<IRoomsService, RoomsService>();
 builder.Services.AddScoped<IDescriptionsService, DescriptionsService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IPostsService, PostsService>();
+builder.Services.AddScoped<IReservationsService, ReservationsService>();
 
 // Captcha config
 builder.Services.AddSingleton(config.GetSection("CaptchaConfig").Get<CaptchaConfig>());
