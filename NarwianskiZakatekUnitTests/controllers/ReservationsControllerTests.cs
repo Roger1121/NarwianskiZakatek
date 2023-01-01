@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
 using Moq;
 using NarwianskiZakatek.Controllers;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.ViewModels;
-using System.Web.Mvc;
-using ViewResult = Microsoft.AspNetCore.Mvc.ViewResult;
 
 namespace NarwianskiZakatekUnitTests.controllers
 {

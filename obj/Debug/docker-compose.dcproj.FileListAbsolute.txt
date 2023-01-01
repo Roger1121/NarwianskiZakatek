@@ -51,9 +51,3 @@ C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authenti
 C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
 C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Newtonsoft.Json.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\System.Web.Mvc.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\System.Web.Razor.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\System.Web.WebPages.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\leszc\Desktop\NarwianskiZakatek\bin\Debug\System.Web.WebPages.Deployment.dll
