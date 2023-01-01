@@ -284,6 +284,14 @@
       },
       "js": {
         "Children": {
+          "calendar.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/calendar.js"
+            },
+            "Patterns": null
+          },
           "qr.js": {
             "Children": null,
             "Asset": {
@@ -297,6 +305,14 @@
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "js/site.js"
+            },
+            "Patterns": null
+          },
+          "weather.js": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "js/weather.js"
             },
             "Patterns": null
           }

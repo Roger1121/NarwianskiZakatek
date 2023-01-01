@@ -68,7 +68,7 @@ namespace NarwianskiZakatek.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.CreatePost(post);
+                await _service.CreatePost(post);
                 return RedirectToAction("Admin", new { message = "Post został utworzony." });
             }
             return View(post);
@@ -133,7 +133,7 @@ namespace NarwianskiZakatek.Controllers
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _service.Delete(id);
+            await _service.Delete(id);
             return RedirectToAction("Admin", new { message = "Post został usunięty." });
         }
     }

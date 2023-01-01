@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "01zjut+Wgd9zRB8GsB/I4GNaCwSCGEQF+VQ008ZHk0w=",
+  "Hash": "OcUfywhQskOZkI8U6NlKBzoTycVOxXXvwUpAfN8YfFM=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -1581,6 +1581,23 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\thunderstorm.svg"
     },
     {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\calendar.js",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "js/calendar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\calendar.js"
+    },
+    {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\qr.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
@@ -1613,6 +1630,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\weather.js",
+      "SourceId": "NarwianskiZakatek",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "BasePath": "_content/NarwianskiZakatek",
+      "RelativePath": "js/weather.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\weather.js"
     },
     {
       "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
