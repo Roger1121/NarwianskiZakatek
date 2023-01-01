@@ -22,10 +22,10 @@ namespace NarwianskiZakatek.Repositories
             return PaginatedList<Post>.Create(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber, pageSize);
         }
 
-        public async Task<Post?> GetPostDetails(int id)
+        public Post? GetPostDetails(int id)
         {
-            return await _context.Posts
-                .FirstOrDefaultAsync(m => m.PostId == id) ?? null;
+            return _context.Posts
+                .FirstOrDefault(m => m.PostId == id) ?? null;
         }
 
         public async Task CreatePost(PostViewModel post)

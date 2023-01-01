@@ -46,7 +46,7 @@ namespace NarwianskiZakatekUnitTests
         {
             var mockService = new Mock<IPostsService>();
             mockService.Setup(x => x.GetPostDetails(It.IsAny<int>()))
-                .ReturnsAsync(_mockData.posts.First());
+                .Returns(_mockData.posts.First());
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);
@@ -125,7 +125,7 @@ namespace NarwianskiZakatekUnitTests
         public void GetEdit_PostNotFound()
         {
             var mockService = new Mock<IPostsService>();
-            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).ReturnsAsync((Post)null);
+            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).Returns((Post)null);
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);
@@ -148,7 +148,7 @@ namespace NarwianskiZakatekUnitTests
                 Content = "test"
             };
             var mockService = new Mock<IPostsService>();
-            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).ReturnsAsync(post);
+            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).Returns(post);
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);
@@ -241,7 +241,7 @@ namespace NarwianskiZakatekUnitTests
         public void GetDelete_PostNotFound()
         {
             var mockService = new Mock<IPostsService>();
-            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).ReturnsAsync((Post)null);
+            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).Returns((Post)null);
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);
@@ -259,7 +259,7 @@ namespace NarwianskiZakatekUnitTests
                 Content = "test"
             };
             var mockService = new Mock<IPostsService>();
-            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).ReturnsAsync(post);
+            mockService.Setup(m => m.GetPostDetails(It.IsAny<int>())).Returns(post);
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);

@@ -48,7 +48,7 @@ namespace NarwianskiZakatek.Controllers
                 return NotFound();
             }
 
-            var post = await _service.GetPostDetails((int)id);
+            var post = _service.GetPostDetails((int)id);
             return post == null ? NotFound() : View(post);
         }
 
@@ -83,7 +83,7 @@ namespace NarwianskiZakatek.Controllers
                 return NotFound();
             }
 
-            var post = await _service.GetPostDetails((int)id);
+            var post = _service.GetPostDetails((int)id);
             return post == null ? NotFound() : View(new PostViewModel()
             {
                 PhotoUrl = post.getFullPhotoPath(),
@@ -123,7 +123,7 @@ namespace NarwianskiZakatek.Controllers
                 return NotFound();
             }
 
-            var post = await _service.GetPostDetails((int)id);
+            var post = _service.GetPostDetails((int)id);
             return post == null ? NotFound() : View(post);
         }
 
