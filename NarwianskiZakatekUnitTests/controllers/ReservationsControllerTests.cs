@@ -8,7 +8,7 @@ using NarwianskiZakatek.ViewModels;
 using System.Web.Mvc;
 using ViewResult = Microsoft.AspNetCore.Mvc.ViewResult;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.controllers
 {
     [TestClass]
     public class ReservationsControllerTests

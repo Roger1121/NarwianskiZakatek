@@ -6,7 +6,7 @@ using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.controllers
 {
     [TestClass]
     public class RoomsControllerTests
@@ -15,7 +15,7 @@ namespace NarwianskiZakatekUnitTests
         public void GetIndex_ReturnsView()
         {
             var mockRoomService = new Mock<IRoomsService>();
-            mockRoomService.Setup(m => m.GetRooms()).ReturnsAsync(new List<Room>());
+            mockRoomService.Setup(m => m.GetRooms()).Returns(new List<Room>());
 
             var controller = new RoomsController(mockRoomService.Object);
             var result = controller.Index("").Result as ViewResult;

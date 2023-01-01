@@ -1,7 +1,7 @@
 ﻿using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.ViewModels;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.services
 {
     [TestClass]
     public class PostsServiceTests

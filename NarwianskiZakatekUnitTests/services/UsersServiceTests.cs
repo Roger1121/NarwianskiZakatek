@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.ViewModels;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.services
 {
     [TestClass]
     public class UsersServiceTests

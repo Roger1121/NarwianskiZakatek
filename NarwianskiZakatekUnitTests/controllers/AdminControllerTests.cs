@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using NarwianskiZakatek.ViewModels;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.controllers
 {
     [TestClass]
     public class AdminControllerTests

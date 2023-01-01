@@ -7,7 +7,7 @@ namespace NarwianskiZakatek.Repositories
         Task AddRoom(Room room);
         Task<bool> Delete(Room room);
         Task<Room> Get(int id);
-        Task<List<Room>> GetRooms();
+        List<Room> GetRooms();
         bool RoomExists(int id);
         Task<string> UpdateRoom(Room room);
     }

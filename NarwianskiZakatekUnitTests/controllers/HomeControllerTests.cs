@@ -6,7 +6,7 @@ using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.ViewModels;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.controllers
 {
     [TestClass]
     public class HomeControllerTests
@@ -18,8 +18,8 @@ namespace NarwianskiZakatekUnitTests
             var mockDescriptionService = new Mock<IDescriptionsService>();
             mockDescriptionService.Setup(m => m.GetByTitle(It.IsAny<string>())).Returns(new Description()
             {
-                Title="Noclegi",
-                Content="XXXXXXX"
+                Title = "Noclegi",
+                Content = "XXXXXXX"
             });
 
             var controller = new HomeController(mockLogger, mockDescriptionService.Object);

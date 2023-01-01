@@ -5,6 +5,18 @@ namespace NarwianskiZakatek.Models
 {
     public class Room
     {
+        public Room() { }
+
+        public Room(Room room)
+        {
+            RoomId = room.RoomId;
+            RoomNumber = room.RoomNumber;
+            RoomCapacity = room.RoomCapacity;
+            Price = room.Price;
+            IsActive = room.IsActive;
+            ReservedRooms = room.ReservedRooms;
+        }
+
         public int RoomId { get; set; }
 
         [RequiredNotNullOrWhitespace(ErrorMessage = "Nie podano numeru pokoju")]

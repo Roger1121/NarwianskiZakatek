@@ -16,11 +16,10 @@ namespace NarwianskiZakatek.Repositories
             _sender = sender;
         }
 
-        public async Task<List<Room>> GetRooms()
+        public List<Room> GetRooms()
         {
-            return await _context.Rooms.OrderBy(r => r.RoomNumber).ToListAsync();
+            return _context.Rooms.OrderBy(r => r.RoomNumber).ToList();
         }
-
         public async Task<Room> Get(int id)
         {
             return await _context.Rooms.FindAsync(id);

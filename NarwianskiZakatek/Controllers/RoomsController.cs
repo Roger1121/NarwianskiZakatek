@@ -23,7 +23,7 @@ namespace NarwianskiZakatek.Controllers
         public async Task<IActionResult> Index(string? message)
         {
             ViewBag.Message = message;
-            return View(await _service.GetRooms());
+            return View(_service.GetRooms());
         }
 
         // GET: Rooms/Create

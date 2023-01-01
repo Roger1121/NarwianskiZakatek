@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.controllers
 {
     [TestClass]
     public class PostsControllerTests
@@ -273,7 +273,7 @@ namespace NarwianskiZakatekUnitTests
         }
 
         [TestMethod]
-        public void PostDelete() 
+        public void PostDelete()
         {
             var mockService = new Mock<IPostsService>();
             var mockUserService = new Mock<IUsersService>();
