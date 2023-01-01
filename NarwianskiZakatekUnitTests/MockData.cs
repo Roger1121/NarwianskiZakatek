@@ -49,14 +49,14 @@ namespace NarwianskiZakatekUnitTests
             };
             reservations = new List<Reservation>()
             {
-                new Reservation { ReservationId = "1", UserId = "2", BeginDate = DateTime.Now.AddDays(-5), EndDate = DateTime.Now.AddDays(-3), Price = 100, Opinion = "Test",  Rating = 2},
-                new Reservation { ReservationId = "2", UserId = "2", BeginDate = DateTime.Now.AddDays(5), EndDate = DateTime.Now.AddDays(8), Price = 100},
-                new Reservation { ReservationId = "3", UserId = "2", BeginDate = DateTime.Now.AddDays(-1), EndDate = DateTime.Now.AddDays(2), Price = 100},
-                new Reservation { ReservationId = "4", UserId = "3", BeginDate = DateTime.Now.AddDays(-2), EndDate = DateTime.Now.AddDays(1), Price = 100},
-                new Reservation { ReservationId = "5", UserId = "3", BeginDate = DateTime.Now.AddDays(-5), EndDate = DateTime.Now.AddDays(-3), Price = 100, IsCancelled = true},
-                new Reservation { ReservationId = "6", UserId = "3", BeginDate = DateTime.Now.AddDays(2), EndDate = DateTime.Now.AddDays(4), Price = 100, IsCancelled = true},
-                new Reservation { ReservationId = "7", UserId = "4", BeginDate = DateTime.Now.AddDays(-2), EndDate = DateTime.Now.AddDays(-1), Price = 100, Opinion = "Test",  Rating = 2},
-                new Reservation { ReservationId = "8", UserId = "4", BeginDate = DateTime.Now.AddDays(-4), EndDate = DateTime.Now.AddDays(-2), Price = 100}
+                new Reservation { ReservationId = "1", UserId = "2", BeginDate = DateTime.Now.AddDays(-5), EndDate = DateTime.Now.AddDays(-3), Price = 1100, Opinion = "Test",  Rating = 2},
+                new Reservation { ReservationId = "2", UserId = "2", BeginDate = DateTime.Now.AddDays(5), EndDate = DateTime.Now.AddDays(8), Price = 2100},
+                new Reservation { ReservationId = "3", UserId = "2", BeginDate = DateTime.Now.AddDays(-1), EndDate = DateTime.Now.AddDays(2), Price = 200},
+                new Reservation { ReservationId = "4", UserId = "3", BeginDate = DateTime.Now.AddDays(-2), EndDate = DateTime.Now.AddDays(1), Price = 200},
+                new Reservation { ReservationId = "5", UserId = "3", BeginDate = DateTime.Now.AddDays(-5), EndDate = DateTime.Now.AddDays(-3), Price = 80, IsCancelled = true},
+                new Reservation { ReservationId = "6", UserId = "3", BeginDate = DateTime.Now.AddDays(2), EndDate = DateTime.Now.AddDays(4), Price = 150, IsCancelled = true},
+                new Reservation { ReservationId = "7", UserId = "4", BeginDate = DateTime.Now.AddDays(-2), EndDate = DateTime.Now.AddDays(-1), Price = 300, Opinion = "Test",  Rating = 2},
+                new Reservation { ReservationId = "8", UserId = "4", BeginDate = DateTime.Now.AddDays(-4), EndDate = DateTime.Now.AddDays(-2), Price = 400}
             };
             rooms = new List<Room>()
             {

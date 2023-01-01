@@ -3,7 +3,7 @@ using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
 using NarwianskiZakatek.Services;
 
-namespace NarwianskiZakatekUnitTests
+namespace NarwianskiZakatekUnitTests.services
 {
     [TestClass]
     public class RoomsServiceTests

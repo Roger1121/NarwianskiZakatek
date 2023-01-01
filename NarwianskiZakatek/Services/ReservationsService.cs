@@ -21,35 +21,14 @@ namespace NarwianskiZakatek.Repositories
         public async Task<PaginatedList<Reservation>> GetReservationsByParams(int? pageSize, int? pageNumber, string? sortOrder, DateTime? beginFrom, DateTime? beginTo, DateTime? endFrom, DateTime? endTo, decimal? priceFrom, decimal? priceTo, string? userId)
         {
             var reservations = _context.Reservations.Select(r => r);
-            if (beginFrom != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate >= beginFrom);
-            }
-            if (beginTo != null)
-            {
-                reservations = reservations.Where(r => r.BeginDate <= beginTo);
-            }
-            if (endFrom != null)
-            {
-                reservations = reservations.Where(r => r.EndDate >= endFrom);
-            }
-            if (endTo != null)
-            {
-                reservations = reservations.Where(r => r.EndDate <= endTo);
-            }
-            if (priceFrom != null)
-            {
-                reservations = reservations.Where(r => r.Price >= priceFrom);
-            }
-            if (priceTo != null)
-            {
-                reservations = reservations.Where(r => r.Price <= priceTo);
-            }
-            if (userId != null)
-            {
-                reservations = reservations.Where(r => r.UserId == userId);
-            }
-
+            reservations = beginFrom == null ? reservations : reservations.Where(r => r.BeginDate >= beginFrom);
+            reservations = beginTo == null ? reservations : reservations.Where(r => r.BeginDate <= beginTo);
+            reservations = endFrom == null ? reservations : reservations.Where(r => r.EndDate >= endFrom);
+            reservations = endTo == null ? reservations : reservations.Where(r => r.EndDate <= endTo);
+            reservations = priceFrom == null ? reservations : reservations.Where(r => r.Price >= priceFrom);
+            reservations = priceTo == null ? reservations : reservations.Where(r => r.Price <= priceTo);
+            reservations = userId == null ? reservations : reservations.Where(r => r.UserId == userId);
+            
             switch (sortOrder)
             {
                 case "begin":
