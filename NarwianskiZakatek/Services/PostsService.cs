@@ -17,9 +17,9 @@ namespace NarwianskiZakatek.Repositories
             _context = context;
         }
 
-        public async Task<PaginatedList<Post>> GetPostsPage(int pageNumber, int pageSize)
+        public PaginatedList<Post> GetPostsPage(int pageNumber, int pageSize)
         {
-            return await PaginatedList<Post>.CreateAsync(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber, pageSize);
+            return PaginatedList<Post>.Create(_context.Posts.OrderByDescending(p => p.DateCreated).AsNoTracking(), pageNumber, pageSize);
         }
 
         public async Task<Post?> GetPostDetails(int id)

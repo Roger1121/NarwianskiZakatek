@@ -29,7 +29,7 @@ namespace NarwianskiZakatek.Controllers
             ViewBag.Warnings = _userService.GetUserWarnings(username);
 
             int pageSize = 10;
-            return View(await _service.GetPostsPage(pageNumber ?? 1, pageSize));
+            return View(_service.GetPostsPage(pageNumber ?? 1, pageSize));
         }
 
         [Authorize(Roles = "Admin,Employee")]
@@ -37,7 +37,7 @@ namespace NarwianskiZakatek.Controllers
         {
             ViewBag.Message = message;
             int pageSize = 10;
-            return View(await _service.GetPostsPage(pageNumber ?? 1, pageSize));
+            return View(_service.GetPostsPage(pageNumber ?? 1, pageSize));
         }
 
         // GET: Posts/Details/5

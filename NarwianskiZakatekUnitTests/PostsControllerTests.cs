@@ -31,7 +31,7 @@ namespace NarwianskiZakatekUnitTests
             var posts = new PaginatedList<Post>(_mockData.posts.GetRange(0, 10), 10, 0, 10);
             var mockService = new Mock<IPostsService>();
             mockService.Setup(x => x.GetPostsPage(It.IsAny<int>(), It.IsAny<int>()))
-                .ReturnsAsync(posts);
+                .Returns(posts);
             var mockUserService = new Mock<IUsersService>();
 
             var controller = new PostsController(mockService.Object, mockUserService.Object);

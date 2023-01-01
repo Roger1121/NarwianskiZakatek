@@ -3,24 +3,41 @@ using Moq;
 using NarwianskiZakatek.Data;
 using NarwianskiZakatek.Models;
 using NarwianskiZakatek.Repositories;
+using NarwianskiZakatek.ViewModels;
 
 namespace NarwianskiZakatekUnitTests
 {
+    [TestClass]
     public class DescriptionsServiceTests
     {
-        public readonly Mock<ApplicationDbContext> _mockContext;
+        public readonly MockData _mockData;
 
         public DescriptionsServiceTests()
         {
-            _mockContext = new MockData().Context;
+            _mockData = new MockData();
         }
 
         [TestMethod]
-        public void Mock_DbContext_Test()
+        public void GetByTitle()
         {
-            var service = new DescriptionsService(_mockContext.Object);
-            var d = service.GetByTitle("Okolica");
-            Assert.AreEqual("XXX", d.Content);
+            var service = new DescriptionsService(_mockData.Context.Object);
+            var d = service.GetByTitle("Test description 3");
+            Assert.AreEqual(_mockData.descriptions.Where(d => d.Title == "Test description 3").First(), d);
+        }
+
+        [TestMethod]
+        public void Update()
+        {
+            var service = new DescriptionsService(_mockData.Context.Object);
+            var viewModel = new DescriptionViewModel()
+            {
+                Title = "Test description 2",
+                Content = "New content"
+            };
+
+            service.Update(viewModel);
+
+            Assert.AreEqual(viewModel.Content, _mockData.descriptions.Where(d => d.Title == "Test description 2").First().Content);
         }
     }
 }

@@ -64,16 +64,16 @@ namespace NarwianskiZakatek.Repositories
                     users = users.Where(u => employees.Contains(u.Id) && !admins.Contains(u.Id));
                     break;
                 case "KLIENT":
-                    users = users.Where(u => !employees.Contains(u.Id));
+                    users = users.Where(u => !employees.Contains(u.Id) && !admins.Contains(u.Id));
                     break;
             }
-            return await PaginatedList<AppUser>.CreateAsync(users, pageNumber ?? 1, pageSize ?? 10);
+            return PaginatedList<AppUser>.Create(users, pageNumber ?? 1, pageSize ?? 10);
         }
 
         public bool AddToRole(string role, string userName)
         {
-            string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
+            string? userId = _context.Users.Where(u => u.NormalizedUserName == userName.ToUpper()).FirstOrDefault()?.Id;
+            string? roleId = _context.Roles.Where(u => u.NormalizedName == role.ToUpper()).FirstOrDefault()?.Id;
             if (userId == null || roleId == null)
             {
                 return false;
@@ -89,8 +89,8 @@ namespace NarwianskiZakatek.Repositories
 
         public bool RemoveFromRole(string role, string userName)
         {
-            string? userId = _context.Users.Where(u => u.UserName == userName).FirstOrDefault()?.Id;
-            string? roleId = _context.Roles.Where(u => u.NormalizedName == role).FirstOrDefault()?.Id;
+            string? userId = _context.Users.Where(u => u.NormalizedUserName == userName.ToUpper()).FirstOrDefault()?.Id;
+            string? roleId = _context.Roles.Where(u => u.NormalizedName == role.ToUpper()).FirstOrDefault()?.Id;
             if (userId == null || roleId == null)
             {
                 return false;
@@ -106,8 +106,8 @@ namespace NarwianskiZakatek.Repositories
 
         public bool SendWarning(WarningViewModel model)
         {
-            var user = _context.Users.Where(u => u.UserName == model.UserName).First();
-            if (_context.Warnings == null)
+            var user = _context.Users.Where(u => u.NormalizedUserName == model.UserName.ToUpper()).FirstOrDefault();
+            if (user == null)
             {
                 return false;
             }
@@ -122,13 +122,13 @@ namespace NarwianskiZakatek.Repositories
 
         public void LockAccount(string userName)
         {
-            var user = _context.Users.Where(u => u.UserName == userName).First();
+            var user = _context.Users.Where(u => u.NormalizedUserName == userName.ToUpper()).First();
             user.IsLocked = true;
             _context.SaveChanges();
         }
         public void UnlockAccount(string userName)
         {
-            var user = _context.Users.Where(u => u.UserName == userName).First();
+            var user = _context.Users.Where(u => u.NormalizedUserName == userName.ToUpper()).First();
             user.IsLocked = false;
             _context.SaveChanges();
         }

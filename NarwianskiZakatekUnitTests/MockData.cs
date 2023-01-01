@@ -23,14 +23,14 @@ namespace NarwianskiZakatekUnitTests
         {
             descriptions = new List<Description>()
             {
-                 new Description { Content = "Okolica", DescriptionId = 1 , Title = "Okolica"},
-                new Description { Content = "O nas", DescriptionId = 2 , Title = "O nas"},
-                new Description { Content = "Restauracja", DescriptionId = 3 , Title = "Restauracja"}
+                 new Description { Content = "Test description 1", DescriptionId = 1 , Title = "Test description 1"},
+                new Description { Content = "Test description 2", DescriptionId = 2 , Title = "Test description 2"},
+                new Description { Content = "Test description 3", DescriptionId = 3 , Title = "Test description 3"}
             };
             appUsers = new List<AppUser>()
             {
                 new AppUser { UserName = "Admin@email.com", Email = "Admin@email.com", NormalizedEmail = "ADMIN@EMAIL.COM", NormalizedUserName = "ADMIN@EMAIL.COM", Id = "1", IsLocked = false, PhoneNumber = "111222333"},
-                new AppUser { UserName = "Emplyee@email.com", Email = "Employee@email.com", NormalizedEmail = "EMPLOYEE@EMAIL.COM", NormalizedUserName = "EMPLOYEE@EMAIL.COM", Id = "2", IsLocked = false, PhoneNumber = "123123123"},
+                new AppUser { UserName = "Employee@email.com", Email = "Employee@email.com", NormalizedEmail = "EMPLOYEE@EMAIL.COM", NormalizedUserName = "EMPLOYEE@EMAIL.COM", Id = "2", IsLocked = false, PhoneNumber = "123123123"},
                 new AppUser { UserName = "User1@email.com", Email = "User1@email.com", NormalizedEmail = "USER1@EMAIL.COM", NormalizedUserName = "USER1@EMAIL.COM", Id = "3", IsLocked = false, PhoneNumber = "321321321"},
                 new AppUser { UserName = "User2@email.com", Email = "User2@email.com", NormalizedEmail = "USER2@EMAIL.COM", NormalizedUserName = "USER2@EMAIL.COM", Id = "4", IsLocked = true, PhoneNumber = "111222333"}
             };

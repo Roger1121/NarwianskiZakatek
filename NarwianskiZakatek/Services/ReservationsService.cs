@@ -74,7 +74,7 @@ namespace NarwianskiZakatek.Repositories
                     reservations = reservations.OrderBy(r => r.BeginDate);
                     break;
             }
-            return await PaginatedList<Reservation>.CreateAsync(reservations.Include(r => r.User).AsNoTracking(), pageNumber ?? 1, pageSize ?? 10);
+            return PaginatedList<Reservation>.Create(reservations.Include(r => r.User).AsNoTracking(), pageNumber ?? 1, pageSize ?? 10);
         }
 
         public Reservation GetReservation(string id)

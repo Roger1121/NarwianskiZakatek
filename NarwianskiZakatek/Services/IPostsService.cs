@@ -9,7 +9,7 @@ namespace NarwianskiZakatek.Repositories
         Task CreatePost(PostViewModel post);
         Task Delete(int id);
         Task<Post?> GetPostDetails(int id);
-        Task<PaginatedList<Post>> GetPostsPage(int pageNumber, int pageSize);
+        PaginatedList<Post> GetPostsPage(int pageNumber, int pageSize);
         Task<bool> UpdatePost(PostViewModel editedPost);
     }
 }
