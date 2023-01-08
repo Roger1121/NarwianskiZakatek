@@ -8,305 +8,305 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NarwianskiZakatek
 build_property.RootNamespace = NarwianskiZakatek
-build_property.ProjectDir = C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek\
+build_property.ProjectDir = D:\NarwianskiZakatek\NarwianskiZakatek\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\leszc\Desktop\NarwianskiZakatek\NarwianskiZakatek
+build_property.MSBuildProjectDirectory = D:\NarwianskiZakatek\NarwianskiZakatek
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Lockout.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Admin/SendWarning.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Admin/SendWarning.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VuZFdhcm5pbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Admin/Users.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/About.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Accomodation.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Accomodation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2NvbW9kYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Attractions.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Attractions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdHRyYWN0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Catering.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Catering.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlcmluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Edit.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Neighborhood.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Home/Neighborhood.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZWlnaGJvcmhvb2QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Admin.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Create.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Delete.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Details.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Edit.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Index.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Date.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Date.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Delete.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/DeleteAny.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/DeleteAny.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERlbGV0ZUFueS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Details.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/DetailsFull.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/DetailsFull.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXERldGFpbHNGdWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Index.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/MyReservations.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/MyReservations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXE15UmVzZXJ2YXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/New.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXE5ldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Rate.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Reservations/Rate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25zXFJhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Create.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Delete.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Edit.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Index.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Rooms/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/Error.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Calendar.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYWxlbmRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_LoginPartial.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_ReservationFilter.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_ReservationFilter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZXNlcnZhdGlvbkZpbHRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_StatusMessage.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGF0dXNNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Warning.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Warning.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9XYXJuaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Weather.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Weather.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9XZWF0aGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/_ViewImports.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/_ViewStart.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_AdminLayout.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-vdzn39t33s
 
-[C:/Users/leszc/Desktop/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Layout.cshtml]
+[D:/NarwianskiZakatek/NarwianskiZakatek/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jyvyxihbij

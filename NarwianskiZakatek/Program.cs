@@ -7,6 +7,13 @@ using NarwianskiZakatek.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
+/*builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ConfigureEndpointDefaults(listenOptions =>
+    {
+        listenOptions.UseHttps("/app/devkey.pfx", "P@$$w0rd1234");
+    });
+});*/
 
 // Database config
 var connectionString = config.GetConnectionString("DefaultConnection");

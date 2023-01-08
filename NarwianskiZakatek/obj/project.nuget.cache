@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bKy56+B5G8RumBRMIBGwMJ2LUgGFjGihManm3V1tbrm3HeB8o3YhwKR6FQywcHgM/AsWTarYzhc+Ii9wdVsb8A==",
+  "dgSpecHash": "CkK9NADQ8yhlF2Td/0eMNDjesvO4Nc4bD7Pn7JwFppjc+mCU6GOdkGA5E5y2/+mhIJ8lWZwWizFyxla3XJ5QcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
+  "projectFilePath": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leszc\\.nuget\\packages\\foolproof\\0.9.4518\\foolproof.0.9.4518.nupkg.sha512",
     "C:\\Users\\leszc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

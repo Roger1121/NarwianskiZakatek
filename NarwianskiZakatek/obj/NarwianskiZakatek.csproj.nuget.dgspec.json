@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj": {}
+    "D:\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj": {
+    "D:\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
+        "projectUniqueName": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
         "projectName": "NarwianskiZakatek",
-        "projectPath": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
+        "projectPath": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\NarwianskiZakatek.csproj",
         "packagesPath": "C:\\Users\\leszc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\",
+        "outputPath": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

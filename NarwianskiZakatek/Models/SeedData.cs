@@ -12,6 +12,10 @@ namespace NarwianskiZakatek.Models
             using (var context = new ApplicationDbContext(serviceProvider.
                 GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
+                while (!context.Database.CanConnect())
+                {
+
+                }
                 try
                 {
                     #region add roles
@@ -674,7 +678,7 @@ namespace NarwianskiZakatek.Models
                         {
                             Title = "Nowa strona gospodarstwa",
                             DateCreated = new DateTime(2022, 8, 3),
-                            PhotoUrl = "1fcc6a5a-3154-4c53-a962-da994e5672d3.jpg",
+                            PhotoUrl = "1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
                             Content = "Pragniemy przedstawić wam naszą nową stronę internetową, która powstała w ramach pracy inżynierskiej" +
                             " we współpracy z Politechniką Białostocką. Korzystając z nowej witryny możecie dowiedzieć się więcej o naszym gospodarstwie," +
                             " zarezerwować pobyt, a nawet zostawić nam ocenę (do czego gorąco zachęcamy). Liczymy, że nowy serwis ułatwi wam kontakt z naszymi" +
@@ -685,7 +689,7 @@ namespace NarwianskiZakatek.Models
                         {
                             Title = "Prace remontowe",
                             DateCreated = new DateTime(2022, 8, 10),
-                            PhotoUrl = "5808f117-4e78-49c2-8c9e-0e76026ce24b.jpg",
+                            PhotoUrl = "5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG",
                             Content = "Witajcie. Jak zapewne niektórzy z gości mogli już zauważyć, w naszym gospodarstwie zaczynają się prace remontowe związane z wymianami" +
                             " dachów na budynkach gospodarczych. Z tego też powodu jesteśmy zmuszeni ograniczyć liczbę odwiedzających, za co bardzo serdecznie przepraszamy." +
                             " Liczymy, że te niedogodności nie potrwają długo i wkrótce będziemy mogli wrócić do normalnego trybu pracy. Wszystkim gościom, których pobyt" +
@@ -696,7 +700,7 @@ namespace NarwianskiZakatek.Models
                         {
                             Title = "Sejmiki bocianów",
                             DateCreated = new DateTime(2022, 8, 16),
-                            PhotoUrl = "801b69a7-6b3e-4605-baf4-b4ce4d2d659f.jpg",
+                            PhotoUrl = "801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG",
                             Content = "W tym roku w okolicach naszego gospodarstwa możemy obserwować przepiękne zebrania bocianów szykujących się do odlotu" +
                             " nazywane Bocianimi sejmikami. Zebrania takie mogą liczyc nawet ok. 50 osobników w różnym wieku. Mają one na celu wspólne przygotowanie" +
                             " do długiego, liczącego niejednokrotnie nawet 10000 km lotu. Bociany przed podróżą muszą uzupełnić zapasy i nabrać sił. Już niedługo przyjdzie" +
@@ -708,7 +712,7 @@ namespace NarwianskiZakatek.Models
                         {
                             Title = "Once in a blue moon",
                             DateCreated = new DateTime(2022, 9, 25),
-                            PhotoUrl = "2ca60500-7cb1-48b1-bade-62a54353d8a9.jpg",
+                            PhotoUrl = "2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
                             Content = "Niebieska pełnia, czyli druga pełnia księżyca występująca w jednym miesiącu, lub trzecia z czterech występujących w czasie jednej pory roku." +
                             " Jest to zjawisko na tyle rzadkie, że w kulturze angielskiej doczekało się nawet swojego powiedzenia. Zwrot \"once in a blue moon\" (raz na niebieski księżyc" +
                             " - tłum. autora) oznacza wydarzenie, które odbywa się bardzo rzadko. Faktycznie, ostatnia niebieska pełnia miała miejsce 22 sierpnia, a na kolejną przyjdzie" +

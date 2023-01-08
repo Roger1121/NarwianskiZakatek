@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OcUfywhQskOZkI8U6NlKBzoTycVOxXXvwUpAfN8YfFM=",
+  "Hash": "jyWg7Vlojm/9mxOLY4fcO8oDdWkUH8Rs6DnXmAR4gaA=",
   "Source": "NarwianskiZakatek",
   "BasePath": "_content/NarwianskiZakatek",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "NarwianskiZakatek\\wwwroot",
       "Source": "NarwianskiZakatek",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "Pattern": "**"
     }
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "C:\\Users\\leszc\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.12\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NarwianskiZakatek.styles.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NarwianskiZakatek.styles.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "NarwianskiZakatek.styles.css",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NarwianskiZakatek.styles.css"
+      "OriginalItemSpec": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NarwianskiZakatek.styles.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NarwianskiZakatek.bundle.scp.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NarwianskiZakatek.bundle.scp.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "NarwianskiZakatek.bundle.scp.css",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NarwianskiZakatek.bundle.scp.css"
+      "OriginalItemSpec": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NarwianskiZakatek.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\calendar.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\calendar.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "css/calendar.css",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\css\\calendar.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\layout.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\layout.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "css/layout.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\css\\layout.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\site.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\site.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\weather.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\css\\weather.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "css/weather.css",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\css\\weather.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\favicon.ico",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\favicon.ico",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/descriptions/2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\descriptions\\2b9b80fc-d85f-47f0-a06f-465f0e080706.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/descriptions/9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\descriptions\\9a2c3ed5-7b4e-4ba4-987c-0fb9e0fa5a6d.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\descriptions\\d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/descriptions/d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\descriptions\\d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\header.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\header.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/header.jpg",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\header.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\1fcc6a5a-3154-4c53-a962-da994e5672d3.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\28c0ce45-aa9e-4286-8bcf-6ca69d6259c6.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\2ca60500-7cb1-48b1-bade-62a54353d8a9.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\441f0284-4df8-4d6e-b8ac-38bb960d5673.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\441f0284-4df8-4d6e-b8ac-38bb960d5673.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/441f0284-4df8-4d6e-b8ac-38bb960d5673.jpg",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\441f0284-4df8-4d6e-b8ac-38bb960d5673.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\5808f117-4e78-49c2-8c9e-0e76026ce24b.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\5e93e30b-1c15-4156-b319-0294d5d30cc5.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\69491762-d0a2-47ed-b920-864bd7bba243.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\69491762-d0a2-47ed-b920-864bd7bba243.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/69491762-d0a2-47ed-b920-864bd7bba243.jpg",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\69491762-d0a2-47ed-b920-864bd7bba243.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\801b69a7-6b3e-4605-baf4-b4ce4d2d659f.JPG"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\b8109a75-693d-4ae6-bfe0-c6ead1af5911.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\b8109a75-693d-4ae6-bfe0-c6ead1af5911.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/b8109a75-693d-4ae6-bfe0-c6ead1af5911.jpg",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\b8109a75-693d-4ae6-bfe0-c6ead1af5911.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\e3c1b9a5-f6db-46c0-8d03-0b5487f3f089.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\e3c1b9a5-f6db-46c0-8d03-0b5487f3f089.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/e3c1b9a5-f6db-46c0-8d03-0b5487f3f089.jpg",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\e3c1b9a5-f6db-46c0-8d03-0b5487f3f089.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\ea230ca0-f403-414d-8563-d691c6692548.jpg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\posts\\2022\\ea230ca0-f403-414d-8563-d691c6692548.jpg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/posts/2022/ea230ca0-f403-414d-8563-d691c6692548.jpg",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\posts\\2022\\ea230ca0-f403-414d-8563-d691c6692548.jpg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\clouds.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\clouds.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/clouds.svg",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\clouds.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\fog.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\fog.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/fog.svg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\fog.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\hail.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\hail.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/hail.svg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\hail.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\heavy_rain.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\heavy_rain.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/heavy_rain.svg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\heavy_rain.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\small_rain.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\small_rain.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/small_rain.svg",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\small_rain.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\snow.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\snow.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/snow.svg",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\snow.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\snow_and_rain.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\snow_and_rain.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/snow_and_rain.svg",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\snow_and_rain.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\sun.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\sun.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/sun.svg",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\sun.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\sun_with_clouds.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\sun_with_clouds.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/sun_with_clouds.svg",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\sun_with_clouds.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\thunderstorm.svg",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\graphics\\weather\\thunderstorm.svg",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "graphics/weather/thunderstorm.svg",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\graphics\\weather\\thunderstorm.svg"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\calendar.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\calendar.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "js/calendar.js",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\js\\calendar.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\qr.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\qr.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "js/qr.js",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\js\\qr.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\site.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\site.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\weather.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\js\\weather.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "js/weather.js",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\js\\weather.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\qrcode.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\lib\\qrcode.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "lib/qrcode.js",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\qrcode.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\jquery-3.6.0.min.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\jquery-3.6.0.min.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "scripts/jquery-3.6.0.min.js",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\scripts\\jquery-3.6.0.min.js"
     },
     {
-      "Identity": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\selectize.js",
+      "Identity": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\scripts\\selectize.js",
       "SourceId": "NarwianskiZakatek",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leszc\\Desktop\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
+      "ContentRoot": "D:\\NarwianskiZakatek\\NarwianskiZakatek\\wwwroot\\",
       "BasePath": "_content/NarwianskiZakatek",
       "RelativePath": "scripts/selectize.js",
       "AssetKind": "All",
