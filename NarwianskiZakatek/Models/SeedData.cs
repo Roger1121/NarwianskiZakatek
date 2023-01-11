@@ -192,7 +192,8 @@ namespace NarwianskiZakatek.Models
                             PhotoUrl = "d1bba959-f4e6-470d-a1fb-ce98527588d7.JPG",
                             Content = "Jesteśmy rodzinnym gospodarstwem agroturystycznym założonym jako rozwinięcie realnie działającego gospodarstwa rolnego. Naszym" +
                             " celem jest zachęcenie klientów do przebywania w bliskim kontakcie z naturą i wsparcie działalności lokalnych gospodarstw i przedsiębiorstw" +
-                            " poprzed dystrybucję wyrobów regionalnych i ekologicznych oraz reklamę usług."
+                            " poprzed dystrybucję wyrobów regionalnych i ekologicznych oraz reklamę usług. Niniejsza witryna internetowa powstała na Wydziale Informatyki" +
+                            " Politechniki Białostockiej"
                         });
 
                         context.SaveChanges();
