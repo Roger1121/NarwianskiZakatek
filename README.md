@@ -1,0 +1,1 @@
+The goal of creating this application was to support an agrotourism farm. Application allowed it's users to make reservations, read news from farm and contact with farm owners. Employees were able to manage available rooms, cancel reservations if needed, warn and block users, and add news on main page.
